@@ -1,0 +1,453 @@
+﻿// Responsive design so no need for horizontal scroll
+// but to avoid jumps in fixed-position items between pages, 
+// set vertical scrollbars always on
+html{
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+// Swatch specific alterations
+.navbar-nav > li > .dropdown-menu .dropdown-menu {
+    margin-top: -6px;
+}
+
+// enable slider text (arrows)
+.carousel-control {
+    &.left {
+        text-align: left;
+    }
+
+    &.right {
+        text-align: right;
+    }
+
+    .sr-only {
+        top: 48%;
+        width: auto;
+        height: auto;
+        clip: auto;
+        left: 15px;
+        right: 15px;
+    }
+}
+
+// fadein/out effects.
+// just add/remove these classes as required
+.show-fast {
+    visibility: visible;
+    opacity: 1;
+    -moz-transition: opacity 250ms linear;
+    -o-transition: opacity 250ms linear;
+    -webkit-transition: opacity 250ms linear;
+    transition: opacity 250ms linear;
+}
+
+.hide-fast {
+    visibility: hidden;
+    opacity: 0;
+    -moz-transition: visibility 0s 250ms, opacity 250ms linear;
+    -o-transition: visibility 0s 250ms, opacity 250ms linear;
+    -webkit-transition: visibility 0s 250ms, opacity 250ms linear;
+    transition: visibility 0s 250ms, opacity 250ms linear;
+}
+
+// Stops page jumping on load (DAG)
+/*#layout-main-container{ margin-top: @navbar-height;}*/
+.pad-fixed-top {
+    margin-top: (@navbar-height + @navbar-margin-bottom);
+}
+
+/* Orchard Layouts fine-tuning */
+.orchard-layouts-root {
+    // align content with edges of container
+    & > .container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    // if img width is NOT specified then default to responsive
+    // BUT ONLY if the image isn't in PhotoSwipe
+    img:not([width]):not(.pswp__img) {
+        width: 100%;
+    }
+
+    /* List style none is active Why? Restore to a useful default*/
+    /* Cannot do this in navbar because it assumes no margin */
+    ul, ol {
+        padding-left: 1.25em;
+
+        & li {
+            margin-bottom: 10px;
+        }
+    }
+
+    ul {
+        list-style: disc outside;
+    }
+
+    ol {
+        list-style: decimal outside;
+    }}
+
+/*
+    OBSOLETE: do not use. Use cascade styles below. These are here for old stuff only.
+    Large background image 'hiphouse' styling, and image lazy-loading classes
+
+.hip-head {
+    // This is the small-device styling
+    background: url('/media/default/test/dsc_6451_1.jpg?width=2560&quality=60') no-repeat bottom center scroll;
+    background-color: rgb(128, 128, 128);
+    background-size: cover;
+    height: auto;
+    width: 100%;
+    display: table;
+    padding: 100px 0;
+
+
+    .hip-text {
+        display: table-cell;
+        vertical-align: middle;
+
+        .hip-panel {
+            padding: 15px;
+
+            h2 {
+                font-size: 30px;
+                color: #fff;
+            }
+
+            h1 {
+                font-size: 36px;
+                color: #fff;
+            }
+        }
+    }
+    // Override the small-device styling for desktop
+    @media (min-width:768px) {
+        height: 100vh; // NOTE: vh units here: 100vh=100% of vertical height of screen
+        padding: 0;
+    }
+}
+
+.reveal-fade-in {
+    opacity: 1;
+    -moz-transition: opacity linear 1s;
+    -o-transition: opacity linear 1s;
+    -webkit-transition: opacity linear 1s;
+    transition: opacity linear 1s;
+}
+
+.reveal {
+    opacity: 0;
+}
+
+    */
+
+/*
+    Heading styles for sliding heads
+*/
+
+.cascade-caption {
+    h1 {
+        font-size: 200%;
+        text-shadow: 2px 2px 4px @gray;
+        margin-top: 0;
+        font-kerning: auto;
+    }
+
+    p {
+        font-size: 100%;
+        color: #fff;
+    }
+
+    @media screen and (min-width: @screen-sm-min) {
+        h1 {
+            font-size: 500%;
+        }
+
+        p {
+            font-size: 200%;
+            text-shadow: 2px 2px 4px @gray;
+        }
+    }
+}
+
+
+/*
+    Large background image 'hiphouse' styling for a normal menu
+*/
+.cascade-hippo-image {
+    // This is the small-device styling
+    background: url('/media/default/test/dsc_6451_1.jpg?width=2560&quality=60') no-repeat bottom center scroll;
+    background-color: @body-bg;
+    background-size: cover;
+    height: auto;
+    width: 100%;
+    display: table;
+    // move up to top of screen (ie compensate for height of menu)
+    margin-top: 0;
+
+    .cascade-hippo-text {
+        top: 0;
+        bottom: 0;
+    }
+    // Override the small-device styling for desktop
+    @media screen and (min-width:@screen-sm-min) {
+        height: 100vh; // NOTE: vh units here: 100vh=100% of vertical height of screen
+        margin-top: (-2px - @navbar-height);
+    }
+}
+
+/*
+    Large background image 'hiphouse' styling for a fixed menu
+*/
+.cascade-hippo-image-fixed {
+    // This is the small-device styling
+    background: url('/media/default/test/dsc_6451_1.jpg?width=2560&quality=60') no-repeat bottom center scroll;
+    background-color: @body-bg;
+    background-size: cover;
+    height: auto;
+    width: 100%;
+    display: table;
+    // move up to top of screen (ie compensate for height of menu)
+    margin-top: 0;
+
+    .cascade-hippo-text {
+        top: 0;
+        bottom: 0;
+    }
+    // Override the small-device styling for desktop
+    @media screen and (min-width:@screen-sm-min) {
+        height: 100vh; // NOTE: vh units here: 100vh=100% of vertical height of screen
+        margin-top: (0 - @navbar-height);
+    }
+}
+
+/*
+    Image lazy-loading classes
+*/
+.cascade-reveal-fade-in {
+    opacity: 1;
+    -moz-transition: opacity linear .3s;
+    -o-transition: opacity linear .3s;
+    -webkit-transition: opacity linear .3s;
+    transition: opacity linear .3s;
+}
+
+.cascade-reveal {
+    opacity: 0;
+}
+
+/*
+    General purpose vertical alignment. 
+    Add to any block to vertically center it within the parent block
+*/
+.cascade-vertical-align-middle {
+    position: relative;
+    top: 50%;
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+
+.cascade-carousel-vertical-align-middle {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+/* Display text against background panel in a carousel 
+    you will probably need to override the height and maybe the width here
+*/
+.cascade-panel {
+    /* base settings for small devices */
+    .center-block();
+    height: 200px;
+    width: 100%;
+    background: fade(@gray, 35%);
+    padding: 0 20px;
+    /* larger screens have larger fonts (see below), so make the panel bigger */
+    @media screen and (min-width: @screen-sm-min) {
+        height: 300px;
+        max-width: 600px;
+    }
+    /* vertically centers content inside a panel*/
+    .middle {
+        .cascade-vertical-align-middle();
+    }
+    /*top-aligns content inside panel*/
+    .top {
+    }
+}
+
+
+
+
+
+
+/* 
+    Bootstrap specifies heading suitable for desktops rather than smaller devices.
+    Reduce the size of headings by one 'step' (ie from h1 to h2) on smaller devices
+
+*/
+@media screen and (max-width:@screen-sm-max) {
+    h1, .h1 {
+        font-size: @font-size-h2;
+    }
+
+    h2, .h2 {
+        font-size: @font-size-h3;
+    }
+
+    h3, .h3 {
+        font-size: @font-size-h4;
+    }
+
+    h4, .h4 {
+        font-size: @font-size-h5;
+    }
+}
+
+//
+// Hippotron: based on Jumbotron
+// --------------------------------------------------
+
+@hippo-padding: 0;
+@hippo-color: rgb(150,100,100);
+@hippo-heading-color: #fff;
+@hippo-bg: rgb(150,150,150);
+@hippo-font-size: 200%;
+
+.cascade-hippotron {
+    padding: @hippo-padding (@hippo-padding / 2);
+    margin-bottom: @hippo-padding;
+    color: @hippo-color;
+    background-color: @hippo-bg;
+
+    h1,
+    .h1 {
+        color: @hippo-heading-color;
+    }
+
+    p {
+        margin-bottom: (@hippo-padding / 2);
+        font-size: @hippo-font-size;
+        font-weight: 200;
+    }
+
+    > hr {
+        border-top-color: darken(@hippo-bg, 10%);
+    }
+
+    .container &,
+    .container-fluid & {
+        border-radius: @border-radius-large; // Only round corners at higher resolutions if contained in a container
+    }
+
+    .container {
+        max-width: 100%;
+    }
+
+    @media screen and (min-width: @screen-sm-min) {
+        padding: (@hippo-padding * 1.6) 0;
+
+        .container &,
+        .container-fluid & {
+            padding-left: (@hippo-padding * 2);
+            padding-right: (@hippo-padding * 2);
+        }
+
+        h1,
+        .h1 {
+            font-size: (@font-size-base * 4.5);
+        }
+    }
+}
+
+/* Bootstrap doesn't define these, but Orchard Layouts does */
+.col-sm-0,
+.col-md-0,
+.col-lg-0,
+.col-xs-0 {
+    margin-left: (@grid-gutter-width / 2);
+    margin-right: (@grid-gutter-width / 2);
+}
+
+.navbar {
+    z-index: 10;
+    margin-bottom: 0;
+    /* add this class to the list of 'navbar' classes to center the menu. 
+           TODO: add some code to Cascade.Bootstrap to support this as an option */
+    &.navbar-center {
+        .navbar-nav {
+            float: none;
+            display: inline-block;
+            text-align: center;
+        }
+    }
+}
+
+
+.navbar-brand {
+    font-size: 30px;
+    line-height: 19px;
+}
+
+
+
+/* add vertical spacing for large screens*/
+.cascade-air {
+    @media screen and (min-width: @screen-sm-min) {
+        &.above {
+            &.v10 {
+                margin-top: 10px;
+            }
+
+            &.v20 {
+                margin-top: 20px;
+            }
+
+            &.v40 {
+                margin-top: 40px;
+            }
+
+            &.v80 {
+                margin-top: 80px;
+            }
+        }
+
+        &.below {
+            &.v10 {
+                margin-bottom: 10px;
+            }
+
+            &.v20 {
+                margin-bottom: 20px;
+            }
+
+            &.v40 {
+                margin-bottom: 40px;
+            }
+
+            &.v80 {
+                margin-bottom: 80px;
+            }
+        }
+    }
+}
+
+#toTop {
+    position: fixed;
+    right: 5px;
+    bottom: 10px;
+    cursor: pointer;
+    display: none;
+    text-align: center;
+    z-index: 500;
+    opacity: 0.6;
+}
+
+#toTop:hover {
+    opacity: .9;
+}

@@ -1,0 +1,172 @@
+﻿@import "site-default.less";
+@import "bootswatch-3.3.5/encompass-variables.less";
+@import "bootswatch-3.3.5/encompass-bootswatch.less";
+
+
+.feature-title {
+
+    @media screen and (min-width:@screen-sm-min) {
+        position: absolute;
+        right: 20px;
+        width: 40%;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    @media screen and (min-width:1140px) {
+        font-size: 300%;
+    }
+
+    text-align: center;
+    font-size: 200%;
+    padding: 0 6px;
+
+    .bigtitle {
+        color: @brand-primary;
+        text-shadow: 1px 1px 3px#666;
+
+        @media screen and (min-width:@screen-sm-min) {
+            margin-bottom: 10px;
+        }
+
+           @media screen and (min-width:@screen-md-min) {
+            margin-bottom: 60px;
+        }
+    }
+
+    .subtitle {
+        color: @headings-color;
+        text-shadow: 1px 1px 3px#666;
+    }
+}
+
+.haaa-head {
+
+    h2 {
+        margin: 2em 0 1em 0;
+    }
+
+    .box {
+
+        max-width:400px;
+        margin:20px auto;
+        .content-wrapper {
+
+            .title {
+                color: @brand-primary;
+                overflow: hidden;
+
+                font-size: 18px;
+                margin-bottom:5px;
+
+                @media screen and (min-width:@screen-sm-min) {
+                    font-size: 24px;
+                }
+
+                img {
+                    display: inline-block;
+                    float: left;
+                    width: auto;
+                    margin-right: 20px;
+                }
+            }
+
+
+            .text-box {
+                position: relative;
+                .text {
+                    position:absolute;
+                    top: 50%;
+                    transform: translate(0, -50%);
+                    background: rgba(0,0,0,0.5);
+                    color: #ffffff;
+                    font-size: 22px;
+                    padding: 5px;
+                }
+                img{
+                    max-width:100%;
+                }
+            }
+        }
+    }
+}
+
+#layout-footer {
+    background-color: @gray-dark;
+    color: @gray-light;
+
+    h4 {
+        color: @brand-info;
+    }
+}
+
+#layout-header {
+    position: fixed;
+    z-index: 1000;
+}
+
+.haaa-phone {
+    font-weight: bold;
+    font-size: 150%;
+    margin: 12px 5px 0 20px;
+    float: left;
+
+    @media (min-width: @grid-float-breakpoint) {
+        float: right;
+    }
+}
+
+.navbar-nav {
+    font-size: 120%;
+}
+
+.poll-container {
+    width: 40%;
+    margin: 0 auto 3em auto;
+    min-width: 320px;
+    text-align: left;
+}
+
+/* JUNK!*/
+.zone-tripel-second {
+    margin-top: 4em;
+    text-align: center;
+}
+
+
+.dropdown-menu {
+    border-color: @dropdown-fallback-border;
+    border-radius: 10px;
+    top: 80%;
+}
+
+.navbar-logo{
+    /*padding: 5px 5px 5px 0;*/
+}
+.navbar-brand{
+    padding: 10px 5px 5px 5px;
+}
+
+// a bar above the navbar
+.phone-header{
+    position: fixed;
+    top:0;
+    width:100%;
+    background-color: black;
+    color: white;
+    height:30px;
+    padding:5px;
+    text-align:center;
+    font-weight:bold;
+}
+
+// move navbar down to make room for the bar above
+.navbar-fixed-top{
+    top:30px;
+}
+
+// and set the top of the content to the sum of the stuff above it.
+.pad-fixed-top {
+    margin-top: (@navbar-height + 30);
+}
+
