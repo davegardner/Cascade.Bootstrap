@@ -230,7 +230,9 @@
     <Content Include="Content\Web.config" />
     <Content Include="Theme.txt" />
     <Content Include="Theme.png" />
-    <Content Include="Placement.info" />
+    <Content Include="Placement.info">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Orchard\Orchard.Framework.csproj">
