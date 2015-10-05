@@ -1,4 +1,4 @@
-﻿# PJS.Bootstrap Orchard CMS Theme
+﻿# Cascade.Bootstrap Theme
 
 ---
 
