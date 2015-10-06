@@ -10,7 +10,7 @@ namespace Cascade.Bootstrap.Handlers {
         public BootstrapThemeSettingsPartHandler() {
             T = NullLocalizer.Instance;
             Filters.Add(new ActivatingFilter<BootstrapThemeSettingsPart>("Site"));
-            Filters.Add(new TemplateFilterForPart<BootstrapThemeSettingsPart>("BootstrapThemeSettings", "Parts/BootstrapThemeSettings", "Theme-Bootstrap"));
+            Filters.Add(new TemplateFilterForPart<BootstrapThemeSettingsPart>("CascadeBootstrapThemeSettings", "Parts/CascadeBootstrapThemeSettings", "CascadeBootstrapTheme"));
         }
 
         public Localizer T { get; set; }
@@ -18,8 +18,15 @@ namespace Cascade.Bootstrap.Handlers {
         protected override void GetItemMetadata(GetContentItemMetadataContext context) {
             if (context.ContentItem.ContentType != "Site")
                 return;
+
             base.GetItemMetadata(context);
-            context.Metadata.EditorGroupInfo.Add(new GroupInfo(T("Theme-Bootstrap")));
+
+            // Constructor for GroupInfo is nuts
+            var group = new GroupInfo(T("CascadeBootstrapTheme"));
+            group.Name = T("Cascade Bootstrap");
+
+            context.Metadata.EditorGroupInfo.Add(group);
+
         }
     }
 }

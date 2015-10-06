@@ -334,7 +334,7 @@
     <Content Include="Styles\type.less" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\EditorTemplates\Parts\BootstrapThemeSettings.cshtml" />
+    <Content Include="Views\EditorTemplates\Parts\CascadeBootstrapThemeSettings.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Orchard.Users\Account\AccessDenied.cshtml" />
