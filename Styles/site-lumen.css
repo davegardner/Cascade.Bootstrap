@@ -255,8 +255,8 @@ th {
 }
 @font-face {
   font-family: 'Glyphicons Halflings';
-  src: url('bootstrap-3.3.5/fonts/glyphicons-halflings-regular.eot');
-  src: url('bootstrap-3.3.5/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('bootstrap-3.3.5/fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('bootstrap-3.3.5/fonts/glyphicons-halflings-regular.woff') format('woff'), url('bootstrap-3.3.5/fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('bootstrap-3.3.5/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+  src: url('bootstrap/fonts/glyphicons-halflings-regular.eot');
+  src: url('bootstrap/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('bootstrap/fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('bootstrap/fonts/glyphicons-halflings-regular.woff') format('woff'), url('bootstrap/fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('bootstrap/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 .glyphicon {
   position: relative;
@@ -6808,8 +6808,8 @@ html.orchard-users form:after {
  * -------------------------- */
 @font-face {
   font-family: 'FontAwesome';
-  src: url('font-awesome-4.3.0/fonts/fontawesome-webfont.eot?v=4.3.0');
-  src: url('font-awesome-4.3.0/fonts/fontawesome-webfont.eot?#iefix&v=4.3.0') format('embedded-opentype'), url('font-awesome-4.3.0/fonts/fontawesome-webfont.woff2?v=4.3.0') format('woff2'), url('font-awesome-4.3.0/fonts/fontawesome-webfont.woff?v=4.3.0') format('woff'), url('font-awesome-4.3.0/fonts/fontawesome-webfont.ttf?v=4.3.0') format('truetype'), url('font-awesome-4.3.0/fonts/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular') format('svg');
+  src: url('font-awesome/fonts/fontawesome-webfont.eot?v=4.3.0');
+  src: url('font-awesome/fonts/fontawesome-webfont.eot?#iefix&v=4.3.0') format('embedded-opentype'), url('font-awesome/fonts/fontawesome-webfont.woff2?v=4.3.0') format('woff2'), url('font-awesome/fonts/fontawesome-webfont.woff?v=4.3.0') format('woff'), url('font-awesome/fonts/fontawesome-webfont.ttf?v=4.3.0') format('truetype'), url('font-awesome/fonts/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular') format('svg');
   font-weight: normal;
   font-style: normal;
 }

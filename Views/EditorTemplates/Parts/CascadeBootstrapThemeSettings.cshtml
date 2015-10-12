@@ -1,4 +1,10 @@
 ﻿@model Cascade.Bootstrap.Models.BootstrapThemeSettingsPart
+           
+@{
+    Script.Require("jQuery");
+    Script.Include("CascadeBootstrapSettings.js");
+}                          
+
 @using (Script.Foot())
 {
     <script type="text/javascript">
@@ -22,6 +28,7 @@
         border: 3px solid #fff;
         width: 17%;
         display: inline-block;
+        background-color: #eee;
     }
 
         .swatchContainer:hover {
@@ -38,7 +45,10 @@
             max-width: 100%;
             height: auto;
         }
-
+        .swatchContainer p{
+            text-align: center;
+            font-size: 120%;
+        }
     #inverseColorContainer {
         width: 100px;
         height: 50px;
@@ -178,6 +188,7 @@
                 }
                 <div class="swatchContainer @swatch">
                     <img data-swatch="@swatch" src="@swatchImg">
+                    <p>@swatch</p>
                 </div>
             }
         }
@@ -185,9 +196,8 @@
 </fieldset>
 
 
-
-
-
+<a id="cbduplicate" class="button putton-primary" src="#">Duplicate Selected Swatch...</a>
+<span class="hint">@T("This will make a copy of the currently selected swatch. It is then up to you to modify the less files and the swatch image, and recompile the less files.")</span>
 
 
 <fieldset>
@@ -234,3 +244,4 @@
     @Html.CheckBoxFor(m => m.UseStickyFooter)@T("Use a Sticky Footer?")
     <span class="hint">@T("Select this checkbox to use a sticky footer.")</span>
 </fieldset>
+

@@ -10,8 +10,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PJS.Bootstrap</RootNamespace>
-    <AssemblyName>PJS.Bootstrap</AssemblyName>
+    <RootNamespace>Cascade.Bootstrap</RootNamespace>
+    <AssemblyName>Cascade.Bootstrap</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <FileUpgradeFlags>
@@ -130,32 +130,36 @@
     <Content Include="Content\swatches\superhero_th.png" />
     <Content Include="Content\swatches\united_th.png" />
     <Content Include="Content\swatches\yeti_th.png" />
-    <Content Include="Scripts\bootstrap-3.3.5\js\affix.js" />
-    <Content Include="Scripts\bootstrap-3.3.5\js\alert.js" />
-    <Content Include="Scripts\bootstrap-3.3.5\js\bootstrap.js" />
-    <Content Include="Scripts\bootstrap-3.3.5\js\bootstrap.min.js" />
-    <Content Include="Scripts\bootstrap-3.3.5\js\button.js" />
-    <Content Include="Scripts\bootstrap-3.3.5\js\carousel.js" />
-    <Content Include="Scripts\bootstrap-3.3.5\js\collapse.js" />
-    <Content Include="Scripts\bootstrap-3.3.5\js\dropdown.js" />
-    <Content Include="Scripts\bootstrap-3.3.5\js\modal.js" />
-    <Content Include="Scripts\bootstrap-3.3.5\js\popover.js" />
-    <Content Include="Scripts\bootstrap-3.3.5\js\scrollspy.js" />
-    <Content Include="Scripts\bootstrap-3.3.5\js\tab.js" />
-    <Content Include="Scripts\bootstrap-3.3.5\js\tooltip.js" />
-    <Content Include="Scripts\bootstrap-3.3.5\js\transition.js" />
+    <Content Include="Scripts\bootstrap\js\affix.js" />
+    <Content Include="Scripts\bootstrap\js\alert.js" />
+    <Content Include="Scripts\bootstrap\js\bootstrap.js" />
+    <Content Include="Scripts\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Scripts\bootstrap\js\button.js" />
+    <Content Include="Scripts\bootstrap\js\carousel.js" />
+    <Content Include="Scripts\bootstrap\js\collapse.js" />
+    <Content Include="Scripts\bootstrap\js\dropdown.js" />
+    <Content Include="Scripts\bootstrap\js\modal.js" />
+    <Content Include="Scripts\bootstrap\js\popover.js" />
+    <Content Include="Scripts\bootstrap\js\scrollspy.js" />
+    <Content Include="Scripts\bootstrap\js\tab.js" />
+    <Content Include="Scripts\bootstrap\js\tooltip.js" />
+    <Content Include="Scripts\bootstrap\js\transition.js" />
+    <Content Include="Scripts\CascadeBootstrapSettings.js" />
     <Content Include="Scripts\custom.js" />
     <Content Include="Scripts\hover-dropdown.js" />
     <Content Include="Scripts\prettyPhoto\jquery.prettyPhoto.js" />
     <Content Include="Scripts\stapel\jquery.stapel.js" />
     <Content Include="Scripts\stapel\modernizr.custom.63321.js" />
-    <Content Include="Styles\bootstrap-3.3.1-rtl\css\bootstrap-rtl.css" />
-    <Content Include="Styles\bootstrap-3.3.1-rtl\css\bootstrap-rtl.min.css" />
-    <Content Include="Styles\bootstrap-3.3.1-rtl\less\bootstrap-rtl.css">
+    <Content Include="Styles\bootstrap-rtl\css\bootstrap-rtl.css" />
+    <Content Include="Styles\bootstrap-rtl\css\bootstrap-rtl.min.css" />
+    <Content Include="Styles\bootstrap-rtl\less\bootstrap-rtl.css">
       <DependentUpon>bootstrap-rtl.less</DependentUpon>
     </Content>
-    <Content Include="Styles\bootstrap-3.3.5\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="Styles\font-awesome-4.3.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="Styles\bootstrap-rtl\less\bootstrap-rtl.min.css">
+      <DependentUpon>bootstrap-rtl.css</DependentUpon>
+    </Content>
+    <Content Include="Styles\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Styles\font-awesome\fonts\fontawesome-webfont.svg" />
     <Content Include="Styles\latest-twitter.css">
       <DependentUpon>latest-twitter.less</DependentUpon>
     </Content>
@@ -261,6 +265,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\BootstrapSettingsController.cs" />
     <Compile Include="Gravatar\Gravatar.cs" />
     <Compile Include="Gravatar\Gremail.cs" />
     <Compile Include="Gravatar\Grofile.cs" />
@@ -271,29 +276,31 @@
     <Compile Include="MainMenu.cs" />
     <Compile Include="Models\BootstrapThemeSettingsPart.cs" />
     <Compile Include="ResourceManifest.cs" />
+    <Compile Include="Routes.cs" />
+    <Compile Include="Services\CascadeBootstrapService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\EditorTemplates\Parts.Comment.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Styles\font-awesome-4.3.0\fonts\fontawesome-webfont.eot" />
-    <Content Include="Styles\font-awesome-4.3.0\fonts\fontawesome-webfont.ttf" />
-    <Content Include="Styles\font-awesome-4.3.0\fonts\fontawesome-webfont.woff" />
-    <Content Include="Styles\font-awesome-4.3.0\fonts\fontawesome-webfont.woff2" />
-    <Content Include="Styles\font-awesome-4.3.0\fonts\FontAwesome.otf" />
-    <Content Include="Styles\font-awesome-4.3.0\less\animated.less" />
-    <Content Include="Styles\font-awesome-4.3.0\less\bordered-pulled.less" />
-    <Content Include="Styles\font-awesome-4.3.0\less\core.less" />
-    <Content Include="Styles\font-awesome-4.3.0\less\fixed-width.less" />
-    <Content Include="Styles\font-awesome-4.3.0\less\font-awesome.less" />
-    <Content Include="Styles\font-awesome-4.3.0\less\icons.less" />
-    <Content Include="Styles\font-awesome-4.3.0\less\larger.less" />
-    <Content Include="Styles\font-awesome-4.3.0\less\list.less" />
-    <Content Include="Styles\font-awesome-4.3.0\less\mixins.less" />
-    <Content Include="Styles\font-awesome-4.3.0\less\path.less" />
-    <Content Include="Styles\font-awesome-4.3.0\less\rotated-flipped.less" />
-    <Content Include="Styles\font-awesome-4.3.0\less\stacked.less" />
-    <Content Include="Styles\font-awesome-4.3.0\less\variables.less" />
+    <Content Include="Styles\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Styles\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Styles\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Styles\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Styles\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Styles\font-awesome\less\animated.less" />
+    <Content Include="Styles\font-awesome\less\bordered-pulled.less" />
+    <Content Include="Styles\font-awesome\less\core.less" />
+    <Content Include="Styles\font-awesome\less\fixed-width.less" />
+    <Content Include="Styles\font-awesome\less\font-awesome.less" />
+    <Content Include="Styles\font-awesome\less\icons.less" />
+    <Content Include="Styles\font-awesome\less\larger.less" />
+    <Content Include="Styles\font-awesome\less\list.less" />
+    <Content Include="Styles\font-awesome\less\mixins.less" />
+    <Content Include="Styles\font-awesome\less\path.less" />
+    <Content Include="Styles\font-awesome\less\rotated-flipped.less" />
+    <Content Include="Styles\font-awesome\less\stacked.less" />
+    <Content Include="Styles\font-awesome\less\variables.less" />
     <Content Include="Styles\forms.less" />
     <Content Include="Styles\layout.less" />
     <Content Include="Styles\navigation.less" />
@@ -401,40 +408,40 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Styles\bootstrap-3.3.1-rtl\css\bootstrap-rtl.css.map" />
+    <Content Include="Styles\bootstrap-rtl\css\bootstrap-rtl.css.map" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Styles\bootstrap-3.3.1-rtl\less\alerts-rtl.less" />
-    <Content Include="Styles\bootstrap-3.3.1-rtl\less\badges-rtl.less" />
-    <Content Include="Styles\bootstrap-3.3.1-rtl\less\bootstrap-rtl.less" />
-    <Content Include="Styles\bootstrap-3.3.1-rtl\less\button-groups-rtl.less" />
-    <Content Include="Styles\bootstrap-3.3.1-rtl\less\carousel-rtl.less" />
-    <Content Include="Styles\bootstrap-3.3.1-rtl\less\close-rtl.less" />
-    <Content Include="Styles\bootstrap-3.3.1-rtl\less\dropdowns-rtl.less" />
-    <Content Include="Styles\bootstrap-3.3.1-rtl\less\forms-rtl.less" />
-    <Content Include="Styles\bootstrap-3.3.1-rtl\less\grid-rtl.less" />
-    <Content Include="Styles\bootstrap-3.3.1-rtl\less\input-groups-rtl.less" />
-    <Content Include="Styles\bootstrap-3.3.1-rtl\less\list-group-rtl.less" />
-    <Content Include="Styles\bootstrap-3.3.1-rtl\less\media-rtl.less" />
-    <Content Include="Styles\bootstrap-3.3.1-rtl\less\mixins-rtl.less" />
-    <Content Include="Styles\bootstrap-3.3.1-rtl\less\mixins\gradients-rtl.less" />
-    <Content Include="Styles\bootstrap-3.3.1-rtl\less\mixins\grid-framework-rtl.less" />
-    <Content Include="Styles\bootstrap-3.3.1-rtl\less\mixins\grid-rtl.less" />
-    <Content Include="Styles\bootstrap-3.3.1-rtl\less\mixins\pagination-rtl.less" />
-    <Content Include="Styles\bootstrap-3.3.1-rtl\less\modals-rtl.less" />
-    <Content Include="Styles\bootstrap-3.3.1-rtl\less\navbar-rtl.less" />
-    <Content Include="Styles\bootstrap-3.3.1-rtl\less\navs-rtl.less" />
-    <Content Include="Styles\bootstrap-3.3.1-rtl\less\normalize-rtl.less" />
-    <Content Include="Styles\bootstrap-3.3.1-rtl\less\pager-rtl.less" />
-    <Content Include="Styles\bootstrap-3.3.1-rtl\less\pagination-rtl.less" />
-    <Content Include="Styles\bootstrap-3.3.1-rtl\less\panels-rtl.less" />
-    <Content Include="Styles\bootstrap-3.3.1-rtl\less\popovers-rtl.less" />
-    <Content Include="Styles\bootstrap-3.3.1-rtl\less\progress-bars-rtl.less" />
-    <Content Include="Styles\bootstrap-3.3.1-rtl\less\responsive-embed-rtl.less" />
-    <Content Include="Styles\bootstrap-3.3.1-rtl\less\tables-rtl.less" />
-    <Content Include="Styles\bootstrap-3.3.1-rtl\less\type-rtl.less" />
-    <Content Include="Styles\bootstrap-3.3.1-rtl\less\utilities-rtl.less" />
-    <Content Include="Styles\bootstrap-3.3.1-rtl\less\variables-rtl.less" />
+    <Content Include="Styles\bootstrap-rtl\less\alerts-rtl.less" />
+    <Content Include="Styles\bootstrap-rtl\less\badges-rtl.less" />
+    <Content Include="Styles\bootstrap-rtl\less\bootstrap-rtl.less" />
+    <Content Include="Styles\bootstrap-rtl\less\button-groups-rtl.less" />
+    <Content Include="Styles\bootstrap-rtl\less\carousel-rtl.less" />
+    <Content Include="Styles\bootstrap-rtl\less\close-rtl.less" />
+    <Content Include="Styles\bootstrap-rtl\less\dropdowns-rtl.less" />
+    <Content Include="Styles\bootstrap-rtl\less\forms-rtl.less" />
+    <Content Include="Styles\bootstrap-rtl\less\grid-rtl.less" />
+    <Content Include="Styles\bootstrap-rtl\less\input-groups-rtl.less" />
+    <Content Include="Styles\bootstrap-rtl\less\list-group-rtl.less" />
+    <Content Include="Styles\bootstrap-rtl\less\media-rtl.less" />
+    <Content Include="Styles\bootstrap-rtl\less\mixins-rtl.less" />
+    <Content Include="Styles\bootstrap-rtl\less\mixins\gradients-rtl.less" />
+    <Content Include="Styles\bootstrap-rtl\less\mixins\grid-framework-rtl.less" />
+    <Content Include="Styles\bootstrap-rtl\less\mixins\grid-rtl.less" />
+    <Content Include="Styles\bootstrap-rtl\less\mixins\pagination-rtl.less" />
+    <Content Include="Styles\bootstrap-rtl\less\modals-rtl.less" />
+    <Content Include="Styles\bootstrap-rtl\less\navbar-rtl.less" />
+    <Content Include="Styles\bootstrap-rtl\less\navs-rtl.less" />
+    <Content Include="Styles\bootstrap-rtl\less\normalize-rtl.less" />
+    <Content Include="Styles\bootstrap-rtl\less\pager-rtl.less" />
+    <Content Include="Styles\bootstrap-rtl\less\pagination-rtl.less" />
+    <Content Include="Styles\bootstrap-rtl\less\panels-rtl.less" />
+    <Content Include="Styles\bootstrap-rtl\less\popovers-rtl.less" />
+    <Content Include="Styles\bootstrap-rtl\less\progress-bars-rtl.less" />
+    <Content Include="Styles\bootstrap-rtl\less\responsive-embed-rtl.less" />
+    <Content Include="Styles\bootstrap-rtl\less\tables-rtl.less" />
+    <Content Include="Styles\bootstrap-rtl\less\type-rtl.less" />
+    <Content Include="Styles\bootstrap-rtl\less\utilities-rtl.less" />
+    <Content Include="Styles\bootstrap-rtl\less\variables-rtl.less" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Styles\site-rtl.less" />
@@ -457,120 +464,120 @@
     <Content Include="Styles\yamm\yamm.less" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Styles\bootstrap-3.3.1-rtl\less\bootstrap-rtl.css.map">
+    <Content Include="Styles\bootstrap-rtl\less\bootstrap-rtl.css.map">
       <DependentUpon>bootstrap-rtl.css</DependentUpon>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Styles\bootswatch-3.3.5\cerulean-bootswatch.less" />
-    <Content Include="Styles\bootswatch-3.3.5\cerulean-variables.less" />
-    <Content Include="Styles\bootswatch-3.3.5\cosmo-bootswatch.less" />
-    <Content Include="Styles\bootswatch-3.3.5\cosmo-variables.less" />
-    <Content Include="Styles\bootswatch-3.3.5\cyborg-bootswatch.less" />
-    <Content Include="Styles\bootswatch-3.3.5\cyborg-variables.less" />
-    <Content Include="Styles\bootswatch-3.3.5\darkly-bootswatch.less" />
-    <Content Include="Styles\bootswatch-3.3.5\darkly-variables.less" />
-    <Content Include="Styles\bootswatch-3.3.5\flatly-bootswatch.less" />
-    <Content Include="Styles\bootswatch-3.3.5\flatly-variables.less" />
-    <Content Include="Styles\bootswatch-3.3.5\journal-bootswatch.less" />
-    <Content Include="Styles\bootswatch-3.3.5\journal-variables.less" />
-    <Content Include="Styles\bootswatch-3.3.5\lumen-bootswatch.less" />
-    <Content Include="Styles\bootswatch-3.3.5\lumen-variables.less" />
-    <Content Include="Styles\bootswatch-3.3.5\paper-bootswatch.less" />
-    <Content Include="Styles\bootswatch-3.3.5\paper-variables.less" />
-    <Content Include="Styles\bootswatch-3.3.5\readable-bootswatch.less" />
-    <Content Include="Styles\bootswatch-3.3.5\readable-variables.less" />
-    <Content Include="Styles\bootswatch-3.3.5\sandstone-bootswatch.less" />
-    <Content Include="Styles\bootswatch-3.3.5\sandstone-variables.less" />
-    <Content Include="Styles\bootswatch-3.3.5\simplex-bootswatch.less" />
-    <Content Include="Styles\bootswatch-3.3.5\simplex-variables.less" />
-    <Content Include="Styles\bootswatch-3.3.5\slate-bootswatch.less" />
-    <Content Include="Styles\bootswatch-3.3.5\slate-variables.less" />
-    <Content Include="Styles\bootswatch-3.3.5\spacelab-bootswatch.less" />
-    <Content Include="Styles\bootswatch-3.3.5\spacelab-variables.less" />
-    <Content Include="Styles\bootswatch-3.3.5\superhero-bootswatch.less" />
-    <Content Include="Styles\bootswatch-3.3.5\superhero-variables.less" />
-    <Content Include="Styles\bootswatch-3.3.5\united-bootswatch.less" />
-    <Content Include="Styles\bootswatch-3.3.5\united-variables.less" />
-    <Content Include="Styles\bootswatch-3.3.5\yeti-bootswatch.less" />
-    <Content Include="Styles\bootswatch-3.3.5\yeti-variables.less" />
+    <Content Include="Styles\bootswatch\cerulean-bootswatch.less" />
+    <Content Include="Styles\bootswatch\cerulean-variables.less" />
+    <Content Include="Styles\bootswatch\cosmo-bootswatch.less" />
+    <Content Include="Styles\bootswatch\cosmo-variables.less" />
+    <Content Include="Styles\bootswatch\cyborg-bootswatch.less" />
+    <Content Include="Styles\bootswatch\cyborg-variables.less" />
+    <Content Include="Styles\bootswatch\darkly-bootswatch.less" />
+    <Content Include="Styles\bootswatch\darkly-variables.less" />
+    <Content Include="Styles\bootswatch\flatly-bootswatch.less" />
+    <Content Include="Styles\bootswatch\flatly-variables.less" />
+    <Content Include="Styles\bootswatch\journal-bootswatch.less" />
+    <Content Include="Styles\bootswatch\journal-variables.less" />
+    <Content Include="Styles\bootswatch\lumen-bootswatch.less" />
+    <Content Include="Styles\bootswatch\lumen-variables.less" />
+    <Content Include="Styles\bootswatch\paper-bootswatch.less" />
+    <Content Include="Styles\bootswatch\paper-variables.less" />
+    <Content Include="Styles\bootswatch\readable-bootswatch.less" />
+    <Content Include="Styles\bootswatch\readable-variables.less" />
+    <Content Include="Styles\bootswatch\sandstone-bootswatch.less" />
+    <Content Include="Styles\bootswatch\sandstone-variables.less" />
+    <Content Include="Styles\bootswatch\simplex-bootswatch.less" />
+    <Content Include="Styles\bootswatch\simplex-variables.less" />
+    <Content Include="Styles\bootswatch\slate-bootswatch.less" />
+    <Content Include="Styles\bootswatch\slate-variables.less" />
+    <Content Include="Styles\bootswatch\spacelab-bootswatch.less" />
+    <Content Include="Styles\bootswatch\spacelab-variables.less" />
+    <Content Include="Styles\bootswatch\superhero-bootswatch.less" />
+    <Content Include="Styles\bootswatch\superhero-variables.less" />
+    <Content Include="Styles\bootswatch\united-bootswatch.less" />
+    <Content Include="Styles\bootswatch\united-variables.less" />
+    <Content Include="Styles\bootswatch\yeti-bootswatch.less" />
+    <Content Include="Styles\bootswatch\yeti-variables.less" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Styles\bootstrap-3.3.5\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Styles\bootstrap-3.3.5\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="Styles\bootstrap-3.3.5\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="Styles\bootstrap-3.3.5\fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="Styles\bootstrap-3.3.5\less\alerts.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\badges.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\bootstrap.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\breadcrumbs.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\button-groups.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\buttons.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\carousel.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\close.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\code.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\component-animations.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\dropdowns.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\forms.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\glyphicons.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\grid.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\input-groups.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\jumbotron.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\labels.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\list-group.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\media.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\mixins.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\mixins\alerts.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\mixins\background-variant.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\mixins\border-radius.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\mixins\buttons.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\mixins\center-block.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\mixins\clearfix.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\mixins\forms.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\mixins\gradients.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\mixins\grid-framework.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\mixins\grid.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\mixins\hide-text.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\mixins\image.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\mixins\labels.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\mixins\list-group.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\mixins\nav-divider.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\mixins\nav-vertical-align.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\mixins\opacity.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\mixins\pagination.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\mixins\panels.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\mixins\progress-bar.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\mixins\reset-filter.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\mixins\reset-text.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\mixins\resize.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\mixins\responsive-visibility.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\mixins\size.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\mixins\tab-focus.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\mixins\table-row.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\mixins\text-emphasis.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\mixins\text-overflow.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\mixins\vendor-prefixes.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\modals.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\navbar.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\navs.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\normalize.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\pager.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\pagination.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\panels.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\popovers.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\print.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\progress-bars.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\responsive-embed.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\responsive-utilities.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\scaffolding.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\tables.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\theme.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\thumbnails.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\tooltip.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\type.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\utilities.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\variables.less" />
-    <Content Include="Styles\bootstrap-3.3.5\less\wells.less" />
+    <Content Include="Styles\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Styles\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Styles\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Styles\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Styles\bootstrap\less\alerts.less" />
+    <Content Include="Styles\bootstrap\less\badges.less" />
+    <Content Include="Styles\bootstrap\less\bootstrap.less" />
+    <Content Include="Styles\bootstrap\less\breadcrumbs.less" />
+    <Content Include="Styles\bootstrap\less\button-groups.less" />
+    <Content Include="Styles\bootstrap\less\buttons.less" />
+    <Content Include="Styles\bootstrap\less\carousel.less" />
+    <Content Include="Styles\bootstrap\less\close.less" />
+    <Content Include="Styles\bootstrap\less\code.less" />
+    <Content Include="Styles\bootstrap\less\component-animations.less" />
+    <Content Include="Styles\bootstrap\less\dropdowns.less" />
+    <Content Include="Styles\bootstrap\less\forms.less" />
+    <Content Include="Styles\bootstrap\less\glyphicons.less" />
+    <Content Include="Styles\bootstrap\less\grid.less" />
+    <Content Include="Styles\bootstrap\less\input-groups.less" />
+    <Content Include="Styles\bootstrap\less\jumbotron.less" />
+    <Content Include="Styles\bootstrap\less\labels.less" />
+    <Content Include="Styles\bootstrap\less\list-group.less" />
+    <Content Include="Styles\bootstrap\less\media.less" />
+    <Content Include="Styles\bootstrap\less\mixins.less" />
+    <Content Include="Styles\bootstrap\less\mixins\alerts.less" />
+    <Content Include="Styles\bootstrap\less\mixins\background-variant.less" />
+    <Content Include="Styles\bootstrap\less\mixins\border-radius.less" />
+    <Content Include="Styles\bootstrap\less\mixins\buttons.less" />
+    <Content Include="Styles\bootstrap\less\mixins\center-block.less" />
+    <Content Include="Styles\bootstrap\less\mixins\clearfix.less" />
+    <Content Include="Styles\bootstrap\less\mixins\forms.less" />
+    <Content Include="Styles\bootstrap\less\mixins\gradients.less" />
+    <Content Include="Styles\bootstrap\less\mixins\grid-framework.less" />
+    <Content Include="Styles\bootstrap\less\mixins\grid.less" />
+    <Content Include="Styles\bootstrap\less\mixins\hide-text.less" />
+    <Content Include="Styles\bootstrap\less\mixins\image.less" />
+    <Content Include="Styles\bootstrap\less\mixins\labels.less" />
+    <Content Include="Styles\bootstrap\less\mixins\list-group.less" />
+    <Content Include="Styles\bootstrap\less\mixins\nav-divider.less" />
+    <Content Include="Styles\bootstrap\less\mixins\nav-vertical-align.less" />
+    <Content Include="Styles\bootstrap\less\mixins\opacity.less" />
+    <Content Include="Styles\bootstrap\less\mixins\pagination.less" />
+    <Content Include="Styles\bootstrap\less\mixins\panels.less" />
+    <Content Include="Styles\bootstrap\less\mixins\progress-bar.less" />
+    <Content Include="Styles\bootstrap\less\mixins\reset-filter.less" />
+    <Content Include="Styles\bootstrap\less\mixins\reset-text.less" />
+    <Content Include="Styles\bootstrap\less\mixins\resize.less" />
+    <Content Include="Styles\bootstrap\less\mixins\responsive-visibility.less" />
+    <Content Include="Styles\bootstrap\less\mixins\size.less" />
+    <Content Include="Styles\bootstrap\less\mixins\tab-focus.less" />
+    <Content Include="Styles\bootstrap\less\mixins\table-row.less" />
+    <Content Include="Styles\bootstrap\less\mixins\text-emphasis.less" />
+    <Content Include="Styles\bootstrap\less\mixins\text-overflow.less" />
+    <Content Include="Styles\bootstrap\less\mixins\vendor-prefixes.less" />
+    <Content Include="Styles\bootstrap\less\modals.less" />
+    <Content Include="Styles\bootstrap\less\navbar.less" />
+    <Content Include="Styles\bootstrap\less\navs.less" />
+    <Content Include="Styles\bootstrap\less\normalize.less" />
+    <Content Include="Styles\bootstrap\less\pager.less" />
+    <Content Include="Styles\bootstrap\less\pagination.less" />
+    <Content Include="Styles\bootstrap\less\panels.less" />
+    <Content Include="Styles\bootstrap\less\popovers.less" />
+    <Content Include="Styles\bootstrap\less\print.less" />
+    <Content Include="Styles\bootstrap\less\progress-bars.less" />
+    <Content Include="Styles\bootstrap\less\responsive-embed.less" />
+    <Content Include="Styles\bootstrap\less\responsive-utilities.less" />
+    <Content Include="Styles\bootstrap\less\scaffolding.less" />
+    <Content Include="Styles\bootstrap\less\tables.less" />
+    <Content Include="Styles\bootstrap\less\theme.less" />
+    <Content Include="Styles\bootstrap\less\thumbnails.less" />
+    <Content Include="Styles\bootstrap\less\tooltip.less" />
+    <Content Include="Styles\bootstrap\less\type.less" />
+    <Content Include="Styles\bootstrap\less\utilities.less" />
+    <Content Include="Styles\bootstrap\less\variables.less" />
+    <Content Include="Styles\bootstrap\less\wells.less" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Styles\cascade.less" />
@@ -579,14 +586,14 @@
     <Content Include="Styles\site-hiphouse.less" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Styles\bootswatch-3.3.5\clayton-bootswatch.less" />
-    <Content Include="Styles\bootswatch-3.3.5\clayton-variables.less" />
-    <Content Include="Styles\bootswatch-3.3.5\encompass-bootswatch.less" />
-    <Content Include="Styles\bootswatch-3.3.5\encompass-variables.less" />
-    <Content Include="Styles\bootswatch-3.3.5\hiphouse-bootswatch.less" />
-    <Content Include="Styles\bootswatch-3.3.5\hiphouse-variables.less" />
-    <Content Include="Styles\bootswatch-3.3.5\restart-bootswatch.less" />
-    <Content Include="Styles\bootswatch-3.3.5\restart-variables.less" />
+    <Content Include="Styles\bootswatch\clayton-bootswatch.less" />
+    <Content Include="Styles\bootswatch\clayton-variables.less" />
+    <Content Include="Styles\bootswatch\encompass-bootswatch.less" />
+    <Content Include="Styles\bootswatch\encompass-variables.less" />
+    <Content Include="Styles\bootswatch\hiphouse-bootswatch.less" />
+    <Content Include="Styles\bootswatch\hiphouse-variables.less" />
+    <Content Include="Styles\bootswatch\restart-bootswatch.less" />
+    <Content Include="Styles\bootswatch\restart-variables.less" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Styles\site-restart.less" />
@@ -605,6 +612,7 @@
   <ItemGroup>
     <Content Include="Views\Parts.Layout.cshtml" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

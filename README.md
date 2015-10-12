@@ -5,6 +5,7 @@
 > Bootstrap is a sleek, intuitive, and powerful front-end framework for faster and easier web development.
 
 ## Features
+- Ability to duplicate swatches from admin settings
 - Supports Orchard Layouts out of the box
 - Easily extend with new swatches (copy/rename an existing Bootswatch)
 - Requires Orchard 1.8 or higher

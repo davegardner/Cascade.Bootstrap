@@ -1,6 +1,7 @@
 <Placement>
   <Match ContentType="Page">
     <Place Parts_Common_Metadata="-"/>
+    <Place Parts_Title="-"/>
   </Match>
 
   <Match ContentType="Blog">
