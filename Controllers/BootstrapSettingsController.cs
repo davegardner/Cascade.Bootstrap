@@ -35,6 +35,16 @@ namespace Cascade.Bootstrap.Controllers
 
         }
 
+        [HttpPost]
+        public string DuplicateTheme(string fromTheme, string toTheme)
+        {
+            // normalize
+            fromTheme = fromTheme.Trim().ToLower();
+            toTheme = toTheme.Trim().ToLower();
+            var bootstrapThemeFolder = Server.MapPath("/Themes");
+
+            return _cascadeBootstrapService.CreateTheme(bootstrapThemeFolder, fromTheme, toTheme);
+        }
 
     }
 }

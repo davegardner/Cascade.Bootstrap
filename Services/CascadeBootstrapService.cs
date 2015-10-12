@@ -13,7 +13,7 @@ namespace Cascade.Bootstrap.Services
         /// <param name="bootstrapThemeFolder">The windows folder in which the theme is located</param>
         /// <param name="fromSwatch">Name of swatch to copy</param>
         /// <param name="toSwatch">Name of new swatch</param>
-        /// <returns></returns>
+        /// <returns>null on success. Otherwise, an error message</returns>
         string Copy(string bootstrapThemeFolder, string fromSwatch, string toSwatch);
 
         /// <summary>
@@ -22,8 +22,17 @@ namespace Cascade.Bootstrap.Services
         /// <param name="bootstrapThemeFolder">The windows folder in which the theme is located</param>
         /// <param name="fromSwatch">Name of original swatch</param>
         /// <param name="toSwatch">Name of new swatch</param>
-        /// <returns></returns>
+        /// <returns>true on success</returns>
         bool Replace(string bootstrapThemeFolder, string fromSwatch, string toSwatch);
+
+        /// <summary>
+        /// Creates a new theme based on Cascade.Bootstrap
+        /// </summary>
+        /// <param name="themesFolder">Windows folder for Themes</param>
+        /// <param name="fromTheme">Name of the theme to copy (can be null) </param>
+        /// <param name="toTheme">Name of the theme to be created</param>
+        /// <returns>null on success. Otherwise, an error message</returns>
+        string CreateTheme(string themesFolder, string fromTheme, string toTheme);
     }
 
     public class CascadeBootstrapService : ICascadeBootstrapService
@@ -51,9 +60,9 @@ namespace Cascade.Bootstrap.Services
                     {
                         var from = BuildPath(bootstrapThemeFolder, fromSwatch, fileType, fileExtension);
                         var to = BuildPath(bootstrapThemeFolder, toSwatch, fileType, fileExtension);
-                        
+
                         // default-variables and default-bootstrap don't exist
-                        if (File.Exists(from) && !File.Exists(to)) 
+                        if (File.Exists(from) && !File.Exists(to))
                             File.Copy(from, to);
                     }
                 }
@@ -61,7 +70,7 @@ namespace Cascade.Bootstrap.Services
                 // also copy the image used to show the swatch in the list of swatches
                 var fromImg = Path.Combine(bootstrapThemeFolder, imageFolder, fromSwatch + imageSuffix);
                 var toImg = Path.Combine(bootstrapThemeFolder, imageFolder, toSwatch + imageSuffix);
-                if(File.Exists(fromImg) && !File.Exists(toImg))
+                if (File.Exists(fromImg) && !File.Exists(toImg))
                     File.Copy(fromImg, toImg);
 
             }
@@ -95,13 +104,83 @@ namespace Cascade.Bootstrap.Services
                     File.Delete(toPath);
                 File.WriteAllLines(toPath, lines);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Logger.Error(ex, "Unable to update @import refs for '{0}'", toSwatch);
                 return false;
             }
             return true;
 
+        }
+
+
+        public string CreateTheme(string themesFolder, string fromTheme, string toTheme)
+        {
+            // if fromTheme is specified and it exists, use it as a template (ie copy and rename)
+            // Otherwise, create a new theme by copying mandatory files such as web.config
+            // from Cascade.Bootstrap.
+
+            string fromFolder = Path.Combine(themesFolder, fromTheme);
+
+            var themetxt = "Name: " + toTheme + Environment.NewLine +
+                            "Author: Cascade Pixels" + Environment.NewLine +
+                            "Website: http://cascadepixels.com.au" + Environment.NewLine +
+                            "Description: Extends Cascade.Bootstrap theme" + Environment.NewLine +
+                            "Version: 1.0" + Environment.NewLine +
+                            "BaseTheme: Cascade.Bootstrap" + Environment.NewLine;
+
+            try
+            {
+                string toFolder = Path.Combine(themesFolder, toTheme);
+                Directory.CreateDirectory(toFolder);
+
+                if (!String.IsNullOrWhiteSpace(fromTheme) && Directory.Exists(fromFolder))
+                {
+                    // -- copy existing theme --
+
+                    // create directories
+                    foreach (string dirPath in Directory.GetDirectories(fromFolder, "*", SearchOption.AllDirectories))
+                        Directory.CreateDirectory(dirPath.Replace(fromFolder, toFolder));
+
+                    // copy files
+                    foreach (string newPath in Directory.GetFiles(fromFolder, "*.*", SearchOption.AllDirectories))
+                        File.Copy(newPath, newPath.Replace(fromFolder, toFolder), true);
+
+                    // update or create theme.txt
+                    var themeTxtPath = Path.Combine(themesFolder, "theme.txt");
+                    if (File.Exists(themeTxtPath))
+                    {
+                        themetxt = File.ReadAllText(themeTxtPath);
+                        themetxt.Replace(fromTheme, toTheme);
+                    }
+                    File.WriteAllText(themeTxtPath, themetxt);
+                }
+                else
+                {
+                    // -- create a brand new theme --
+
+                    // create directories
+                    var contentFolder = Path.Combine(toFolder, "Content");
+                    var scriptsFolder = Path.Combine(toFolder, "Scripts");
+                    var stylesFolder = Path.Combine(toFolder, "Styles");
+                    var viewsFolder = Path.Combine(toFolder, "Views");
+                    Directory.CreateDirectory(contentFolder);
+                    Directory.CreateDirectory(scriptsFolder);
+                    Directory.CreateDirectory(stylesFolder);
+                    Directory.CreateDirectory(viewsFolder);
+
+                    // copy files from base theme
+                    File.Copy(Path.Combine(themesFolder, "Cascade.Bootstrap", "web.config"), Path.Combine(toFolder, "web.config"));
+                    File.Copy(Path.Combine(themesFolder, "Cascade.Bootstrap", "theme.png"), Path.Combine(toFolder, "theme.png"));
+                    File.WriteAllText(Path.Combine(toFolder, "theme.txt"), themetxt);
+                }
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+
+            return null; //success
         }
 
         private string BuildPath(string bootstrapThemeFolder, string swatch, string fileType, string fileExtension)
