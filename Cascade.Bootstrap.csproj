@@ -273,6 +273,7 @@
     <Compile Include="Gravatar\Html\HtmlHelperExtensions.cs" />
     <Compile Include="Gravatar\Html\UrlHelperExtensions.cs" />
     <Compile Include="Handlers\BootstrapThemeSettingsPartHandler.cs" />
+    <Compile Include="Helpers\CssParser.cs" />
     <Compile Include="MainMenu.cs" />
     <Compile Include="Models\BootstrapThemeSettingsPart.cs" />
     <Compile Include="ResourceManifest.cs" />

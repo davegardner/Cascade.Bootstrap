@@ -13,6 +13,7 @@ namespace Cascade.Bootstrap
                 routes.Add(routeDescriptor);
         }
 
+
         public IEnumerable<RouteDescriptor> GetRoutes()
         {
             return new[] {
@@ -43,7 +44,22 @@ namespace Cascade.Bootstrap
                             {"area", "Cascade.Bootstrap"}
                         },
                         new MvcRouteHandler())
+                },
+                new RouteDescriptor {   
+                    Priority = 5,
+                    Route = new Route("Admin/Settings/CascadeBootstrapTheme/GetCssValue",
+                        new RouteValueDictionary {
+                            {"area", "Cascade.Bootstrap"},
+                            {"controller", "BootstrapSettings"},
+                            {"action", "GetCssValue"}
+                        },
+                        new RouteValueDictionary(),
+                        new RouteValueDictionary {
+                            {"area", "Cascade.Bootstrap"}
+                        },
+                        new MvcRouteHandler())
                 }
+
 
             };
         }

@@ -1,11 +1,13 @@
-﻿using System;
-using System.Linq;
+﻿using Cascade.Bootstrap.Models;
 using Orchard;
 using Orchard.ContentManagement;
 using Orchard.Core.Navigation.Models;
+using Orchard.Core.Title.Models;
 using Orchard.Localization;
 using Orchard.UI.Navigation;
-using Orchard.Core.Title.Models;
+using System;
+using System.Linq;
+
 
 namespace Cascade.Bootstrap {
     public class MainMenu : IMenuProvider {
@@ -19,7 +21,11 @@ namespace Cascade.Bootstrap {
 
         public Localizer T { get; set; }
         public void GetMenu(IContent menu, NavigationBuilder builder) {
-            if (menu.As<TitlePart>().Title == "Main Menu") {
+            var workContext = _orchardServices.WorkContext;
+            var bootstrapSettings = workContext.CurrentSite.As<BootstrapThemeSettingsPart>();
+            
+            if (menu.As<TitlePart>().Title == "Main Menu")
+            {
                 var maxPosition = _contentManager
                     .Query<MenuPart, MenuPartRecord>()
                     .Where(x => x.MenuId == menu.Id)
@@ -29,16 +35,26 @@ namespace Cascade.Bootstrap {
 
                 var itemCount = maxPosition + 1;
 
-                if (_orchardServices.WorkContext.CurrentUser != null) {
-                    builder.Add(T(_orchardServices.WorkContext.CurrentUser.UserName), itemCount.ToString(), item => item.Url("#").AddClass("menuUserName"));
-                    builder.Add(T("Change Password"), itemCount.ToString() + ".1", item => item.Action("ChangePassword", "Account", new { area = "Orchard.Users" }));
-                    builder.Add(T("Sign Out"), itemCount.ToString() + ".2", item => item.Action("LogOff", "Account", new { area = "Orchard.Users", ReturnUrl = _orchardServices.WorkContext.HttpContext.Request.RawUrl }));
-                    if (_orchardServices.Authorizer.Authorize(Orchard.Security.StandardPermissions.AccessAdminPanel)) {
-                        builder.Add(T("Dashboard"), itemCount.ToString() + ".3", item => item.Action("Index", "Admin", new { area = "Dashboard" }));
+                //do we want to display admin menu?
+                if (bootstrapSettings.ShowLogInLinksInMenu)
+                {
+                    if (_orchardServices.WorkContext.CurrentUser != null)
+                    {
+
+                        builder.Add(T(_orchardServices.WorkContext.CurrentUser.UserName), itemCount.ToString(), item => item.Url("#").AddClass("menuUserName"));
+                        builder.Add(T("Change Password"), itemCount.ToString() + ".1", item => item.Action("ChangePassword", "Account", new { area = "Orchard.Users" }));
+                        builder.Add(T("Sign Out"), itemCount.ToString() + ".2", item => item.Action("LogOff", "Account", new { area = "Orchard.Users", ReturnUrl = _orchardServices.WorkContext.HttpContext.Request.RawUrl }));
+                        if (_orchardServices.Authorizer.Authorize(Orchard.Security.StandardPermissions.AccessAdminPanel))
+                        {
+                            builder.Add(T("Dashboard"), itemCount.ToString() + ".3", item => item.Action("Index", "Admin", new { area = "Dashboard" }));
+                        }
                     }
-                }
-                else {
-                    builder.Add(T("Sign In"), itemCount.ToString(), item => item.Action("LogOn", "Account", new { area = "Orchard.Users", ReturnUrl = (_orchardServices.WorkContext.HttpContext.Request.QueryString["ReturnUrl"] ?? _orchardServices.WorkContext.HttpContext.Request.RawUrl) }));
+
+                    else if (bootstrapSettings.ShowLogInLinksInMenuWhenLoggedIn)
+                    {
+                        builder.Add(T("Sign In"), itemCount.ToString(), item => item.Action("LogOn", "Account", new { area = "Orchard.Users", ReturnUrl = (_orchardServices.WorkContext.HttpContext.Request.QueryString["ReturnUrl"] ?? _orchardServices.WorkContext.HttpContext.Request.RawUrl) }));
+                    }
+
                 }
             }
         }

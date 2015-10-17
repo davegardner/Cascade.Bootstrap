@@ -55,5 +55,32 @@
 		});
 	}
 
+
+	$('.swatchContainer').click(function () {
+		var swatch = $(this).data("swatch");
+		$('#CascadeBootstrapThemeSettings_Swatch').val(swatch);
+		$('.swatchContainer').removeClass('active');
+		$('.' + swatch).addClass('active');
+
+		GetLessValue($('#navColorContainer'), ".navbar-default .navbar-nav > li > a", swatch, "color");
+		GetLessValue($('#navColorContainer'), ".navbar-default", swatch, "background-color");
+		GetLessValue($('#inverseColorContainer'), ".navbar-inverse .navbar-nav > li > a", swatch, "color");
+		GetLessValue($('#inverseColorContainer'), ".navbar-inverse", swatch, "background-color");
+
+		function GetLessValue(el, style, swatch, attribute) {
+			$.ajax({
+				url: '/Admin/Settings/CascadeBootstrapTheme/GetCssValue',
+				data: { Swatch: swatch, Style: style, Attribute: attribute },
+				method: 'GET',
+				success: function (data)
+				{
+					el.css(attribute, data );
+				},
+				error: function () { alert('Unable to contact server'); }
+			});
+		}
+
+	});
+
 })(jQuery);
 

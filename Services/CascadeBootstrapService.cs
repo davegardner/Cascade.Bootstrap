@@ -1,4 +1,5 @@
-﻿using Orchard.Logging;
+﻿using Cascade.Bootstrap.Helpers;
+using Orchard.Logging;
 using System;
 using System.IO;
 using System.Linq;
@@ -33,6 +34,16 @@ namespace Cascade.Bootstrap.Services
         /// <param name="toTheme">Name of the theme to be created</param>
         /// <returns>null on success. Otherwise, an error message</returns>
         string CreateTheme(string themesFolder, string fromTheme, string toTheme);
+
+        /// <summary>
+        /// Retrieve an attribute value from a css file
+        /// </summary>
+        /// <param name="bootstrapThemeFolder">Windows folder for themes</param>
+        /// <param name="swatch">Name of bootswatch</param>
+        /// <param name="styleName">Style name (eg: .navbar-nav)</param>
+        /// <param name="attribute">Attribute whose value is to be returned (eg: background-color)</param>
+        /// <returns>The value of the attribute, or null if not found</returns>
+        string GetCssValue(string bootstrapThemeFolder, string swatch, string styleName, string attribute);
     }
 
     public class CascadeBootstrapService : ICascadeBootstrapService
@@ -44,6 +55,7 @@ namespace Cascade.Bootstrap.Services
         const string imageFolder = "Content\\swatches";
         const string imageSuffix = "_th.png";
         const string stylesFolder = "Styles";
+        const string cascade = "Cascade.Bootstrap";
 
         public CascadeBootstrapService()
         {
@@ -170,8 +182,8 @@ namespace Cascade.Bootstrap.Services
                     Directory.CreateDirectory(viewsFolder);
 
                     // copy files from base theme
-                    File.Copy(Path.Combine(themesFolder, "Cascade.Bootstrap", "web.config"), Path.Combine(toFolder, "web.config"));
-                    File.Copy(Path.Combine(themesFolder, "Cascade.Bootstrap", "theme.png"), Path.Combine(toFolder, "theme.png"));
+                    File.Copy(Path.Combine(themesFolder, cascade, "web.config"), Path.Combine(toFolder, "web.config"));
+                    File.Copy(Path.Combine(themesFolder, cascade, "theme.png"), Path.Combine(toFolder, "theme.png"));
                     File.WriteAllText(Path.Combine(toFolder, "theme.txt"), themetxt);
                 }
             }
@@ -182,6 +194,14 @@ namespace Cascade.Bootstrap.Services
 
             return null; //success
         }
+
+
+        public string GetCssValue(string bootstrapThemeFolder, string swatch, string styleName, string attribute)
+        {
+            var path = BuildPath(Path.Combine(bootstrapThemeFolder, cascade), swatch, "site", "css");
+            return FindProperty(bootstrapThemeFolder, swatch, styleName, attribute, path);
+        }
+        // HELPERS /////////////////////////////////
 
         private string BuildPath(string bootstrapThemeFolder, string swatch, string fileType, string fileExtension)
         {
@@ -201,5 +221,36 @@ namespace Cascade.Bootstrap.Services
             }
             return path;
         }
+
+        private static CssParser _parser = null;
+        private static string _swatch = null;
+        private CssParser GetParser(string bootstrapThemeFolder, string swatch)
+        {
+            // cache CssParser
+            if (_swatch != swatch)
+                _parser = null;
+
+            if (_parser == null)
+            {
+                _parser = new CssParser();
+                _parser.AddStyleSheet(BuildPath(Path.Combine(bootstrapThemeFolder, cascade), swatch, "site", "css"));
+            }
+            return _parser;
+        }
+
+
+        private string FindProperty(string bootstrapThemeFolder, string swatch, string styleName, string attribute, string cssFileName)
+        {
+            try
+            {
+                var sc = GetParser(bootstrapThemeFolder, swatch).Styles[styleName];
+                return sc.Attributes[attribute];
+            }
+            catch
+            {
+                return null;
+            }
+        }
     }
+
 }

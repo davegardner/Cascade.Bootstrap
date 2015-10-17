@@ -46,5 +46,11 @@ namespace Cascade.Bootstrap.Controllers
             return _cascadeBootstrapService.CreateTheme(bootstrapThemeFolder, fromTheme, toTheme);
         }
 
+        [HttpGet]
+        public string GetCssValue(string Swatch, string Style, string Attribute)
+        {
+            return _cascadeBootstrapService.GetCssValue(Server.MapPath("/Themes"), Swatch.Trim().ToLower(), Style.Trim(), Attribute.Trim());
+        }
+
     }
 }

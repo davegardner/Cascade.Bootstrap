@@ -1,43 +1,34 @@
 ﻿@model Cascade.Bootstrap.Models.BootstrapThemeSettingsPart
-           
+
 @{
     Script.Require("jQuery");
     Script.Include("CascadeBootstrapSettings.js");
-}                          
+}
 
 @using (Script.Foot())
 {
     <script type="text/javascript">
         $(function () {
-            $('.swatchContainer.@Model.Swatch').addClass('active');
-
-            $('.swatchContainer img').click(function () {
-                var swatch = $(this).data("swatch");
-                $('#CascadeBootstrapThemeSettings_Swatch').val(swatch);
-                $('.swatchContainer').removeClass('active');
-                $('.' + swatch).addClass('active');
-                $('#inverseColorContainer').removeClass();
-                $('#inverseColorContainer').addClass(swatch);
-            });
+            $('.swatchContainer.@Model.Swatch').trigger("click");
         });
     </script>
 }
 <style type="text/css">
     .swatchContainer {
         padding: 5px;
-        border: 3px solid #fff;
+        border: 2px solid #fff;
         width: 17%;
         display: inline-block;
         background-color: #eee;
     }
 
         .swatchContainer:hover {
-            border: 3px solid #563d7c;
+            border: 2px dotted #bbb;
             cursor: pointer;
         }
 
         .swatchContainer.active {
-            border: 3px solid #563d7c;
+            border: 2px solid black;
         }
 
         .swatchContainer img {
@@ -45,124 +36,21 @@
             max-width: 100%;
             height: auto;
         }
-        .swatchContainer p{
+
+        .swatchContainer p {
             text-align: center;
             font-size: 120%;
         }
-    #inverseColorContainer {
-        width: 100px;
+
+    #navColorContainer, #inverseColorContainer {
+        width: 300px;
         height: 50px;
         text-align: center;
         line-height: 50px;
+        border: 1px solid black;
     }
 
-        #inverseColorContainer.default {
-            background-color: #222222;
-            border: 1px solid #080808;
-            color: #9d9d9d;
-        }
-
-        #inverseColorContainer.cerulean {
-            background-color: #033c73;
-            border: 1px solid #022f5a;
-            color: #ffffff;
-        }
-
-        #inverseColorContainer.cosmo {
-            background-color: #2780e3;
-            border: 1px solid #1967be;
-            color: #ffffff;
-        }
-
-        #inverseColorContainer.cyborg {
-            background-color: #222222;
-            border: 1px solid #080808;
-            color: #888888;
-        }
-
-        #inverseColorContainer.darkly {
-            background-color: #00bc8c;
-            border: 1px solid transparent;
-            color: #ffffff;
-        }
-
-        #inverseColorContainer.flatly {
-            background-color: #18bc9c;
-            border: 1px solid transparent;
-            color: #ffffff;
-        }
-
-        #inverseColorContainer.journal {
-            background-color: #eb6864;
-            border: 1px solid #e53c37;
-            color: #ffffff;
-        }
-
-        #inverseColorContainer.lumen {
-            background-color: #ffffff;
-            border: 1px solid #e6e6e6;
-            color: #999999;
-        }
-
-        #inverseColorContainer.paper {
-            background-color: #2196f3;
-            border: 1px solid transparent;
-            color: #b2dbfb;
-        }
-
-        #inverseColorContainer.readable {
-            background-color: #ffffff;
-            border: 1px solid #dddddd;
-            color: #333333;
-        }
-
-        #inverseColorContainer.restart {
-            background-color: #ffffff;
-            border: 1px solid #dddddd;
-            color: #333333;
-        }
-
-        #inverseColorContainer.sandstone {
-            background-color: #93c54b;
-            border: 1px solid #93c54b;
-            color: #6b9430;
-        }
-
-        #inverseColorContainer.simplex {
-            background-color: #d9230f;
-            border: 1px solid #a91b0c;
-            color: #fac0ba;
-        }
-
-        #inverseColorContainer.slate {
-            background-color: #7a8288;
-            border: 1px solid #62686d;
-            color: #cccccc;
-        }
-
-        #inverseColorContainer.spacelab {
-            background-color: #446e9b;
-            border: 1px solid #345578;
-            color: #dddddd;
-        }
-
-        #inverseColorContainer.superhero {
-            background-color: #df691a;
-            border: 1px solid transparent;
-            color: #ebebeb;
-        }
-
-        #inverseColorContainer.united {
-            background-color: #772953;
-            border: 1px solid #511c39;
-            color: #ffffff;
-        }
-
-        #inverseColorContainer.yeti {
-            background-color: #008cba;
-            border: 1px solid #006687;
-            color: #ffffff;
-        }
+      
 </style>
 <fieldset>
     <legend>Select a Swatch</legend>
@@ -186,8 +74,8 @@
                 {
                     swatchImg = swatchImg.Substring(1);
                 }
-                <div class="swatchContainer @swatch">
-                    <img data-swatch="@swatch" src="@swatchImg">
+                <div class="swatchContainer @swatch" data-swatch="@swatch">
+                    <img src="@swatchImg">
                     <p>@swatch</p>
                 </div>
             }
@@ -207,7 +95,8 @@
     <legend>Inverse Navigation Bar Color</legend>
     @Html.CheckBoxFor(m => m.UseInverseNav) @T("Use Inverse Navigation Bar Color?")
     <span class="hint">@T("Select this checkbox to use the inverse navigation bar color.")</span>
-    <div id="inverseColorContainer" class="@Model.Swatch">Text Color</div>
+    <div id="navColorContainer">Navigation Sample</div>
+    <div id="inverseColorContainer">Inverse Navigation Sample</div>
 </fieldset>
 <fieldset>
     <legend>Fixed Navigation Bar</legend>
