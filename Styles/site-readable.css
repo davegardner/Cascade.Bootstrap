@@ -10390,59 +10390,6 @@ html {
   list-style: decimal outside;
 }
 /*
-    OBSOLETE: do not use. Use cascade styles below. These are here for old stuff only.
-    Large background image 'hiphouse' styling, and image lazy-loading classes
-
-.hip-head {
-    // This is the small-device styling
-    background: url('/media/default/test/dsc_6451_1.jpg?width=2560&quality=60') no-repeat bottom center scroll;
-    background-color: rgb(128, 128, 128);
-    background-size: cover;
-    height: auto;
-    width: 100%;
-    display: table;
-    padding: 100px 0;
-
-
-    .hip-text {
-        display: table-cell;
-        vertical-align: middle;
-
-        .hip-panel {
-            padding: 15px;
-
-            h2 {
-                font-size: 30px;
-                color: #fff;
-            }
-
-            h1 {
-                font-size: 36px;
-                color: #fff;
-            }
-        }
-    }
-    // Override the small-device styling for desktop
-    @media (min-width:768px) {
-        height: 100vh; // NOTE: vh units here: 100vh=100% of vertical height of screen
-        padding: 0;
-    }
-}
-
-.reveal-fade-in {
-    opacity: 1;
-    -moz-transition: opacity linear 1s;
-    -o-transition: opacity linear 1s;
-    -webkit-transition: opacity linear 1s;
-    transition: opacity linear 1s;
-}
-
-.reveal {
-    opacity: 0;
-}
-
-    */
-/*
     Heading styles for sliding heads
 */
 .cascade-caption h1 {
@@ -10570,7 +10517,7 @@ html {
   transform: translateY(-50%);
 }
 /* 
-    Bootstrap specifies heading suitable for desktops rather than smaller devices.
+    Bootstrap specifies headings suitable for desktops rather than smaller devices.
     Reduce the size of headings by one 'step' (ie from h1 to h2) on smaller devices
 
 */

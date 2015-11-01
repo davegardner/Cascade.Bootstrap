@@ -2,8 +2,9 @@
 @using Orchard.Layouts.Helpers
 @{
     var tagBuilder = TagBuilderExtensions.AddCommonElementAttributes(new OrchardTagBuilder("div"), Model);
-    tagBuilder.AddCssClass("container");
 }
 @tagBuilder.StartElement
-@DisplayChildren(Model)
+<div class="container">
+    @DisplayChildren(Model)
+</div>
 @tagBuilder.EndElement
