@@ -2,9 +2,15 @@
 @using Orchard.Layouts.Helpers
 @{
     var tagBuilder = TagBuilderExtensions.AddCommonElementAttributes(new OrchardTagBuilder("div"), Model);
+    var isEmpty = tagBuilder.Attributes.Count == 0;
 }
-@tagBuilder.StartElement
+
+@if(!isEmpty){
+    <text>@tagBuilder.StartElement</text>
+}
 <div class="container">
     @DisplayChildren(Model)
 </div>
-@tagBuilder.EndElement
+@if(!isEmpty){
+     <text>@tagBuilder.EndElement</text>
+}
