@@ -3,9 +3,11 @@
  * */
 
 (function ($) {
+	var baseUrl = 'CascadeBootstrapTheme';
+
 	$('#cbduplicate').click(function (ev) {
 		var img = $('.swatchContainer.active img');
-		var swatch = $('.swatchContainer.active img').data("swatch");
+		var swatch = img.parent().data("swatch");
 
 		var toSwatch = prompt("Duplicate swatch '" + swatch + "' and call it:");
 		if (toSwatch == null || toSwatch == "")
@@ -18,7 +20,7 @@
 
 		// ask server to do it please
 		$.ajax({
-			url: '/Admin/Settings/CascadeBootstrapTheme/DuplicateSwatch',
+			url: baseUrl + '/DuplicateSwatch',
 			data: { fromSwatch: swatch, toSwatch: toSwatch },
 			method: 'POST',
 			success: function (data) {
@@ -41,7 +43,7 @@
 	// duplicates the theme, assuming the theme has the same name as the swatch
 	var DuplicateTheme = function (fromTheme, toTheme) {
 		$.ajax({
-			url: '/Admin/Settings/CascadeBootstrapTheme/DuplicateTheme',
+			url: baseUrl + '/DuplicateTheme',
 			data: { fromTheme: fromTheme, toTheme: toTheme },
 			method: 'POST',
 			success: function (data) {
@@ -69,7 +71,7 @@
 
 		function GetLessValue(el, style, swatch, attribute) {
 			$.ajax({
-				url: '/Admin/Settings/CascadeBootstrapTheme/GetCssValue',
+				url: baseUrl + '/GetCssValue',
 				data: { Swatch: swatch, Style: style, Attribute: attribute },
 				method: 'GET',
 				success: function (data)
