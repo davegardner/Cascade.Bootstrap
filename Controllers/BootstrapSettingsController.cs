@@ -1,5 +1,6 @@
 ﻿using Cascade.Bootstrap.Services;
 using System;
+using System.IO;
 using System.Web.Mvc;
 
 namespace Cascade.Bootstrap.Controllers
@@ -22,6 +23,9 @@ namespace Cascade.Bootstrap.Controllers
 
             // duplicate the swatch
             var bootstrapThemeFolder = Server.MapPath("~/Themes/Cascade.Bootstrap");
+            if (!Directory.Exists(bootstrapThemeFolder))
+                return "Folder '" + bootstrapThemeFolder + "' does not exist";
+
             var message = _cascadeBootstrapService.Copy(bootstrapThemeFolder, fromSwatch, toSwatch);
             if (!String.IsNullOrEmpty(message))
                 return message;

@@ -64,6 +64,7 @@ namespace Cascade.Bootstrap.Services
 
         public string Copy(string bootstrapThemeFolder, string fromSwatch, string toSwatch)
         {
+            Logger.Error("Starting Copy()");
             try
             {
                 foreach (var fileType in fileTypes)
@@ -73,17 +74,26 @@ namespace Cascade.Bootstrap.Services
                         var from = BuildPath(bootstrapThemeFolder, fromSwatch, fileType, fileExtension);
                         var to = BuildPath(bootstrapThemeFolder, toSwatch, fileType, fileExtension);
 
+                        //Logger.Error("About to copy from '" + from + "' to '" + to + "'");
+
                         // default-variables and default-bootstrap don't exist
                         if (File.Exists(from) && !File.Exists(to))
                             File.Copy(from, to);
+
+                        //Logger.Error("success!");
                     }
                 }
 
                 // also copy the image used to show the swatch in the list of swatches
                 var fromImg = Path.Combine(bootstrapThemeFolder, imageFolder, fromSwatch + imageSuffix);
                 var toImg = Path.Combine(bootstrapThemeFolder, imageFolder, toSwatch + imageSuffix);
+
+                //Logger.Error("About to copy image from '" + fromImg + "' to '" + toImg + "'");
+                
                 if (File.Exists(fromImg) && !File.Exists(toImg))
                     File.Copy(fromImg, toImg);
+
+                //Logger.Error("success!");
 
             }
             catch (Exception ex)
