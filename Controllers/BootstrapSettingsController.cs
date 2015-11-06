@@ -21,7 +21,7 @@ namespace Cascade.Bootstrap.Controllers
             toSwatch = toSwatch.Trim().ToLower();
 
             // duplicate the swatch
-            var bootstrapThemeFolder = Server.MapPath("/Themes/Cascade.Bootstrap");
+            var bootstrapThemeFolder = Server.MapPath("~/Themes/Cascade.Bootstrap");
             var message = _cascadeBootstrapService.Copy(bootstrapThemeFolder, fromSwatch, toSwatch);
             if (!String.IsNullOrEmpty(message))
                 return message;
@@ -41,7 +41,7 @@ namespace Cascade.Bootstrap.Controllers
             // normalize
             fromTheme = fromTheme.Trim().ToLower();
             toTheme = toTheme.Trim().ToLower();
-            var bootstrapThemeFolder = Server.MapPath("/Themes");
+            var bootstrapThemeFolder = Server.MapPath("~/Themes");
 
             return _cascadeBootstrapService.CreateTheme(bootstrapThemeFolder, fromTheme, toTheme);
         }
@@ -49,7 +49,7 @@ namespace Cascade.Bootstrap.Controllers
         [HttpGet]
         public string GetCssValue(string Swatch, string Style, string Attribute)
         {
-            return _cascadeBootstrapService.GetCssValue(Server.MapPath("/Themes"), Swatch.Trim().ToLower(), Style.Trim(), Attribute.Trim());
+            return _cascadeBootstrapService.GetCssValue(Server.MapPath("~/Themes"), Swatch.Trim().ToLower(), Style.Trim(), Attribute.Trim());
         }
 
     }
