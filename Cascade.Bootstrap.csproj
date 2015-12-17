@@ -159,6 +159,12 @@
       <DependentUpon>bootstrap-rtl.css</DependentUpon>
     </Content>
     <Content Include="Styles\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Styles\bootswatch\clayton-variables.css">
+      <DependentUpon>clayton-variables.less</DependentUpon>
+    </Content>
+    <Content Include="Styles\bootswatch\clayton-variables.min.css">
+      <DependentUpon>clayton-variables.css</DependentUpon>
+    </Content>
     <Content Include="Styles\font-awesome\fonts\fontawesome-webfont.svg" />
     <Content Include="Styles\latest-twitter.css">
       <DependentUpon>latest-twitter.less</DependentUpon>
@@ -171,6 +177,12 @@
     <Content Include="Styles\restart\style.min.css" />
     <Content Include="Styles\site-cerulean.css" />
     <Content Include="Styles\site-cerulean.min.css" />
+    <Content Include="Styles\site-clayton.css">
+      <DependentUpon>site-clayton.less</DependentUpon>
+    </Content>
+    <Content Include="Styles\site-clayton.min.css">
+      <DependentUpon>site-clayton.css</DependentUpon>
+    </Content>
     <Content Include="Styles\site-cosmo.css" />
     <Content Include="Styles\site-cosmo.min.css" />
     <Content Include="Styles\site-cyborg.css" />
@@ -212,6 +224,12 @@
     </Content>
     <Content Include="Styles\site-rtl.min.css">
       <DependentUpon>site-rtl.css</DependentUpon>
+    </Content>
+    <Content Include="Styles\site-safetec.css">
+      <DependentUpon>site-safetec.less</DependentUpon>
+    </Content>
+    <Content Include="Styles\site-safetec.min.css">
+      <DependentUpon>site-safetec.css</DependentUpon>
     </Content>
     <Content Include="Styles\site-sandstone.css" />
     <Content Include="Styles\site-sandstone.min.css" />
@@ -613,7 +631,9 @@
   <ItemGroup>
     <Content Include="Views\Parts.Layout.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Styles\site-safetec.less" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

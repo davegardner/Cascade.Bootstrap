@@ -1,0 +1,184 @@
+@import "site-default.less";
+@import "bootswatch/safetec-bootswatch.less";
+@import "bootswatch/safetec-variables.less";
+@import url(http://fonts.googleapis.com/css?family=Quicksand);
+@import url(https://fonts.googleapis.com/css?family=Audiowide);
+
+
+.widget-splash {
+    text-align: center;
+
+    .wrapper {
+
+        .text {
+            padding: 10px;
+            background: none;
+        }
+
+        .logo {
+            font-family: 'Audiowide', cursive;
+            color: @brand-primary;
+            text-shadow: 2px 1px 4px #f6f6f6;
+        }
+
+        h2, p {
+            font-size: 180%;
+        }
+
+        p {
+            font-size: 100%;
+        }
+
+        @media screen and (min-width : @screen-xs) {
+            background: url('../../../Media/Safetec/Common/splash.jpg') no-repeat;
+            background-size: contain;
+            position: relative;
+            width: 100%;
+            padding-top: 26.65%;
+            margin: 0 0 20px 0;
+
+            .text {
+                position: absolute;
+                top: 0;
+                left: 5%;
+                background-color: rgba(110, 110, 110, .7);
+                height: 100%;
+                width: 400px;
+                padding-top: 30px;
+                text-shadow: 3px 3px 10px #333;
+
+                h2, p {
+                    color: #fff;
+                    font-size: 200%;
+                }
+
+                p {
+                    font-size: 100%;
+                }
+            }
+        }
+
+        @media screen and (min-width : @screen-md) {
+            .text {
+                background-color: rgba(110, 110, 110, 0);
+                #gradient>.vertical(rgba(110, 110, 110, .7), rgba(110, 110, 110, 0));
+                padding-top: 50px;
+                width: 600px;
+
+                h2, p {
+                    font-size: 300%;
+                }
+
+                p {
+                    font-size: 150%;
+                }
+            }
+        }
+
+        @media screen and (min-width : @screen-lg) {
+            .text {
+                padding-top: 60px;
+                width: 900px;
+
+                h2, p {
+                    font-size: 450%;
+                }
+
+                p {
+                    font-size: 225%;
+                }
+            }
+        }
+    }
+}
+
+.safetec-main-gx {
+    max-height: 120px;
+}
+
+.dynamic-form {
+    margin: 0px 0 80px 0;
+
+    ol {
+        padding-left: 20px;
+    }
+
+    .checkbox-list li {
+        display: inline-block;
+        padding-right: 1em;
+    }
+}
+
+#layout-footer {
+    width: 100% !important;
+    color: rgb(128, 128, 128);
+    background-color: rgb(135, 136, 137);
+}
+
+.footer-wrapper {
+    color: #f6f6f6;
+    margin-bottom: 2em;
+    font-size: .8em;
+
+    a {
+        color: #f6f6f6;
+    }
+
+    h1, h2, h3 {
+        color: #f6f6f6;
+        font-size: 2rem;
+    }
+
+    .left, right {
+        display: inline-block;
+        float: left;
+        width: 50%;
+    }
+}
+
+#footer-sig {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.navbar > #layout-navigation .navbar-brand {
+    padding: 15px 0;
+    margin: 0;
+
+    & > img {
+        height: 40px;
+        width: auto;
+    }
+}
+
+.pad-fixed-top {
+    margin-top: (@navbar-height);
+}
+
+// Testimonials
+.quote blockquote {
+    border: none;
+    /*max-width:600px;*/
+    margin: auto;
+}
+
+.quote blockquote::before {
+    font-size: 200%;
+    font-family: FontAwesome;
+    opacity: .5;
+    content: "\f10d  ";
+}
+
+.quote p {
+    text-align: right;
+}
+
+article {
+
+    &.service-category-term {
+        .container();
+    }
+    &.product-category-term {
+        .container();
+    }
+}
