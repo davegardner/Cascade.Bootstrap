@@ -6889,6 +6889,7 @@ html.fixed-nav.boxed-layout #layout-navigation > .navbar-collapse {
 }
 html.fixed-nav.fluid-layout #layout-navigation {
   padding: 0 15px;
+  /*height: @navbar-height; prevents mobile menu from expanding */
 }
 html.floating-nav #layout-navigation {
   position: relative;
@@ -7913,9 +7914,14 @@ html.fluid-layout .orchard-layouts-root .table {
     width: 100%;
   }
 }
+/* These styles are for nested menus. By default Bootstrap caters for just two menu levels.
+    Any additional submenus are not displayed. The following overrides enable submenus
+    to be nested to any depth.
+*/
 .dropdown-menu .dropdown-menu {
   left: 100% !important;
-  top: 0;
+  top: auto;
+  margin-top: -40px !important;
 }
 .dropdown .dropdown:hover > .dropdown-menu,
 .dropdown .dropdown .dropdown:hover > .dropdown-menu,
@@ -8833,6 +8839,12 @@ html {
 }
 #toTop:hover {
   opacity: .9;
+}
+.validation-summary-errors {
+  padding: 5px;
+  border: solid 1px #bd001f;
+  color: #ffffff;
+  background-color: #cc0000;
 }
 .navbar-nav > li > .dropdown-menu .dropdown-menu {
   margin-top: -1px;

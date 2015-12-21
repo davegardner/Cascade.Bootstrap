@@ -1,6 +1,8 @@
 ﻿// HOVER MENUS
 // don't do anything if touch is supported
-if (!('ontouchstart' in document)) {
+// OR if collapsed (DAG)
+var collapsed = window.innerWidth <= 768; // @grid-float-breakpoint
+if (!('ontouchstart' in document) && !collapsed) {
     $('.navbar .dropdown').hover(function () {
         $(this).find('.dropdown-menu').first().stop(true, true).slideDown(0);
     }, function () {

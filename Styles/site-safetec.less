@@ -4,6 +4,7 @@
 @import url(http://fonts.googleapis.com/css?family=Quicksand);
 @import url(https://fonts.googleapis.com/css?family=Audiowide);
 
+@navbar-height: 80px;
 
 .widget-splash {
     text-align: center;
@@ -142,11 +143,11 @@
 }
 
 .navbar > #layout-navigation .navbar-brand {
-    padding: 15px 0;
+    padding: 10px 0;
     margin: 0;
 
     & > img {
-        height: 40px;
+        height: 60px;
         width: auto;
     }
 }
@@ -178,7 +179,20 @@ article {
     &.service-category-term {
         .container();
     }
+
     &.product-category-term {
         .container();
     }
+}
+
+#shoppingCartSummary {
+    padding: 8px 0 0 0;
+    border: none;
+    margin-top: 0;
+    border-radius: 0;
+    font-size: 70%;
+}
+
+h2, h3, h4,{
+    color: firebrick;
 }
