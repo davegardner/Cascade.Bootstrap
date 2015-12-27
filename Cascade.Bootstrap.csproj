@@ -175,6 +175,12 @@
     <Content Include="Styles\prettyPhoto\prettyPhoto.css" />
     <Content Include="Styles\restart\style.css" />
     <Content Include="Styles\restart\style.min.css" />
+    <Content Include="Styles\site-cbca_national.css">
+      <DependentUpon>site-cbca_national.less</DependentUpon>
+    </Content>
+    <Content Include="Styles\site-cbca_national.min.css">
+      <DependentUpon>site-cbca_national.css</DependentUpon>
+    </Content>
     <Content Include="Styles\site-cerulean.css" />
     <Content Include="Styles\site-cerulean.min.css" />
     <Content Include="Styles\site-clayton.css">
@@ -633,6 +639,19 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Styles\site-safetec.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Styles\bootswatch\safetec-bootswatch.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Styles\bootswatch\safetec-variables.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Styles\bootswatch\cbca_national-bootswatch.less" />
+    <Content Include="Styles\bootswatch\cbca_national-variables.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Styles\site-cbca_national.less" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

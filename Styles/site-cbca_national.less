@@ -1,0 +1,163 @@
+@import "site-default.less";
+@import "bootswatch/cbca_national-bootswatch.less";
+@import "bootswatch/cbca_national-variables.less";
+@import url(http://fonts.googleapis.com/css?family=Quicksand);
+// Swatch specific alterations
+.navbar-nav > li > .dropdown-menu .dropdown-menu {
+    margin-top: 0;
+}
+
+.widget-banner {
+    text-align: center;
+
+    header {
+        display: none;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+        padding: 0 5px;
+        max-width: 2000px;
+    }
+}
+
+.widget-welcome {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 2.2rem;
+    color: #464646;
+    line-height: normal;
+    margin: 3em 0;
+}
+
+.span-sponsors {
+    background-color: #b0c4de;
+    font-size: .9em;
+    color: ghostwhite;
+
+    h3 {
+        font-size: 1.8rem;
+        color: #585858;
+    }
+}
+
+
+.span-footer {
+    background-color: #4682b4;
+    color: ghostwhite;
+
+    a {
+        color: ghostwhite;
+    }
+
+    h3 {
+        font-size: 1.8rem;
+        color: #f5f5f5;
+    }
+
+    .link-col-1 {
+        width: 45%;
+    }
+}
+
+// Allow header to scroll but fix nabar at top
+.fix {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+
+html.floating-nav.fluid-layout {
+    .navbar-wrapper {
+        padding: 0;
+    }
+}
+
+.navbar-brand {
+    padding: 0;
+    height: auto;
+}
+
+.smoothscroll {
+    scroll-behavior: smooth;
+}
+
+.social-block {
+    margin-top: 3px;
+
+    .social {
+        background-color: transparent;
+        border: #999 1px solid;
+        color: #565656 !important;
+        text-shadow: none;
+        margin: 0 5px 5px 0;
+        width: 40px;
+        height: 40px;
+        overflow: hidden;
+        display: inline-block;
+        text-decoration: none !important;
+        text-align: center;
+        cursor: pointer;
+        font-style: normal;
+        letter-spacing: 0em !important;
+        border-radius: 3px;
+
+        i {
+            font-size: 20px;
+            margin-top: 8px;
+        }
+
+        &:hover {
+            background-color: #3B5998 !important;
+            color: #fefefe !important;
+        }
+    }
+}
+
+.book-summary {
+    width: 300px;
+    border: 1px solid gray;
+    overflow: hidden;
+    clear:both;
+
+    .cover {
+        width: 50%;
+        float:left;
+
+        img {
+            width:100%;
+        }
+    }
+
+    .blurb {
+        width:50%;
+        float:left;
+
+        .category {
+            font-size: 120%;
+            font-weight: bold;
+            padding: 3px;
+            color:#000;
+            background-color: rgba(255, 105, 50, 0.7);
+            width:100%;
+        }
+        .title {
+            font-size: 100%;
+        }
+
+        .byLine {
+            font-size: 120%;
+        }
+
+        p {
+        }
+    }
+}
+
+ul.search-results.content-items{
+    li{
+        display:inline-block;
+    }
+}
