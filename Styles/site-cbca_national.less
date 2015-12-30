@@ -2,6 +2,7 @@
 @import "bootswatch/cbca_national-bootswatch.less";
 @import "bootswatch/cbca_national-variables.less";
 @import url(http://fonts.googleapis.com/css?family=Quicksand);
+
 // Swatch specific alterations
 .navbar-nav > li > .dropdown-menu .dropdown-menu {
     margin-top: 0;
@@ -17,7 +18,7 @@
     img {
         width: 100%;
         height: auto;
-        padding: 0 5px;
+        /*padding: 0 5px;*/
         max-width: 2000px;
     }
 }
@@ -31,9 +32,9 @@
 }
 
 .span-sponsors {
-    background-color: #b0c4de;
+    background-color: #bde1ff;
     font-size: .9em;
-    color: ghostwhite;
+    /*color: ghostwhite;*/
 
     h3 {
         font-size: 1.8rem;
@@ -43,7 +44,7 @@
 
 
 .span-footer {
-    background-color: #4682b4;
+    background-color: #50afff;
     color: ghostwhite;
 
     a {
@@ -66,20 +67,70 @@
     top: 0;
     left: 0;
     right: 0;
+    z-index: 10;
 }
 
+html.floating-nav.fluid-layout .navbar-wrapper .navbar.navbar-default {
+    padding-left: 0;
+    padding-right: 0;
+}
 
-html.floating-nav.fluid-layout {
-    .navbar-wrapper {
-        padding: 0;
+// Muck around with display-inline to get search form submit button on same line as text
+#search-inline {
+    .form-field-element {
+        display: inline;
+
+        input, button {
+            display: inline;
+        }
+
+        input {
+            width: auto;
+        }
     }
 }
 
-.navbar-brand {
-    padding: 0;
-    height: auto;
+
+// You need to set the color here as well as in the bootswatch
+html.floating-nav.fluid-layout {
+    #layout-header, .navbar-wrapper {
+        background-color: @navbar-default-bg; /* or @navbar-inverse-bg */
+    }
+
+    .navbar-header {
+        .navbar-brand {
+            padding: 0;
+            height: auto;
+        }
+    }
+
+    .navbar-wrapper {
+        padding: 0;
+
+        .navbar {
+            .container();
+            box-shadow: none;
+            /*background-color: transparent;*/
+        }
+    }
 }
 
+
+// This overrides a negative margin setting in nav.less
+@media (min-width: @grid-float-breakpoint) {
+    .navbar > #layout-navigation .navbar-brand {
+        margin-left: 0;
+    }
+}
+
+// We are struggling for menu space so hide branding if screen is narrow
+@media(max-width:1199px) {
+    .navbar-brand {
+        display: none;
+    }
+}
+
+// Not yet supported by any major browser but we live in hope
 .smoothscroll {
     scroll-behavior: smooth;
 }
@@ -116,48 +167,115 @@ html.floating-nav.fluid-layout {
     }
 }
 
+/* Summary display for a book */
 .book-summary {
     width: 300px;
+    height: 186px;
     border: 1px solid gray;
+    border-radius: 2px;
     overflow: hidden;
-    clear:both;
+    clear: both;
+    position: relative;
+
 
     .cover {
         width: 50%;
-        float:left;
+        float: left;
 
         img {
-            width:100%;
+            width: 100%;
         }
     }
 
     .blurb {
-        width:50%;
-        float:left;
+        width: 50%;
+        float: left;
 
         .category {
             font-size: 120%;
             font-weight: bold;
             padding: 3px;
-            color:#000;
-            background-color: rgba(255, 105, 50, 0.7);
-            width:100%;
-        }
-        .title {
-            font-size: 100%;
+            color: #000;
+            background-color: #50afff;
+            width: 100%;
+            text-align: center;
         }
 
-        .byLine {
-            font-size: 120%;
+        .details {
+            padding: 2px 3px 2px 3px;
+            line-height: 1.1;
+
+            .title {
+                margin-top: 3px;
+                margin-bottom: 3px;
+                font-size: 14px;
+            }
+
+            .byLine {
+                margin-top: 3px;
+                margin-bottom: 3px;
+                font-size: 12px;
+            }
+
+            .summary {
+                font-size: 11px;
+                margin-top: 3px;
+                margin-bottom: 3px;
+            }
         }
 
-        p {
+        .more {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background-color: #50afff !important;
+            color: #fff !important;
         }
     }
 }
 
-ul.search-results.content-items{
-    li{
-        display:inline-block;
+/* Make the default search list display 
+    a wrapped list of tiles instead of a simple list*/
+ul.search-results.content-items {
+    li {
+        display: inline-block;
+    }
+}
+
+.category-heading {
+    .h2();
+}
+
+/* detail display for a book */
+.book-detail {
+
+    .image {
+        width: 200px;
+
+        img {
+            width: 200px;
+        }
+    }
+
+    .detail {
+        line-height: 1.1;
+
+        .title {
+            margin-top: 3px;
+            margin-bottom: 3px;
+            font-size: 18px;
+        }
+
+        .byLine {
+            margin-top: 3px;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .summary, .publisher, .isbn {
+            font-size: 11px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
     }
 }

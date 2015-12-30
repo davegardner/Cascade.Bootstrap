@@ -360,7 +360,7 @@
 @navbar-height:                    64px;
 @navbar-margin-bottom:             @line-height-computed;
 @navbar-border-radius:             @border-radius-base;
-@navbar-padding-horizontal:        floor((@grid-gutter-width / 2));
+@navbar-padding-horizontal:        0;
 @navbar-padding-vertical:          ((@navbar-height - @line-height-computed) / 2);
 @navbar-collapse-max-height:       340px;
 
@@ -370,9 +370,9 @@
 
 // Navbar links
 @navbar-default-link-color:                @gray;
-@navbar-default-link-hover-color:          @gray-dark;
-@navbar-default-link-hover-bg:             transparent;
-@navbar-default-link-active-color:         @gray-dark;
+@navbar-default-link-hover-color:          @gray-darker;
+@navbar-default-link-hover-bg:             darken(@navbar-default-bg, 6.5%);
+@navbar-default-link-active-color:         @gray-darker;
 @navbar-default-link-active-bg:            darken(@navbar-default-bg, 6.5%);
 @navbar-default-link-disabled-color:       #ccc;
 @navbar-default-link-disabled-bg:          transparent;

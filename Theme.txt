@@ -3,6 +3,6 @@ Author: Dave Gardner (based on PJS.Bootstrap by Phillip Seneschal)
 AntiForgery: disabled
 Website: CascadePixels.com.au
 Description: A Bootstrap theme that supports Orchard Layouts and can be extended by duplicating Bootswatches and Themes. 
-Version: 3.3.5.013
+Version: 3.3.5.014
 Tags: Bootstrap
 Zones: Header, Navigation, Featured, BeforeMain, AsideFirst, Messages, BeforeContent, Content, AfterContent, AsideSecond, AfterMain, TripelFirst, TripelSecond, TripelThird, FooterQuadFirst, FooterQuadSecond, FooterQuadThird, FooterQuadFourth, Footer

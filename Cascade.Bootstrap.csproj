@@ -110,7 +110,9 @@
     <Content Include="Content\prettyPhoto\light_square\default_thumbnail.gif" />
     <Content Include="Content\prettyPhoto\light_square\loader.gif" />
     <Content Include="Content\prettyPhoto\light_square\sprite.png" />
+    <Content Include="Content\swatches\cbca_national_th.png" />
     <Content Include="Content\swatches\cerulean_th.png" />
+    <Content Include="Content\swatches\clayton_th.png" />
     <Content Include="Content\swatches\cosmo_th.png" />
     <Content Include="Content\swatches\cyborg_th.png" />
     <Content Include="Content\swatches\darkly_th.png" />
@@ -123,6 +125,7 @@
     <Content Include="Content\swatches\paper_th.png" />
     <Content Include="Content\swatches\readable_th.png" />
     <Content Include="Content\swatches\restart_th.png" />
+    <Content Include="Content\swatches\safetec_th.png" />
     <Content Include="Content\swatches\sandstone_th.png" />
     <Content Include="Content\swatches\simplex_th.png" />
     <Content Include="Content\swatches\slate_th.png" />
@@ -159,6 +162,12 @@
       <DependentUpon>bootstrap-rtl.css</DependentUpon>
     </Content>
     <Content Include="Styles\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Styles\bootswatch\cbca_national-variables.css">
+      <DependentUpon>cbca_national-variables.less</DependentUpon>
+    </Content>
+    <Content Include="Styles\bootswatch\cbca_national-variables.min.css">
+      <DependentUpon>cbca_national-variables.css</DependentUpon>
+    </Content>
     <Content Include="Styles\bootswatch\clayton-variables.css">
       <DependentUpon>clayton-variables.less</DependentUpon>
     </Content>
