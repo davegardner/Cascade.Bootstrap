@@ -1,5 +1,7 @@
 ﻿# Cascade.Bootstrap Theme
 
+[![Join the chat at https://gitter.im/davegardner/Cascade.Bootstrap](https://badges.gitter.im/davegardner/Cascade.Bootstrap.svg)](https://gitter.im/davegardner/Cascade.Bootstrap?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 ---
 
 > Bootstrap is a sleek, intuitive, and powerful front-end framework for faster and easier web development.
