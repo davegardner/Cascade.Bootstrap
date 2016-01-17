@@ -207,20 +207,20 @@ html.floating-nav.fluid-layout {
 
             .title {
                 margin-top: 3px;
-                margin-bottom: 3px;
+                margin-bottom: 6px;
                 font-size: 14px;
             }
 
             .byLine {
-                margin-top: 3px;
-                margin-bottom: 3px;
+                margin-top: 6px;
+                margin-bottom: 6px;
                 font-size: 12px;
             }
 
             .summary {
                 font-size: 11px;
-                margin-top: 3px;
-                margin-bottom: 3px;
+                margin-top: 6px;
+                margin-bottom: 6px;
             }
         }
 
@@ -242,6 +242,16 @@ ul.search-results.content-items {
     }
 }
 
+/* Apply the class .book-list to the List Class in the Query */
+ul.book-list {
+    li{
+        display: inline-block;
+    }
+}
+
+#layout-content{
+    .container();
+}
 .category-heading {
     .h2();
 }
@@ -259,15 +269,42 @@ ul.search-results.content-items {
 
     .detail {
         line-height: 1.1;
+            font-size: 18px;
 
+        .gongs{
+            padding: 3px;
+            text-align:center;
+            display: none; // suppresses '(none)'
+            &.Winner{
+                background-color: gold;
+                text-shadow: 0 0 2px #fff;
+                font-weight: bold;
+                color: black;
+                display: block;
+            }
+            &.Honours{
+                background-color: silver;
+                color:#fff;
+                text-shadow: 0 0 2px #333;
+                display: block;
+            }
+            &.Notable{
+                background-color: brown;
+                color: white;
+                display: block;
+            }
+            &.Shortlisted{
+                background-color: @gray-lighter;
+                display: block;
+            }
+        }
         .title {
             margin-top: 3px;
-            margin-bottom: 3px;
-            font-size: 18px;
+            margin-bottom: 10px;
         }
 
         .byLine {
-            margin-top: 3px;
+            margin-top: 10px;
             margin-bottom: 10px;
             font-size: 14px;
         }

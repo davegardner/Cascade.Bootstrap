@@ -6526,7 +6526,9 @@ html.boxed-layout .orchard-layouts-root .table:after,
 html.orchard-users form:before,
 html.orchard-users form:after,
 html.floating-nav.fluid-layout .navbar-wrapper .navbar:before,
-html.floating-nav.fluid-layout .navbar-wrapper .navbar:after {
+html.floating-nav.fluid-layout .navbar-wrapper .navbar:after,
+#layout-content:before,
+#layout-content:after {
   content: " ";
   display: table;
 }
@@ -6556,7 +6558,8 @@ html.floating-nav.boxed-layout .navbar-wrapper:after,
 html.sticky-footer.boxed-layout #footer:after,
 html.boxed-layout .orchard-layouts-root .table:after,
 html.orchard-users form:after,
-html.floating-nav.fluid-layout .navbar-wrapper .navbar:after {
+html.floating-nav.fluid-layout .navbar-wrapper .navbar:after,
+#layout-content:after {
   clear: both;
 }
 .center-block {
@@ -9790,18 +9793,18 @@ html.floating-nav.fluid-layout .navbar-wrapper .navbar > .navbar-collapse {
 }
 .book-summary .blurb .details .title {
   margin-top: 3px;
-  margin-bottom: 3px;
+  margin-bottom: 6px;
   font-size: 14px;
 }
 .book-summary .blurb .details .byLine {
-  margin-top: 3px;
-  margin-bottom: 3px;
+  margin-top: 6px;
+  margin-bottom: 6px;
   font-size: 12px;
 }
 .book-summary .blurb .details .summary {
   font-size: 11px;
-  margin-top: 3px;
-  margin-bottom: 3px;
+  margin-top: 6px;
+  margin-bottom: 6px;
 }
 .book-summary .blurb .more {
   position: absolute;
@@ -9814,6 +9817,43 @@ html.floating-nav.fluid-layout .navbar-wrapper .navbar > .navbar-collapse {
     a wrapped list of tiles instead of a simple list*/
 ul.search-results.content-items li {
   display: inline-block;
+}
+/* Apply the class .book-list to the List Class in the Query */
+ul.book-list li {
+  display: inline-block;
+}
+#layout-content {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  #layout-content {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  #layout-content {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  #layout-content {
+    width: 1170px;
+  }
+}
+#layout-content > .navbar-header,
+#layout-content > .navbar-collapse {
+  margin-right: 0;
+  margin-left: 0;
+}
+@media (min-width: 768px) {
+  #layout-content > .navbar-header,
+  #layout-content > .navbar-collapse {
+    margin-right: 0;
+    margin-left: 0;
+  }
 }
 .category-heading {
   font-family: inherit;
@@ -9843,14 +9883,41 @@ ul.search-results.content-items li {
 }
 .book-detail .detail {
   line-height: 1.1;
+  font-size: 18px;
+}
+.book-detail .detail .gongs {
+  padding: 3px;
+  text-align: center;
+  display: none;
+}
+.book-detail .detail .gongs.Winner {
+  background-color: gold;
+  text-shadow: 0 0 2px #fff;
+  font-weight: bold;
+  color: black;
+  display: block;
+}
+.book-detail .detail .gongs.Honours {
+  background-color: silver;
+  color: #fff;
+  text-shadow: 0 0 2px #333;
+  display: block;
+}
+.book-detail .detail .gongs.Notable {
+  background-color: brown;
+  color: white;
+  display: block;
+}
+.book-detail .detail .gongs.Shortlisted {
+  background-color: #eeeeee;
+  display: block;
 }
 .book-detail .detail .title {
   margin-top: 3px;
-  margin-bottom: 3px;
-  font-size: 18px;
+  margin-bottom: 10px;
 }
 .book-detail .detail .byLine {
-  margin-top: 3px;
+  margin-top: 10px;
   margin-bottom: 10px;
   font-size: 14px;
 }
