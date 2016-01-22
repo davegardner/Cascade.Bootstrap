@@ -1,67 +1,59 @@
+// CBCA Theme Dave Gardner Cascade Pixels 2016
+// Swatch specific alterations to match CADEM (http://entiri.net/cadem_wb/index.html)
+// License purchased (License ID: 751ce043-768f-4e1b-9ede-74b38eb1442f)
+
 @import "site-default.less";
 @import "bootswatch/cbca_national-bootswatch.less";
 @import "bootswatch/cbca_national-variables.less";
-@import url(http://fonts.googleapis.com/css?family=Quicksand);
 
-// Swatch specific alterations
-.navbar-nav > li > .dropdown-menu .dropdown-menu {
-    margin-top: 0;
-}
 
-.widget-banner {
-    text-align: center;
-
-    header {
-        display: none;
+.navbar.navbar-default {
+    @media(min-width: @grid-float-breakpoint) {
+        border-bottom: 1px solid #cbcfd1;
     }
 
-    img {
-        width: 100%;
-        height: auto;
-        /*padding: 0 5px;*/
-        max-width: 2000px;
-    }
-}
+    .navbar-collapse {
+        .nav {
+            font-size: @font-size-nav;
 
-.widget-welcome {
-    font-family: 'Quicksand', sans-serif;
-    font-size: 2.2rem;
-    color: #464646;
-    line-height: normal;
-    margin: 3em 0;
-}
+            > li:not(:last-child) {
+                border-right: 1px solid @gray-lighter;
+            }
 
-.span-sponsors {
-    background-color: #bde1ff;
-    font-size: .9em;
-    /*color: ghostwhite;*/
+            > li {
+                &.active > a, > a:hover {
+                    border-bottom: 2px solid @cbca-light;
+                }
 
-    h3 {
-        font-size: 1.8rem;
-        color: #585858;
-    }
-}
+                > a {
+                    padding: @nav-link-padding;
+                }
+            }
 
+            // nested dropdown menus are different
+            .dropdown .dropdown-menu {
+                padding: 0;
+                background-color: @gray-lighter;
 
-.span-footer {
-    background-color: #50afff;
-    color: ghostwhite;
+                li {
+                    padding: 3px 0;
 
-    a {
-        color: ghostwhite;
-    }
+                    > a {
+                        &:hover {
+                            color: @cbca-light;
+                        }
+                    }
+                }
 
-    h3 {
-        font-size: 1.8rem;
-        color: #f5f5f5;
-    }
-
-    .link-col-1 {
-        width: 45%;
+                li:not(:last-child) {
+                    border-bottom: 1px solid @gray-light;
+                }
+            }
+        }
     }
 }
 
-// Allow header to scroll but fix nabar at top
+// Allow header to scroll but fix navbar at top
 .fix {
     position: fixed;
     top: 0;
@@ -75,20 +67,6 @@ html.floating-nav.fluid-layout .navbar-wrapper .navbar.navbar-default {
     padding-right: 0;
 }
 
-// Muck around with display-inline to get search form submit button on same line as text
-#search-inline {
-    .form-field-element {
-        display: inline;
-
-        input, button {
-            display: inline;
-        }
-
-        input {
-            width: auto;
-        }
-    }
-}
 
 
 // You need to set the color here as well as in the bootswatch
@@ -124,28 +102,35 @@ html.floating-nav.fluid-layout {
 }
 
 // We are struggling for menu space so hide branding if screen is narrow
-@media(max-width:1199px) {
+/*@media(max-width:1199px) {
     .navbar-brand {
         display: none;
     }
-}
+}*/
+
+
 
 // Not yet supported by any major browser but we live in hope
 .smoothscroll {
     scroll-behavior: smooth;
 }
 
-.social-block {
-    margin-top: 3px;
+.widget-header {
+    // Main CBCA branding
+    h1 {
+        margin: 0 0 10px 0;
+        font-weight: 700;
+    }
 
-    .social {
+    .btn-header {
+        padding: 0;
         background-color: transparent;
         border: #999 1px solid;
         color: #565656 !important;
         text-shadow: none;
         margin: 0 5px 5px 0;
-        width: 40px;
-        height: 40px;
+        width: 30px;
+        height: 30px;
         overflow: hidden;
         display: inline-block;
         text-decoration: none !important;
@@ -157,82 +142,81 @@ html.floating-nav.fluid-layout {
 
         i {
             font-size: 20px;
-            margin-top: 8px;
+            margin-top: 4px;
         }
 
         &:hover {
-            background-color: #3B5998 !important;
+            background-color: @cbca-light !important;
             color: #fefefe !important;
         }
     }
-}
 
-/* Summary display for a book */
-.book-summary {
-    width: 300px;
-    height: 186px;
-    border: 1px solid gray;
-    border-radius: 2px;
-    overflow: hidden;
-    clear: both;
-    position: relative;
+    .social-block {
+        margin-top: 3px;
 
-
-    .cover {
-        width: 50%;
-        float: left;
-
-        img {
-            width: 100%;
+        @media (min-width: @screen-sm) {
+            text-align: right;
         }
     }
-
-    .blurb {
-        width: 50%;
-        float: left;
-
-        .category {
-            font-size: 120%;
-            font-weight: bold;
-            padding: 3px;
-            color: #000;
-            background-color: #50afff;
-            width: 100%;
-            text-align: center;
+    // Muck around with display-inline to get search form submit button on same line as text
+    .search-inline {
+        @media (min-width: @screen-md) {
+            text-align: right;
         }
 
-        .details {
-            padding: 2px 3px 2px 3px;
-            line-height: 1.1;
+        .form-field-element {
+            display: inline;
 
-            .title {
-                margin-top: 3px;
-                margin-bottom: 6px;
-                font-size: 14px;
+            input {
+                display: inline;
+                width: auto;
             }
-
-            .byLine {
-                margin-top: 6px;
-                margin-bottom: 6px;
-                font-size: 12px;
-            }
-
-            .summary {
-                font-size: 11px;
-                margin-top: 6px;
-                margin-bottom: 6px;
-            }
-        }
-
-        .more {
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            background-color: #50afff !important;
-            color: #fff !important;
         }
     }
 }
+
+
+.span-sponsors {
+    background-color: @cbca-light;
+    font-size: .9em;
+    color: ghostwhite;
+
+    h3 {
+        font-size: 1.8rem;
+        color: ghostwhite;
+    }
+}
+
+
+.span-footer {
+    background-color: @cbca-medium;
+    color: ghostwhite;
+
+    a {
+        color: ghostwhite;
+    }
+
+    h3 {
+        font-size: 1.8rem;
+        color: #f5f5f5;
+    }
+
+    .link-col-1 {
+        width: 45%;
+    }
+}
+
+#layout-featured{
+    margin-top:10px;
+    background: url('http://cbca.blob.core.windows.net:80/media/Default/Graphics/banner_16_02.jpg') no-repeat center;
+    background-color: @gray-lighter;
+    background-size: auto 100%;
+    display:none;
+    @media(min-width: @grid-float-breakpoint) {
+        display:block;
+    }
+}
+
 
 /* Make the default search list display 
     a wrapped list of tiles instead of a simple list*/
@@ -244,60 +228,142 @@ ul.search-results.content-items {
 
 /* Apply the class .book-list to the List Class in the Query */
 ul.book-list {
-    li{
+    li {
         display: inline-block;
     }
 }
 
-#layout-content{
-    .container();
+article.book.content-item {
+    display: inline-block;
 }
+
 .category-heading {
     .h2();
 }
 
+/* summary display for a book */
+.book-summary {
+    height: 250px;
+    margin: 10px 5px;
+
+    table {
+        width: 350px;
+
+        .image {
+            width: 150px;
+            overflow: hidden;
+
+            img {
+                max-height: 250px;
+                width: 150px;
+            }
+        }
+
+        .detail {
+            line-height: 1.1;
+            font-size: 18px;
+
+            .gongs {
+                padding: 3px;
+                text-align: center;
+                display: none; // suppresses '(none)'
+                &.Winner {
+                    background-color: gold;
+                    text-shadow: 0 0 2px #fff;
+                    font-weight: bold;
+                    color: black;
+                    display: block;
+                }
+
+                &.Honours {
+                    background-color: silver;
+                    color: #fff;
+                    text-shadow: 0 0 2px #333;
+                    display: block;
+                }
+
+                &.Notable {
+                    background-color: brown;
+                    color: white;
+                    display: block;
+                }
+
+                &.Shortlisted {
+                    background-color: @gray-lighter;
+                    display: block;
+                }
+            }
+
+            .title {
+                margin-top: 3px;
+                margin-bottom: 10px;
+            }
+
+            .byLine {
+                margin-top: 10px;
+                margin-bottom: 10px;
+                font-size: 14px;
+            }
+
+            .summary, .publisher, .isbn {
+                font-size: 11px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
+
 /* detail display for a book */
 .book-detail {
+    height: 300px;
+    position: relative;
 
     .image {
         width: 200px;
+        overflow: hidden;
 
         img {
+            max-height: 290px;
             width: 200px;
         }
     }
 
     .detail {
         line-height: 1.1;
-            font-size: 18px;
+        font-size: 18px;
 
-        .gongs{
+        .gongs {
             padding: 3px;
-            text-align:center;
+            text-align: center;
             display: none; // suppresses '(none)'
-            &.Winner{
+            &.Winner {
                 background-color: gold;
                 text-shadow: 0 0 2px #fff;
                 font-weight: bold;
                 color: black;
                 display: block;
             }
-            &.Honours{
+
+            &.Honours {
                 background-color: silver;
-                color:#fff;
+                color: #fff;
                 text-shadow: 0 0 2px #333;
                 display: block;
             }
-            &.Notable{
+
+            &.Notable {
                 background-color: brown;
                 color: white;
                 display: block;
             }
-            &.Shortlisted{
+
+            &.Shortlisted {
                 background-color: @gray-lighter;
                 display: block;
             }
         }
+
         .title {
             margin-top: 3px;
             margin-bottom: 10px;

@@ -1,4 +1,4 @@
-// Paper 3.3.5
+// CBCA National
 // Variables
 // --------------------------------------------------
 
@@ -14,21 +14,28 @@
 @gray-light:             #bbb;
 @gray-lighter:           lighten(@gray-base, 93.5%); // #eee
 
-@brand-primary:         #2196F3;
-@brand-success:         #4CAF50;
-@brand-info:            #9C27B0;
-@brand-warning:         #ff9800;
-@brand-danger:          #e51c23;
+/* CBCA colors */
+@cbca-background:       #fff;
+@cbca-primary:          #293e6a;
+@cbca-medium:           #3b5998;
+@cbca-light:            #639bf1;
+@cbca-hilight:          #77ba9b;
+@cbca-complimentary:    #b6a754;
 
+@brand-primary:         @cbca-primary;
+@brand-success:         @cbca-medium;
+@brand-info:            @cbca-light;
+@brand-warning:         @cbca-complimentary;
+@brand-danger:          @cbca-complimentary;
 
 //== Scaffolding
 //
 //## Settings for some of the most global styles.
 
 //** Background color for `<body>`.
-@body-bg:               #fff;
+@body-bg:               @cbca-background;
 //** Global text color on `<body>`.
-@text-color:            @gray;
+@text-color:            #8c8e90;
 
 //** Global textual link color.
 @link-color:            @brand-primary;
@@ -42,7 +49,8 @@
 //
 //## Font, line-height, and color for body text, headings, and more.
 
-@font-family-sans-serif:  "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+/*@font-family-sans-serif:  "Source Sans Pro", Calibri, Candara, Arial, sans-serif;*/
+@font-family-sans-serif:  "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 @font-family-serif:       Georgia, "Times New Roman", Times, serif;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 @font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
@@ -51,6 +59,7 @@
 @font-size-base:          13px;
 @font-size-large:         ceil((@font-size-base * 1.25)); // ~18px
 @font-size-small:         ceil((@font-size-base * 0.85)); // ~12px
+@font-size-nav:           14px;
 
 @font-size-h1:            56px;
 @font-size-h2:            45px;
@@ -200,7 +209,7 @@
 @input-border-radius-small:      @border-radius-small;
 
 //** Border color for inputs on focus
-@input-border-focus:             #66afe9;
+@input-border-focus:             @cbca-medium;
 
 //** Placeholder text color
 @input-color-placeholder:        @gray-light;
@@ -245,7 +254,7 @@
 //** Hover color for dropdown links.
 @dropdown-link-hover-color:      darken(@gray-dark, 5%);
 //** Hover background for dropdown links.
-@dropdown-link-hover-bg:         @gray-lighter;
+@dropdown-link-hover-bg:         transparent;
 
 //** Active dropdown menu item text color.
 @dropdown-link-active-color:     @component-active-color;
@@ -357,23 +366,23 @@
 //##
 
 // Basics of a navbar
-@navbar-height:                    64px;
+@navbar-height:                    34px;
 @navbar-margin-bottom:             @line-height-computed;
 @navbar-border-radius:             @border-radius-base;
 @navbar-padding-horizontal:        0;
 @navbar-padding-vertical:          ((@navbar-height - @line-height-computed) / 2);
 @navbar-collapse-max-height:       340px;
 
-@navbar-default-color:             @gray-light;
+@navbar-default-color:             @gray;
 @navbar-default-bg:                #fff;
 @navbar-default-border:            transparent;
 
 // Navbar links
-@navbar-default-link-color:                @gray;
-@navbar-default-link-hover-color:          @gray-darker;
-@navbar-default-link-hover-bg:             darken(@navbar-default-bg, 6.5%);
-@navbar-default-link-active-color:         @gray-darker;
-@navbar-default-link-active-bg:            darken(@navbar-default-bg, 6.5%);
+@navbar-default-link-color:                @text-color;
+@navbar-default-link-hover-color:          @cbca-light;
+@navbar-default-link-hover-bg:             transparent;
+@navbar-default-link-active-color:         @cbca-light;
+@navbar-default-link-active-bg:            transparent;
 @navbar-default-link-disabled-color:       #ccc;
 @navbar-default-link-disabled-bg:          transparent;
 
@@ -419,7 +428,7 @@
 //##
 
 //=== Shared nav styles
-@nav-link-padding:                          10px 15px;
+@nav-link-padding:                          5px 5px;
 @nav-link-hover-bg:                         @gray-lighter;
 
 @nav-disabled-link-color:                   @gray-light;
