@@ -8,11 +8,17 @@
 
 
 .navbar.navbar-default {
-    @media(min-width: @grid-float-breakpoint) {
-        border-bottom: 1px solid #cbcfd1;
+    .navbar-toggle {
+        float: none;
+        background-color: #fff;
     }
 
     .navbar-collapse {
+        @media(min-width: @grid-float-breakpoint) {
+            border-bottom: 1px solid #cbcfd1;
+            margin-top: 25px;
+        }
+
         .nav {
             font-size: @font-size-nav;
 
@@ -26,10 +32,10 @@
                 }
 
                 > a {
+                    border-bottom: 2px solid transparent;
                     padding: @nav-link-padding;
                 }
             }
-
             // nested dropdown menus are different
             .dropdown .dropdown-menu {
                 padding: 0;
@@ -53,6 +59,10 @@
     }
 }
 
+
+// space above featured item
+@featured-item-top-margin: 10px;
+
 // Allow header to scroll but fix navbar at top
 .fix {
     position: fixed;
@@ -60,6 +70,20 @@
     left: 0;
     right: 0;
     z-index: 10;
+}
+
+// compensate for menu height once navbar is fixed
+.padfix {
+    margin-top: @navbar-height;
+}
+
+#layout-featured {
+    margin-top: @featured-item-top-margin;
+    display: none;
+
+    @media(min-width: @grid-float-breakpoint) {
+        display: block;
+    }
 }
 
 html.floating-nav.fluid-layout .navbar-wrapper .navbar.navbar-default {
@@ -88,7 +112,11 @@ html.floating-nav.fluid-layout {
         .navbar {
             .container();
             box-shadow: none;
+            background-color: @gray-lighter; /* or @navbar-inverse-bg */
             /*background-color: transparent;*/
+            @media(min-width: @grid-float-breakpoint) {
+                background-color: @navbar-default-bg; /* or @navbar-inverse-bg */
+            }
         }
     }
 }
@@ -117,6 +145,8 @@ html.floating-nav.fluid-layout {
 
 .widget-header {
     // Main CBCA branding
+    padding-top: 5px;
+
     h1 {
         margin: 0 0 10px 0;
         font-weight: 700;
@@ -128,9 +158,9 @@ html.floating-nav.fluid-layout {
         border: #999 1px solid;
         color: #565656 !important;
         text-shadow: none;
-        margin: 0 5px 5px 0;
-        width: 30px;
-        height: 30px;
+        margin: 0 17px 5px 0;
+        width: 40px;
+        height: 40px;
         overflow: hidden;
         display: inline-block;
         text-decoration: none !important;
@@ -141,13 +171,21 @@ html.floating-nav.fluid-layout {
         border-radius: 3px;
 
         i {
-            font-size: 20px;
+            font-size: 27px;
             margin-top: 4px;
         }
 
         &:hover {
             background-color: @cbca-light !important;
             color: #fefefe !important;
+        }
+    }
+
+    .cbca-header {
+        margin-right: -45px;
+
+        @media( min-width: @screen-md) {
+            margin-top: 30px;
         }
     }
 
@@ -173,8 +211,26 @@ html.floating-nav.fluid-layout {
             }
         }
     }
+    // cbca logo at top left
+    img {
+        height: 159px;
+        margin-left: -20px;
+    }
 }
 
+
+// make blog (blogPost summary list) into container
+article.blog {
+    .container();
+
+    > ul.blog-posts {
+        .row();
+
+        > li {
+            .make-md-column(12);
+        }
+    }
+}
 
 .span-sponsors {
     background-color: @cbca-light;
@@ -206,16 +262,7 @@ html.floating-nav.fluid-layout {
     }
 }
 
-#layout-featured{
-    margin-top:10px;
-    background: url('http://cbca.blob.core.windows.net:80/media/Default/Graphics/banner_16_02.jpg') no-repeat center;
-    background-color: @gray-lighter;
-    background-size: auto 100%;
-    display:none;
-    @media(min-width: @grid-float-breakpoint) {
-        display:block;
-    }
-}
+
 
 
 /* Make the default search list display 
@@ -239,13 +286,14 @@ article.book.content-item {
 
 .category-heading {
     .h2();
+    font-weight: 600;
+    color: @gray-dark;
 }
 
 /* summary display for a book */
 .book-summary {
     height: 250px;
-    margin: 10px 5px;
-
+    /*margin: 10px 5px;*/
     table {
         width: 350px;
 
@@ -316,8 +364,16 @@ article.book.content-item {
 
 /* detail display for a book */
 .book-detail {
-    height: 300px;
+    /*height: 300px;*/
     position: relative;
+
+    table {
+        th, td {
+            padding: 0 16px 8px 0;
+            line-height: 1.6;
+            vertical-align: top;
+        }
+    }
 
     .image {
         width: 200px;
@@ -331,54 +387,145 @@ article.book.content-item {
 
     .detail {
         line-height: 1.1;
-        font-size: 18px;
 
         .gongs {
-            padding: 3px;
-            text-align: center;
-            display: none; // suppresses '(none)'
+            padding: 7px;
+
             &.Winner {
                 background-color: gold;
                 text-shadow: 0 0 2px #fff;
                 font-weight: bold;
                 color: black;
-                display: block;
             }
 
             &.Honours {
                 background-color: silver;
                 color: #fff;
                 text-shadow: 0 0 2px #333;
-                display: block;
             }
 
             &.Notable {
                 background-color: brown;
                 color: white;
-                display: block;
             }
 
             &.Shortlisted {
                 background-color: @gray-lighter;
-                display: block;
             }
         }
 
-        .title {
-            margin-top: 3px;
-            margin-bottom: 10px;
-        }
 
         .byLine {
-            margin-top: 10px;
+            margin-top: 0;
             margin-bottom: 10px;
-            font-size: 14px;
+            font-size: 110%;
         }
 
         .summary, .publisher, .isbn {
-            font-size: 11px;
             margin-top: 10px;
             margin-bottom: 10px;
         }
     }
+}
+
+.widget-tripel-featured {
+    #tripel-featured-panel {
+        margin-top: 2em;
+        padding: 30px 0 20px 0;
+        /*background-color: #f8f8f8;*/
+        background-color: @cbca-light-background;
+    }
+
+    .tripel-featured-icon {
+        height: 80px;
+        width: auto;
+    }
+}
+// Reinstate normal ul/li style which is bastardized by Bootswatch.
+// But don't reinstate for Orchard templates that rely on it.
+// :not(.search-results, .projection)
+#layout-main {
+    ul {
+        padding-left: 0;
+        list-style: none;
+
+        li {
+            background: url('/Themes/cbca_national/Content/Arrow3.png') left center no-repeat;
+            list-style: none;
+            margin-bottom: 15px;
+            padding-left: 30px;
+        }
+    }
+
+    ol {
+        padding-left: 40px;
+        list-style: decimal;
+    }
+
+    ul.content-items {
+        padding-left: 0;
+        list-style: none;
+
+        li {
+            background: none;
+            margin-bottom: 15px;
+            padding-left: 0;
+        }
+    }
+
+    ol.content-items {
+        padding-left: 0;
+        list-style: none;
+    }
+
+    article.projection-page {
+        ul, ol {
+            padding-left: 0;
+            list-style: none;
+
+            li {
+                background: none;
+                margin-bottom: 15px;
+                padding-left: 0;
+            }
+        }
+    }
+}
+// Applied to right-hand column of welcome page
+.gray-background {
+    background-color: @cbca-light-background;
+    border: 1px solid @cbca-border;
+    padding-top: 10px;
+    margin-top: 20px;
+}
+// Diary Dates
+.diary-dates {
+    .container();
+
+    h1 {
+        .h2();
+        font-weight: 600;
+        color: @gray-dark;
+    }
+}
+
+table.diary-dates {
+    width: 100%;
+}
+// Miscellaneous
+address {
+    font-style: italic;
+}
+// Headings
+h1 {
+    margin-top: 40px;
+    margin-bottom: 45px;
+}
+
+
+h2, h3, h4, h5 {
+    margin-top: 20px;
+    margin-bottom: 24px;
+    font-weight: 600;
+    color: @gray-dark;
 }
