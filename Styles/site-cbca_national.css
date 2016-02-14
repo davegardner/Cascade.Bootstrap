@@ -6526,10 +6526,10 @@ html.orchard-users form:before,
 html.orchard-users form:after,
 html.floating-nav.fluid-layout .navbar-wrapper .navbar:before,
 html.floating-nav.fluid-layout .navbar-wrapper .navbar:after,
-article.blog:before,
-article.blog:after,
-article.blog > ul.blog-posts:before,
-article.blog > ul.blog-posts:after,
+#layout-main article.blog.content-item:before,
+#layout-main article.blog.content-item:after,
+#layout-main article.blog.content-item > ul.blog-posts:before,
+#layout-main article.blog.content-item > ul.blog-posts:after,
 .diary-dates:before,
 .diary-dates:after {
   content: " ";
@@ -6562,8 +6562,8 @@ html.sticky-footer.boxed-layout #footer:after,
 html.boxed-layout .orchard-layouts-root .table:after,
 html.orchard-users form:after,
 html.floating-nav.fluid-layout .navbar-wrapper .navbar:after,
-article.blog:after,
-article.blog > ul.blog-posts:after,
+#layout-main article.blog.content-item:after,
+#layout-main article.blog.content-item > ul.blog-posts:after,
 .diary-dates:after {
   clear: both;
 }
@@ -9773,6 +9773,7 @@ html.floating-nav.fluid-layout .navbar-wrapper .navbar > .navbar-collapse {
 }
 .widget-header .cbca-header {
   margin-right: -45px;
+  margin-top: 15px;
 }
 @media (min-width: 992px) {
   .widget-header .cbca-header {
@@ -9801,56 +9802,7 @@ html.floating-nav.fluid-layout .navbar-wrapper .navbar > .navbar-collapse {
 }
 .widget-header img {
   height: 159px;
-  margin-left: -20px;
-}
-article.blog {
-  margin-right: auto;
-  margin-left: auto;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-@media (min-width: 768px) {
-  article.blog {
-    width: 750px;
-  }
-}
-@media (min-width: 992px) {
-  article.blog {
-    width: 970px;
-  }
-}
-@media (min-width: 1200px) {
-  article.blog {
-    width: 1170px;
-  }
-}
-article.blog > .navbar-header,
-article.blog > .navbar-collapse {
-  margin-right: 0;
   margin-left: 0;
-}
-@media (min-width: 768px) {
-  article.blog > .navbar-header,
-  article.blog > .navbar-collapse {
-    margin-right: 0;
-    margin-left: 0;
-  }
-}
-article.blog > ul.blog-posts {
-  margin-left: -15px;
-  margin-right: -15px;
-}
-article.blog > ul.blog-posts > li {
-  position: relative;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-@media (min-width: 992px) {
-  article.blog > ul.blog-posts > li {
-    float: left;
-    width: 100%;
-  }
 }
 .span-sponsors {
   background-color: #639bf1;
@@ -9892,9 +9844,9 @@ article.book.content-item {
   font-weight: 400;
   line-height: 1.1;
   color: #639bf1;
-  margin-top: 20px;
+  margin-top: 10px;
   margin-bottom: 10px;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 600;
   color: #212121;
 }
@@ -9906,7 +9858,7 @@ article.book.content-item {
 }
 .category-heading small,
 .category-heading .small {
-  font-size: 65%;
+  font-size: 75%;
 }
 /* summary display for a book */
 .book-summary {
@@ -10049,11 +10001,13 @@ article.book.content-item {
   padding-left: 40px;
   list-style: decimal;
 }
-#layout-main ul.content-items {
+#layout-main ul.content-items,
+#layout-main ul.pagination {
   padding-left: 0;
   list-style: none;
 }
-#layout-main ul.content-items li {
+#layout-main ul.content-items li,
+#layout-main ul.pagination li {
   background: none;
   margin-bottom: 15px;
   padding-left: 0;
@@ -10073,10 +10027,59 @@ article.book.content-item {
   margin-bottom: 15px;
   padding-left: 0;
 }
+#layout-main article.blog.content-item {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  #layout-main article.blog.content-item {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  #layout-main article.blog.content-item {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  #layout-main article.blog.content-item {
+    width: 1170px;
+  }
+}
+#layout-main article.blog.content-item > .navbar-header,
+#layout-main article.blog.content-item > .navbar-collapse {
+  margin-right: 0;
+  margin-left: 0;
+}
+@media (min-width: 768px) {
+  #layout-main article.blog.content-item > .navbar-header,
+  #layout-main article.blog.content-item > .navbar-collapse {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+#layout-main article.blog.content-item > ul.blog-posts {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+#layout-main article.blog.content-item > ul.blog-posts > li {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  #layout-main article.blog.content-item > ul.blog-posts > li {
+    float: left;
+    width: 100%;
+  }
+}
 .gray-background {
   background-color: #e9ecf0;
   border: 1px solid #d9dbdf;
-  padding-top: 10px;
+  padding: 10px;
   margin-top: 20px;
 }
 .diary-dates {
@@ -10140,14 +10143,14 @@ address {
   font-style: italic;
 }
 h1 {
-  margin-top: 40px;
-  margin-bottom: 45px;
+  margin-top: 42px;
+  margin-bottom: 42px;
 }
 h2,
 h3,
 h4,
 h5 {
-  margin-top: 20px;
+  margin-top: 42px;
   margin-bottom: 24px;
   font-weight: 600;
   color: #212121;

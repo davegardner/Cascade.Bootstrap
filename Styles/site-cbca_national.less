@@ -183,6 +183,7 @@ html.floating-nav.fluid-layout {
 
     .cbca-header {
         margin-right: -45px;
+        margin-top: 15px;
 
         @media( min-width: @screen-md) {
             margin-top: 30px;
@@ -214,23 +215,11 @@ html.floating-nav.fluid-layout {
     // cbca logo at top left
     img {
         height: 159px;
-        margin-left: -20px;
+        margin-left: 0;
     }
 }
 
 
-// make blog (blogPost summary list) into container
-article.blog {
-    .container();
-
-    > ul.blog-posts {
-        .row();
-
-        > li {
-            .make-md-column(12);
-        }
-    }
-}
 
 .span-sponsors {
     background-color: @cbca-light;
@@ -285,7 +274,7 @@ article.book.content-item {
 }
 
 .category-heading {
-    .h2();
+    .h4();
     font-weight: 600;
     color: @gray-dark;
 }
@@ -462,7 +451,7 @@ article.book.content-item {
         list-style: decimal;
     }
 
-    ul.content-items {
+    ul.content-items, ul.pagination {
         padding-left: 0;
         list-style: none;
 
@@ -490,12 +479,28 @@ article.book.content-item {
             }
         }
     }
+    // make blog (blogPost summary list) into container
+    article.blog.content-item {
+        .container();
+
+        > ul.blog-posts {
+            .row();
+
+            > li {
+                .make-sm-column(12);
+            }
+        }
+    }
 }
+
+
+
+
 // Applied to right-hand column of welcome page
 .gray-background {
     background-color: @cbca-light-background;
     border: 1px solid @cbca-border;
-    padding-top: 10px;
+    padding: 10px;
     margin-top: 20px;
 }
 // Diary Dates
@@ -518,13 +523,13 @@ address {
 }
 // Headings
 h1 {
-    margin-top: 40px;
-    margin-bottom: 45px;
+    margin-top: 42px;
+    margin-bottom: 42px;
 }
 
 
 h2, h3, h4, h5 {
-    margin-top: 20px;
+    margin-top: 42px;
     margin-bottom: 24px;
     font-weight: 600;
     color: @gray-dark;
