@@ -9801,8 +9801,9 @@ html.floating-nav.fluid-layout .navbar-wrapper .navbar > .navbar-collapse {
   width: auto;
 }
 .widget-header img {
-  height: 159px;
+  height: 120px;
   margin-left: 0;
+  margin-top: 15px;
 }
 .span-sponsors {
   background-color: #639bf1;
@@ -9849,6 +9850,9 @@ article.book.content-item {
   font-size: 16px;
   font-weight: 600;
   color: #212121;
+  width: 100%;
+  padding: 10px;
+  background-color: #e9ecf0;
 }
 .category-heading small,
 .category-heading .small {

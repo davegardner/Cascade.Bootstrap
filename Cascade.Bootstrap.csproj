@@ -312,6 +312,7 @@
     <Compile Include="ResourceManifest.cs" />
     <Compile Include="Routes.cs" />
     <Compile Include="Services\CascadeBootstrapService.cs" />
+    <Compile Include="Services\CBCABookExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\EditorTemplates\Parts.Comment.cshtml" />
