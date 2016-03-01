@@ -226,6 +226,12 @@
     <Content Include="Styles\site-lumen.min.css" />
     <Content Include="Styles\site-paper.css" />
     <Content Include="Styles\site-paper.min.css" />
+    <Content Include="Styles\site-pixels.css">
+      <DependentUpon>site-pixels.less</DependentUpon>
+    </Content>
+    <Content Include="Styles\site-pixels.min.css">
+      <DependentUpon>site-pixels.css</DependentUpon>
+    </Content>
     <Content Include="Styles\site-readable.css" />
     <Content Include="Styles\site-readable.min.css" />
     <Content Include="Styles\site-restart.css">
@@ -662,6 +668,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Styles\site-cbca_national.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Styles\bootswatch\pixels-bootswatch.less" />
+    <Content Include="Styles\bootswatch\pixels-variables.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Styles\site-pixels.less" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
