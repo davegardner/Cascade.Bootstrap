@@ -6905,7 +6905,7 @@ html.floating-nav #layout-navigation {
   padding-left: 15px;
   padding-right: 15px;
 }
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   html.floating-nav #layout-navigation {
     float: left;
     width: 100%;
@@ -6959,7 +6959,7 @@ html.floating-nav.fluid-layout .navbar-wrapper {
   padding-left: 15px;
   padding-right: 15px;
 }
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   #layout-content {
     float: left;
     width: 100%;
@@ -6972,7 +6972,7 @@ html.floating-nav.fluid-layout .navbar-wrapper {
   padding-left: 15px;
   padding-right: 15px;
 }
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .aside-1 #layout-content,
   .aside-2 #layout-content {
     float: left;
@@ -6985,7 +6985,7 @@ html.floating-nav.fluid-layout .navbar-wrapper {
   padding-left: 15px;
   padding-right: 15px;
 }
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .aside-12 #layout-content {
     float: left;
     width: 50%;
@@ -6998,7 +6998,7 @@ html.floating-nav.fluid-layout .navbar-wrapper {
   padding-left: 15px;
   padding-right: 15px;
 }
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   #aside-first,
   #aside-second {
     float: left;
@@ -7019,7 +7019,7 @@ html.floating-nav.fluid-layout .navbar-wrapper {
   padding-left: 15px;
   padding-right: 15px;
 }
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .tripel-1 #tripel-first,
   .tripel-2 #tripel-first,
   .tripel-3 #tripel-first,
@@ -7047,7 +7047,7 @@ html.floating-nav.fluid-layout .navbar-wrapper {
   padding-left: 15px;
   padding-right: 15px;
 }
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .tripel-12 #tripel-first,
   .tripel-13 #tripel-first,
   .tripel-23 #tripel-first,
@@ -7069,7 +7069,7 @@ html.floating-nav.fluid-layout .navbar-wrapper {
   padding-left: 15px;
   padding-right: 15px;
 }
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .tripel-123 #tripel-first,
   .tripel-123 #tripel-second,
   .tripel-123 #tripel-third {
@@ -7098,7 +7098,7 @@ html.floating-nav.fluid-layout .navbar-wrapper {
   padding-left: 15px;
   padding-right: 15px;
 }
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .split-1 + #layout-footer #footer-quad-first,
   .split-2 + #layout-footer #footer-quad-first,
   .split-3 + #layout-footer #footer-quad-first,
@@ -7148,7 +7148,7 @@ html.floating-nav.fluid-layout .navbar-wrapper {
   padding-left: 15px;
   padding-right: 15px;
 }
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .split-12 + #layout-footer #footer-quad-first,
   .split-13 + #layout-footer #footer-quad-first,
   .split-14 + #layout-footer #footer-quad-first,
@@ -7198,7 +7198,7 @@ html.floating-nav.fluid-layout .navbar-wrapper {
   padding-left: 15px;
   padding-right: 15px;
 }
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .split-123 + #layout-footer #footer-quad-first,
   .split-124 + #layout-footer #footer-quad-first,
   .split-134 + #layout-footer #footer-quad-first,
@@ -7228,7 +7228,7 @@ html.floating-nav.fluid-layout .navbar-wrapper {
   padding-left: 15px;
   padding-right: 15px;
 }
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .split-1234 + #layout-footer #footer-quad-first,
   .split-1234 + #layout-footer #footer-quad-second,
   .split-1234 + #layout-footer #footer-quad-third,
@@ -9171,39 +9171,37 @@ label {
 .quote p {
   text-align: right;
 }
-article.service-category-term {
-  margin-right: auto;
-  margin-left: auto;
-  padding-left: 15px;
-  padding-right: 15px;
+/* MIXIN */
+.service-product {
+  display: inline-block;
+  width: 300px;
+  height: 250px;
+  margin-right: 10px;
+  margin-top: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
+  box-shadow: rgba(0, 0, 0, 0.15) 2px 2px 5px;
+  background-color: #ffffff;
+  padding: 3px;
 }
-@media (min-width: 768px) {
-  article.service-category-term {
-    width: 750px;
-  }
+.service-product table {
+  table-layout: fixed;
 }
-@media (min-width: 992px) {
-  article.service-category-term {
-    width: 970px;
-  }
+.service-product table caption {
+  padding-left: 10px;
 }
-@media (min-width: 1200px) {
-  article.service-category-term {
-    width: 1170px;
-  }
+.service-product table td {
+  vertical-align: top;
+  font-size: 80%;
 }
-article.service-category-term > .navbar-header,
-article.service-category-term > .navbar-collapse {
-  margin-right: -15px;
-  margin-left: -15px;
+.service-product table td:first-child {
+  width: 50%;
+  padding-right: 10px;
 }
-@media (min-width: 768px) {
-  article.service-category-term > .navbar-header,
-  article.service-category-term > .navbar-collapse {
-    margin-right: 0;
-    margin-left: 0;
-  }
+.service-product table td:first-child img {
+  width: 130px;
 }
+article.service-category-term,
 article.product-category-term {
   margin-right: auto;
   margin-left: auto;
@@ -9211,31 +9209,138 @@ article.product-category-term {
   padding-right: 15px;
 }
 @media (min-width: 768px) {
+  article.service-category-term,
   article.product-category-term {
     width: 750px;
   }
 }
 @media (min-width: 992px) {
+  article.service-category-term,
   article.product-category-term {
     width: 970px;
   }
 }
 @media (min-width: 1200px) {
+  article.service-category-term,
   article.product-category-term {
     width: 1170px;
   }
 }
+article.service-category-term > .navbar-header,
 article.product-category-term > .navbar-header,
+article.service-category-term > .navbar-collapse,
 article.product-category-term > .navbar-collapse {
   margin-right: -15px;
   margin-left: -15px;
 }
 @media (min-width: 768px) {
+  article.service-category-term > .navbar-header,
   article.product-category-term > .navbar-header,
+  article.service-category-term > .navbar-collapse,
   article.product-category-term > .navbar-collapse {
     margin-right: 0;
     margin-left: 0;
   }
+}
+article.service-category-term ul,
+article.product-category-term ul {
+  display: block;
+}
+article.service-category-term ul li,
+article.product-category-term ul li {
+  display: inline-block;
+  width: 300px;
+  height: 250px;
+  margin-right: 10px;
+  margin-top: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
+  box-shadow: rgba(0, 0, 0, 0.15) 2px 2px 5px;
+  background-color: #ffffff;
+  padding: 3px;
+}
+article.service-category-term ul li table,
+article.product-category-term ul li table {
+  table-layout: fixed;
+}
+article.service-category-term ul li table caption,
+article.product-category-term ul li table caption {
+  padding-left: 10px;
+}
+article.service-category-term ul li table td,
+article.product-category-term ul li table td {
+  vertical-align: top;
+  font-size: 80%;
+}
+article.service-category-term ul li table td:first-child,
+article.product-category-term ul li table td:first-child {
+  width: 50%;
+  padding-right: 10px;
+}
+article.service-category-term ul li table td:first-child img,
+article.product-category-term ul li table td:first-child img {
+  width: 130px;
+}
+ul.search-results {
+  display: block;
+}
+ul.search-results li {
+  display: inline-block;
+  width: 300px;
+  height: 250px;
+  margin-right: 10px;
+  margin-top: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
+  box-shadow: rgba(0, 0, 0, 0.15) 2px 2px 5px;
+  background-color: #ffffff;
+  padding: 3px;
+}
+ul.search-results li table {
+  table-layout: fixed;
+}
+ul.search-results li table caption {
+  padding-left: 10px;
+}
+ul.search-results li table td {
+  vertical-align: top;
+  font-size: 80%;
+}
+ul.search-results li table td:first-child {
+  width: 50%;
+  padding-right: 10px;
+}
+ul.search-results li table td:first-child img {
+  width: 130px;
+}
+.service-product-list ul li {
+  display: inline-block;
+  width: 300px;
+  height: 250px;
+  margin-right: 10px;
+  margin-top: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
+  box-shadow: rgba(0, 0, 0, 0.15) 2px 2px 5px;
+  background-color: #ffffff;
+  padding: 3px;
+}
+.service-product-list ul li table {
+  table-layout: fixed;
+}
+.service-product-list ul li table caption {
+  padding-left: 10px;
+}
+.service-product-list ul li table td {
+  vertical-align: top;
+  font-size: 80%;
+}
+.service-product-list ul li table td:first-child {
+  width: 50%;
+  padding-right: 10px;
+}
+.service-product-list ul li table td:first-child img {
+  width: 130px;
 }
 #shoppingCartSummary {
   padding: 8px 0 0 0;
