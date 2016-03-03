@@ -1,10 +1,10 @@
-// CBCA Theme Dave Gardner Cascade Pixels 2016
-// Swatch specific alterations to match CADEM (http://entiri.net/cadem_wb/index.html)
-// License purchased (License ID: 751ce043-768f-4e1b-9ede-74b38eb1442f)
-
 @import "site-default.less";
 @import "bootswatch/cbca_national-bootswatch.less";
 @import "bootswatch/cbca_national-variables.less";
+
+// CBCA Theme Dave Gardner Cascade Pixels 2016
+// Swatch specific alterations to match CADEM (http://entiri.net/cadem_wb/index.html)
+// License purchased (License ID: 751ce043-768f-4e1b-9ede-74b38eb1442f)
 
 
 .navbar.navbar-default {
@@ -278,7 +278,7 @@ article.book.content-item {
     .h4();
     font-weight: 600;
     color: @gray-dark;
-    width:100%;
+    width: 100%;
     padding: 10px;
     background-color: @cbca-light-background;
 }
@@ -289,7 +289,7 @@ article.book.content-item {
     /*margin: 10px 5px;*/
     table {
         width: 350px;
-
+        /*table-layout:fixed;*/
         .image {
             width: 150px;
             overflow: hidden;
@@ -537,4 +537,17 @@ h2, h3, h4, h5 {
     margin-bottom: 24px;
     font-weight: 600;
     color: @gray-dark;
+}
+
+/* Breadcrumbs */
+article.widget-breadcrumbs {
+    .container();
+
+    nav {
+        .row();
+
+        ul.breadcrumb {
+            .make-sm-column(12);
+        }
+    }
 }

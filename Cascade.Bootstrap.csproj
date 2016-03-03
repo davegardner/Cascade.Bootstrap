@@ -174,7 +174,6 @@
     <Content Include="Styles\bootswatch\clayton-variables.min.css">
       <DependentUpon>clayton-variables.css</DependentUpon>
     </Content>
-    <Content Include="Styles\font-awesome\fonts\fontawesome-webfont.svg" />
     <Content Include="Styles\latest-twitter.css">
       <DependentUpon>latest-twitter.less</DependentUpon>
     </Content>
@@ -324,24 +323,6 @@
     <Content Include="Views\EditorTemplates\Parts.Comment.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Styles\font-awesome\fonts\fontawesome-webfont.eot" />
-    <Content Include="Styles\font-awesome\fonts\fontawesome-webfont.ttf" />
-    <Content Include="Styles\font-awesome\fonts\fontawesome-webfont.woff" />
-    <Content Include="Styles\font-awesome\fonts\fontawesome-webfont.woff2" />
-    <Content Include="Styles\font-awesome\fonts\FontAwesome.otf" />
-    <Content Include="Styles\font-awesome\less\animated.less" />
-    <Content Include="Styles\font-awesome\less\bordered-pulled.less" />
-    <Content Include="Styles\font-awesome\less\core.less" />
-    <Content Include="Styles\font-awesome\less\fixed-width.less" />
-    <Content Include="Styles\font-awesome\less\font-awesome.less" />
-    <Content Include="Styles\font-awesome\less\icons.less" />
-    <Content Include="Styles\font-awesome\less\larger.less" />
-    <Content Include="Styles\font-awesome\less\list.less" />
-    <Content Include="Styles\font-awesome\less\mixins.less" />
-    <Content Include="Styles\font-awesome\less\path.less" />
-    <Content Include="Styles\font-awesome\less\rotated-flipped.less" />
-    <Content Include="Styles\font-awesome\less\stacked.less" />
-    <Content Include="Styles\font-awesome\less\variables.less" />
     <Content Include="Styles\forms.less" />
     <Content Include="Styles\layout.less" />
     <Content Include="Styles\navigation.less" />

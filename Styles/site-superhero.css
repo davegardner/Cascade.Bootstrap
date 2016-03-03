@@ -1,11 +1,11 @@
-﻿/*!
+﻿@import url('//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css');
+/*!
  * Bootstrap v3.3.5 (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
-@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css";
-@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700");
+@import url("//fonts.googleapis.com/css?family=Lato:300,400,700");
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -6792,7 +6792,6 @@ html.orchard-users form:after {
     display: none !important;
   }
 }
-/*@import "font-awesome/less/font-awesome.less";*/
 html.boxed-layout #layout-main-container,
 html.boxed-layout #layout-tripel-container,
 html.boxed-layout #layout-footer {
@@ -6890,7 +6889,7 @@ html.floating-nav #layout-navigation {
   padding-left: 15px;
   padding-right: 15px;
 }
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   html.floating-nav #layout-navigation {
     float: left;
     width: 100%;
@@ -6944,7 +6943,7 @@ html.floating-nav.fluid-layout .navbar-wrapper {
   padding-left: 15px;
   padding-right: 15px;
 }
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   #layout-content {
     float: left;
     width: 100%;
@@ -6957,7 +6956,7 @@ html.floating-nav.fluid-layout .navbar-wrapper {
   padding-left: 15px;
   padding-right: 15px;
 }
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .aside-1 #layout-content,
   .aside-2 #layout-content {
     float: left;
@@ -6970,7 +6969,7 @@ html.floating-nav.fluid-layout .navbar-wrapper {
   padding-left: 15px;
   padding-right: 15px;
 }
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .aside-12 #layout-content {
     float: left;
     width: 50%;
@@ -6983,7 +6982,7 @@ html.floating-nav.fluid-layout .navbar-wrapper {
   padding-left: 15px;
   padding-right: 15px;
 }
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   #aside-first,
   #aside-second {
     float: left;
@@ -7004,7 +7003,7 @@ html.floating-nav.fluid-layout .navbar-wrapper {
   padding-left: 15px;
   padding-right: 15px;
 }
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .tripel-1 #tripel-first,
   .tripel-2 #tripel-first,
   .tripel-3 #tripel-first,
@@ -7032,7 +7031,7 @@ html.floating-nav.fluid-layout .navbar-wrapper {
   padding-left: 15px;
   padding-right: 15px;
 }
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .tripel-12 #tripel-first,
   .tripel-13 #tripel-first,
   .tripel-23 #tripel-first,
@@ -7054,7 +7053,7 @@ html.floating-nav.fluid-layout .navbar-wrapper {
   padding-left: 15px;
   padding-right: 15px;
 }
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .tripel-123 #tripel-first,
   .tripel-123 #tripel-second,
   .tripel-123 #tripel-third {
@@ -7083,7 +7082,7 @@ html.floating-nav.fluid-layout .navbar-wrapper {
   padding-left: 15px;
   padding-right: 15px;
 }
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .split-1 + #layout-footer #footer-quad-first,
   .split-2 + #layout-footer #footer-quad-first,
   .split-3 + #layout-footer #footer-quad-first,
@@ -7133,7 +7132,7 @@ html.floating-nav.fluid-layout .navbar-wrapper {
   padding-left: 15px;
   padding-right: 15px;
 }
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .split-12 + #layout-footer #footer-quad-first,
   .split-13 + #layout-footer #footer-quad-first,
   .split-14 + #layout-footer #footer-quad-first,
@@ -7183,7 +7182,7 @@ html.floating-nav.fluid-layout .navbar-wrapper {
   padding-left: 15px;
   padding-right: 15px;
 }
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .split-123 + #layout-footer #footer-quad-first,
   .split-124 + #layout-footer #footer-quad-first,
   .split-134 + #layout-footer #footer-quad-first,
@@ -7213,7 +7212,7 @@ html.floating-nav.fluid-layout .navbar-wrapper {
   padding-left: 15px;
   padding-right: 15px;
 }
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .split-1234 + #layout-footer #footer-quad-first,
   .split-1234 + #layout-footer #footer-quad-second,
   .split-1234 + #layout-footer #footer-quad-third,
@@ -7911,10 +7910,22 @@ html.fluid-layout .orchard-layouts-root .table {
     Any additional submenus are not displayed. The following overrides enable submenus
     to be nested to any depth.
 */
+.dropdown-menu {
+  top: auto;
+}
 .dropdown-menu .dropdown-menu {
   left: 100% !important;
-  top: auto;
-  margin-top: -40px !important;
+  /*top: auto;*/
+}
+@media (min-width: 768px) {
+  .dropdown-menu .dropdown-menu {
+    margin-top: -30px !important;
+  }
+}
+@media (max-width: 768px) {
+  .dropdown-menu .dropdown-menu {
+    margin-left: 20px;
+  }
 }
 .dropdown .dropdown:hover > .dropdown-menu,
 .dropdown .dropdown .dropdown:hover > .dropdown-menu,
@@ -8669,6 +8680,13 @@ html {
 }
 .cascade-reveal {
   opacity: 0;
+}
+.cascade-reveal-fade-out {
+  opacity: 0;
+  -moz-transition: opacity linear .3s;
+  -o-transition: opacity linear .3s;
+  -webkit-transition: opacity linear .3s;
+  transition: opacity linear .3s;
 }
 /*
     General purpose vertical alignment. 
