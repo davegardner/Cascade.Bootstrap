@@ -147,6 +147,7 @@
     <Content Include="Scripts\bootstrap\js\tab.js" />
     <Content Include="Scripts\bootstrap\js\tooltip.js" />
     <Content Include="Scripts\bootstrap\js\transition.js" />
+    <Content Include="Scripts\BrowserUpdate.js" />
     <Content Include="Scripts\CascadeBootstrapSettings.js" />
     <Content Include="Scripts\custom.js" />
     <Content Include="Scripts\hover-dropdown.js" />
