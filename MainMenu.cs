@@ -30,7 +30,7 @@ namespace Cascade.Bootstrap {
                     .Query<MenuPart, MenuPartRecord>()
                     .Where(x => x.MenuId == menu.Id)
                     .List()
-                    .Select(x => Convert.ToInt32(decimal.Parse(x.MenuPosition)))
+                    .Select(x => GetFirstInteger(x.MenuPosition))
                     .Max();
 
                 var itemCount = maxPosition + 1;
@@ -57,6 +57,18 @@ namespace Cascade.Bootstrap {
 
                 }
             }
+        }
+
+        private int GetFirstInteger(string pos)
+        {
+            int result = 0;
+            if (!String.IsNullOrWhiteSpace(pos))
+            {
+                var ints = pos.Split('.');
+                if (ints != null && ints.Length > 0)
+                    result = Int32.Parse(ints[0]);
+            }
+            return result;
         }
 
         public string MenuName { get { return "Main Menu"; } }
