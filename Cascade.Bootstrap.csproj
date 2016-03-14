@@ -147,6 +147,7 @@
     <Content Include="Scripts\bootstrap\js\tab.js" />
     <Content Include="Scripts\bootstrap\js\tooltip.js" />
     <Content Include="Scripts\bootstrap\js\transition.js" />
+    <Content Include="Scripts\BrowserUpdate.js" />
     <Content Include="Scripts\CascadeBootstrapSettings.js" />
     <Content Include="Scripts\custom.js" />
     <Content Include="Scripts\hover-dropdown.js" />
@@ -174,7 +175,12 @@
     <Content Include="Styles\bootswatch\clayton-variables.min.css">
       <DependentUpon>clayton-variables.css</DependentUpon>
     </Content>
-    <Content Include="Styles\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Styles\bootswatch\hiphouse-variables.css">
+      <DependentUpon>hiphouse-variables.less</DependentUpon>
+    </Content>
+    <Content Include="Styles\bootswatch\hiphouse-variables.min.css">
+      <DependentUpon>hiphouse-variables.css</DependentUpon>
+    </Content>
     <Content Include="Styles\latest-twitter.css">
       <DependentUpon>latest-twitter.less</DependentUpon>
     </Content>
@@ -226,6 +232,12 @@
     <Content Include="Styles\site-lumen.min.css" />
     <Content Include="Styles\site-paper.css" />
     <Content Include="Styles\site-paper.min.css" />
+    <Content Include="Styles\site-pixels.css">
+      <DependentUpon>site-pixels.less</DependentUpon>
+    </Content>
+    <Content Include="Styles\site-pixels.min.css">
+      <DependentUpon>site-pixels.css</DependentUpon>
+    </Content>
     <Content Include="Styles\site-readable.css" />
     <Content Include="Styles\site-readable.min.css" />
     <Content Include="Styles\site-restart.css">
@@ -312,29 +324,12 @@
     <Compile Include="ResourceManifest.cs" />
     <Compile Include="Routes.cs" />
     <Compile Include="Services\CascadeBootstrapService.cs" />
+    <Compile Include="Services\CBCABookExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\EditorTemplates\Parts.Comment.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Styles\font-awesome\fonts\fontawesome-webfont.eot" />
-    <Content Include="Styles\font-awesome\fonts\fontawesome-webfont.ttf" />
-    <Content Include="Styles\font-awesome\fonts\fontawesome-webfont.woff" />
-    <Content Include="Styles\font-awesome\fonts\fontawesome-webfont.woff2" />
-    <Content Include="Styles\font-awesome\fonts\FontAwesome.otf" />
-    <Content Include="Styles\font-awesome\less\animated.less" />
-    <Content Include="Styles\font-awesome\less\bordered-pulled.less" />
-    <Content Include="Styles\font-awesome\less\core.less" />
-    <Content Include="Styles\font-awesome\less\fixed-width.less" />
-    <Content Include="Styles\font-awesome\less\font-awesome.less" />
-    <Content Include="Styles\font-awesome\less\icons.less" />
-    <Content Include="Styles\font-awesome\less\larger.less" />
-    <Content Include="Styles\font-awesome\less\list.less" />
-    <Content Include="Styles\font-awesome\less\mixins.less" />
-    <Content Include="Styles\font-awesome\less\path.less" />
-    <Content Include="Styles\font-awesome\less\rotated-flipped.less" />
-    <Content Include="Styles\font-awesome\less\stacked.less" />
-    <Content Include="Styles\font-awesome\less\variables.less" />
     <Content Include="Styles\forms.less" />
     <Content Include="Styles\layout.less" />
     <Content Include="Styles\navigation.less" />
@@ -661,6 +656,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Styles\site-cbca_national.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Styles\bootswatch\pixels-bootswatch.less" />
+    <Content Include="Styles\bootswatch\pixels-variables.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Styles\site-pixels.less" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

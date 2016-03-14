@@ -19,7 +19,11 @@
         Style.Include("site-rtl.min.css");
     }
 
+    // Remind viewer to upgrade their browser
+    Script.Include("~/Themes/Cascade.Bootstrap/Scripts/BrowserUpdate.js");
+    // Shim for older versions of IE
     Script.Include("~/Core/Shapes/Scripts/html5.js").UseCondition("lt IE 9").AtHead();
+    
     Script.Require("Bootstrap");
 
     if (settings.UseHoverMenus) {
@@ -27,4 +31,5 @@
     }
     
     Script.Require("Custom");
+    
 }

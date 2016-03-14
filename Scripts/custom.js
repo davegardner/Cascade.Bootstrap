@@ -59,4 +59,48 @@
             $(this).next('.capsAlert').remove();
         }
     });
+
+	////////////////// REVEAL IMAGES //////////////////////////////////////////////////////
+
+	// Immediately remove the src attribute from all images to be 'revealed'
+	// if an image has already started loading it will be cancelled
+	$('img.cascade-reveal').each(function () {
+		var t = $(this);
+		t.attr('data-src', t.attr('src'));
+		t.removeAttr('src');
+	});
+
+	var fadeInImage = function (e) {
+		e.stopPropagation();
+		e.data.removeClass('cascade-reveal').addClass('cascade-reveal-fade-in');
+	}
+
+	// load and reveal images when they appear in the viewport
+	var loadImage = function () {
+		$('img[data-src].cascade-reveal').each(function () {
+			if (isElementInViewport(this)) {
+				var t = $(this);
+
+				// fade-in the image after it has loaded
+				t.one('load', t, fadeInImage);
+
+				// load the image
+				t.attr('src', t.attr('data-src'));
+				t.removeAttr('data-src'); // only process this image once
+			}
+		});
+	}
+
+	function isElementInViewport(el) {
+
+		var rect = el.getBoundingClientRect();
+
+		return (rect.right >= 0
+			&& rect.bottom >= 0
+			&& rect.left <= (window.innerWidth || document.documentElement.clientWidth)
+			&& rect.top <= (window.innerHeight || document.documentElement.clientHeight));
+	}
+
+	$(window).on('load resize scroll', loadImage);
+
 });

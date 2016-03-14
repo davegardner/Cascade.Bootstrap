@@ -1,8 +1,8 @@
 @import "site-default.less";
 @import "bootswatch/safetec-bootswatch.less";
 @import "bootswatch/safetec-variables.less";
-@import url(http://fonts.googleapis.com/css?family=Quicksand);
-@import url(https://fonts.googleapis.com/css?family=Audiowide);
+@import url('http://fonts.googleapis.com/css?family=Quicksand');
+@import url('https://fonts.googleapis.com/css?family=Audiowide');
 
 @navbar-height: 80px;
 
@@ -174,14 +174,71 @@
     text-align: right;
 }
 
+/* MIXIN */
+.service-product {
+    display: inline-block;
+    width: 300px;
+    height: 250px;
+    margin-right: 10px;
+    margin-top: 10px;
+    border: 1px solid @dropdown-border;
+    border-radius: 3px;
+    box-shadow: @dropdown-border 2px 2px 5px;
+    background-color: @dropdown-bg;
+    padding: 3px;
+    
+    table {
+        table-layout: fixed;
+
+        caption {
+            padding-left: 10px;
+        }
+
+        td {
+            vertical-align: top;
+            font-size: 80%;
+
+            &:first-child {
+                width: 50%;
+
+                img {
+                    width: 130px;
+                }
+
+                padding-right: 10px;
+            }
+        }
+    }
+}
+
 article {
 
-    &.service-category-term {
+    &.service-category-term, &.product-category-term {
         .container();
-    }
 
-    &.product-category-term {
-        .container();
+        ul {
+            display: block;
+
+            li {
+                .service-product;
+            }
+        }
+    }
+}
+
+ul.search-results {
+    display: block;
+
+    li {
+        .service-product;
+    }
+}
+
+.service-product-list {
+    ul {
+        li {
+            .service-product;
+        }
     }
 }
 
@@ -193,6 +250,6 @@ article {
     font-size: 70%;
 }
 
-h2, h3, h4,{
+h2, h3, h4 {
     color: firebrick;
 }

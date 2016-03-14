@@ -1,18 +1,4 @@
 ﻿/*!
-Theme Name: {re}start
-Theme URI: http://www.leonart.gr/htmlthemes/restart_v3/
-Description: Multipurpose HTML Template based on twitter bootstrap. 
-Version: 3.0
-Author: Leon Touroutoglou
-Author URI: http://www.leonart.gr
-*/
-/* =Imports
-We import bootstrap.less in order to take advantage of its classes and mixins.
-AFTER THAT we import the custom_variables.less which is Bootstrap variables.less 
-that we copied and altered in order to override the original variables and make our custom bootstrap skin.
-This way we leave Bootstrap unharmed.
---------------------------------------------------------------*/
-/*!
  * Bootstrap v3.3.5 (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
@@ -6781,6 +6767,20 @@ button.close {
     display: none !important;
   }
 }
+/*!
+Theme Name: {re}start
+Theme URI: http://www.leonart.gr/htmlthemes/restart_v3/
+Description: Multipurpose HTML Template based on twitter bootstrap. 
+Version: 3.0
+Author: Leon Touroutoglou
+Author URI: http://www.leonart.gr
+*/
+/* =Imports
+We import bootstrap.less in order to take advantage of its classes and mixins.
+AFTER THAT we import the custom_variables.less which is Bootstrap variables.less 
+that we copied and altered in order to override the original variables and make our custom bootstrap skin.
+This way we leave Bootstrap unharmed.
+--------------------------------------------------------------*/
 /*!                    
 Theme Name: ReStart
 THEME STYLES

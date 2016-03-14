@@ -1,4 +1,122 @@
 ﻿@import "site-default.less";
 @import "bootswatch/hiphouse-variables.less";
 @import "bootswatch/hiphouse-bootswatch.less";
-.zeyada { font-family: "Zeyada"}
+
+.zeyada {
+    font-family: "Zeyada";
+    font-size: 8rem; 
+    color: #ffcc00;
+    @media screen and (max-width: @screen-sm-min) {
+        font-size:6rem;
+    }
+}
+
+.bullet-list {
+    list-style: square;
+    padding-left: 20px;
+    margin-left:20px;
+}
+
+/*Branding*/
+.navbar-brand:hover, .navbar-brand:focus {
+    color: none;
+}
+.navbar-nav>li>.dropdown-menu {
+    margin-top: -15px;
+    }
+.navbar-header .navbar-brand {
+    background: url('/Media/Hiphouse/Logos/logo.svg') no-repeat center;
+    background-size: contain;
+    color: transparent !important;
+    line-height: 1.5;
+    font-size: 45px;
+}
+
+.pad-fixed-top {
+
+    @media screen and (max-width: @screen-sm-min) {
+        margin-top:70px;
+    }
+}
+.img-style{
+    width: auto; 
+    max-height: 360px;
+    padding:0 10px;
+     @media screen and (max-width: @screen-lg) {
+        max-height: 300px;
+    }
+     @media screen and (max-width: @screen-md) {
+        max-height: 240px;
+        padding:0;
+    }
+     @media screen and (max-width: @screen-sm-min) {
+        width:auto;
+        height:auto;
+        max-height:unset;
+        padding:0 20px 0 10px;
+        margin:0 auto;
+        max-width: 700px;
+    }
+}
+.img-circle
+{
+    width:25%; 
+    @media screen and (max-width: @screen-md) {
+        width:60px;
+    }
+}
+
+.widget-splash {
+    text-align: center;
+
+    img {
+        width: 98.5%;
+    }
+}
+
+#welcome {
+    .mission {
+        font-size: 1.2em;
+    }
+}
+
+.widget-style {
+    background-color: #b1cae2;
+
+}
+
+.widget-what {
+    background-color: #7a98b5;
+    padding: 20px 0;
+    color: #f8f8f8;
+    margin: 0 auto;
+
+    h2, h3 {
+        color: #f8f8f8;
+    }
+}
+.silhouette{
+    height:180px;
+    width:auto;
+    
+         @media screen and (max-width: @screen-sm-min) {
+        height:130px;
+    
+    }
+}
+#layout-footer {
+    background-color: #fff;
+}
+
+#footer_signature {
+    margin: 5px auto 15px auto;
+
+    .hang-left {
+        float: left;
+        display: inline;
+    }
+
+    .hang-right {
+        float: right;
+    }
+}
