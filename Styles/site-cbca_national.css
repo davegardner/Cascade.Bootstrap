@@ -9941,26 +9941,17 @@ article.book.content-item {
   margin-bottom: 10px;
 }
 /* detail display for a book */
-.book-detail {
-  /*height: 300px;*/
-  position: relative;
-}
-.book-detail table th,
-.book-detail table td {
-  padding: 0 16px 8px 0;
-  line-height: 1.6;
-  vertical-align: top;
-}
-.book-detail .image {
-  width: 200px;
-  overflow: hidden;
-}
 .book-detail .image img {
-  max-height: 290px;
-  width: 200px;
+  width: 100%;
 }
 .book-detail .detail {
   line-height: 1.1;
+  margin-top: 10px;
+}
+@media (min-width: 768px) {
+  .book-detail .detail {
+    margin-top: 0;
+  }
 }
 .book-detail .detail .gongs {
   padding: 7px;
@@ -9990,14 +9981,14 @@ article.book.content-item {
 }
 .book-detail .detail .summary,
 .book-detail .detail .publisher,
-.book-detail .detail .isbn {
+.book-detail .detail .isbn,
+.book-detail .detail .link-field {
   margin-top: 10px;
   margin-bottom: 10px;
 }
 .widget-tripel-featured #tripel-featured-panel {
   margin-top: 2em;
   padding: 30px 0 20px 0;
-  /*background-color: #f8f8f8;*/
   background-color: #e9ecf0;
 }
 .widget-tripel-featured .tripel-featured-icon {
