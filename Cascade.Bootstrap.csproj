@@ -74,7 +74,10 @@
     <Content Include="Content\favicon.ico" />
     <Content Include="Content\Fonts\Hellena Script\Webfont\Hellena Script-webfont.svg" />
     <Content Include="Content\Images\bluebg.jpg" />
+    <Content Include="Content\Images\Footer image.png" />
+    <Content Include="Content\Images\Footer.png" />
     <Content Include="Content\Images\greenbg.jpg" />
+    <Content Include="Content\Images\tree.png" />
     <Content Include="Content\prettyPhoto\dark_rounded\btnNext.png" />
     <Content Include="Content\prettyPhoto\dark_rounded\btnPrevious.png" />
     <Content Include="Content\prettyPhoto\dark_rounded\contentPattern.png" />

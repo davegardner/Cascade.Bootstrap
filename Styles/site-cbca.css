@@ -9698,8 +9698,13 @@ html.boxed-layout #layout-featured .widget-cbca-featured .cbca-featured img {
   font-weight: 700;
 }
 .widget-header a.btn-header {
-  padding: 0 5px;
+  padding: 0 8px;
   text-decoration: none;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .widget-header a.btn-header {
+    padding: 0 3px;
+  }
 }
 .widget-header a.btn-header > img {
   height: 40px;
@@ -9836,6 +9841,9 @@ h5 {
   margin-top: 40px;
   background: url('../Content/Images/greenbg.jpg') repeat;
 }
+.green-stipple-wrapper .green-stipple .cbca-arrows {
+  max-width: 100%;
+}
 /* Adjust sizing of tripel on home page */
 .widget-tripel-featured .cbca-icon div {
   height: 125px;
@@ -9852,6 +9860,11 @@ h5 {
 .widget-tripel-featured .row {
   padding-top: 20px;
 }
+@media (min-width: 992px) {
+  .widget-tripel-featured .row .text-block {
+    min-height: 110px;
+  }
+}
 .widget-tripel-featured .tripel-featured-icon {
   height: 80px;
   width: auto;
@@ -9867,8 +9880,9 @@ h5 {
   vertical-align: top;
 }
 .span-footer {
-  background-color: #ffffff;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
+  padding-top: 0px;
+  background: #ffffff url('../Content/Images/Footer.png') bottom right no-repeat;
 }
 .span-footer h4 {
   text-transform: none;
@@ -9878,6 +9892,19 @@ h5 {
 }
 .span-footer .link-col-1 {
   width: 45%;
+}
+.span-footer .cbca-connect a.btn-header {
+  padding: 0 3px;
+  text-decoration: none;
+}
+.span-footer .cbca-connect a.btn-header > img {
+  height: 30px;
+  width: 30px;
+}
+.span-footer .cbca-connect a.btn-header > img:hover {
+  animation-timing-function: ease-in-out;
+  transform: rotateZ(360deg);
+  transition: transform 0.3s;
 }
 article.widget-badge {
   background-color: #ccdd71;
@@ -9945,20 +9972,19 @@ article.book.content-item {
   display: none;
 }
 .book-summary table .detail .gongs.Winner {
-  background-color: gold;
+  background-color: #f3d09c;
   text-shadow: 0 0 2px #fff;
   font-weight: bold;
   color: black;
   display: block;
 }
 .book-summary table .detail .gongs.Honours {
-  background-color: silver;
+  background-color: #92aad2;
   color: #fff;
-  text-shadow: 0 0 2px #333;
   display: block;
 }
 .book-summary table .detail .gongs.Notable {
-  background-color: brown;
+  background-color: #b2ccab;
   color: white;
   display: block;
 }
@@ -9999,18 +10025,17 @@ article.book.content-item {
   padding: 7px;
 }
 .book-detail .detail .gongs.Winner {
-  background-color: gold;
+  background-color: #f3d09c;
   text-shadow: 0 0 2px #fff;
   font-weight: bold;
   color: black;
 }
 .book-detail .detail .gongs.Honours {
-  background-color: silver;
+  background-color: #92aad2;
   color: #fff;
-  text-shadow: 0 0 2px #333;
 }
 .book-detail .detail .gongs.Notable {
-  background-color: brown;
+  background-color: #b2ccab;
   color: white;
 }
 .book-detail .detail .gongs.Shortlisted {
@@ -10143,4 +10168,44 @@ address {
 }
 .cbca-search-list {
   padding: 0 15px;
+}
+.cbca-branches .map {
+  margin: 0 auto;
+  max-width: 500px;
+}
+.cbca-branches .col-sm-4 div {
+  padding: 10px;
+  margin-bottom: 20px;
+  background: url('../Content/Images/greenbg.jpg') repeat;
+}
+html.orchard-users form fieldset {
+  margin-bottom: 80px;
+}
+@media print {
+  a.btn,
+  video,
+  audio,
+  object,
+  embed,
+  #layout-header,
+  .navbar-wrapper,
+  #layout-after-main,
+  #layout-footer,
+  #toTop {
+    display: none;
+  }
+  .projection-page h1 {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+  .projection-page ul li {
+    page-break-inside: avoid;
+  }
+  .projection-page ul li .category-heading {
+    padding-top: 20px;
+    margin-top: 0;
+  }
+  .projection-page ul li .book-summary table .detail .gongs {
+    text-align: left;
+  }
 }

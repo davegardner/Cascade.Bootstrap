@@ -42,9 +42,13 @@ html.boxed-layout {
     }
 
     a.btn-header {
-        padding: 0 5px;
+        // allow space for touch
+        padding: 0 8px;
         text-decoration: none;
-
+        // squish icons together to avoid wrapping
+        @media (min-width: @screen-sm) and (max-width: @screen-sm-max) {
+            padding: 0 3px;
+        }
 
         > img {
             height: 40px;
@@ -210,6 +214,10 @@ h3, h5 {
         padding: 15px;
         margin-top: 40px;
         background: url('../Content/Images/greenbg.jpg') repeat;
+
+        .cbca-arrows {
+            max-width: 100%;
+        }
     }
 }
 
@@ -237,6 +245,12 @@ h3, h5 {
 
     .row {
         padding-top: 20px;
+
+        .text-block {
+            @media(min-width:@screen-md) {
+                min-height: 110px;
+            }
+        }
     }
 
     .tripel-featured-icon {
@@ -263,8 +277,9 @@ h3, h5 {
 }
 
 .span-footer {
-    background-color: @cbca-background;
-    padding-bottom: 20px;
+    padding-bottom: 40px;
+    padding-top: 0px;
+    background: @cbca-background url('../Content/Images/Footer.png') bottom right no-repeat;
 
     h4 {
         text-transform: none;
@@ -276,6 +291,26 @@ h3, h5 {
 
     .link-col-1 {
         width: 45%;
+    }
+
+    .cbca-connect {
+
+        a.btn-header {
+            padding: 0 3px;
+            text-decoration: none;
+
+
+            > img {
+                height: 30px;
+                width: 30px;
+
+                &:hover {
+                    animation-timing-function: ease-in-out;
+                    transform: rotateZ(360deg);
+                    transition: transform 0.3s;
+                }
+            }
+        }
     }
 }
 
@@ -312,6 +347,11 @@ article.book.content-item {
     margin-top: 30px;
 }
 
+@color-winner: #f3d09c;
+@color-honour: #92aad2; //#3c75ac;
+@color-notable: #b2ccab;
+@color-shortlisted: @gray-lighter;
+
 /* summary display for a book */
 .book-summary {
     height: 250px;
@@ -322,7 +362,8 @@ article.book.content-item {
         .image {
             width: 130px;
             overflow: hidden;
-            padding:5px 3px 0 0;
+            padding: 5px 3px 0 0;
+
             img {
                 max-height: 250px;
                 width: 130px;
@@ -338,7 +379,7 @@ article.book.content-item {
                 text-align: center;
                 display: none; // suppresses '(none)'
                 &.Winner {
-                    background-color: gold;
+                    background-color: @color-winner;
                     text-shadow: 0 0 2px #fff;
                     font-weight: bold;
                     color: black;
@@ -346,20 +387,19 @@ article.book.content-item {
                 }
 
                 &.Honours {
-                    background-color: silver;
+                    background-color: @color-honour;
                     color: #fff;
-                    text-shadow: 0 0 2px #333;
                     display: block;
                 }
 
                 &.Notable {
-                    background-color: brown;
+                    background-color: @color-notable;
                     color: white;
                     display: block;
                 }
 
                 &.Shortlisted {
-                    background-color: @gray-lighter;
+                    background-color: @color-shortlisted;
                     display: block;
                 }
             }
@@ -405,25 +445,24 @@ article.book.content-item {
             padding: 7px;
 
             &.Winner {
-                background-color: gold;
+                background-color: @color-winner;
                 text-shadow: 0 0 2px #fff;
                 font-weight: bold;
                 color: black;
             }
 
             &.Honours {
-                background-color: silver;
+                background-color: @color-honour;
                 color: #fff;
-                text-shadow: 0 0 2px #333;
             }
 
             &.Notable {
-                background-color: brown;
+                background-color: @color-notable;
                 color: white;
             }
 
             &.Shortlisted {
-                background-color: @gray-lighter;
+                background-color: @color-shortlisted;
             }
         }
 
@@ -537,6 +576,57 @@ address {
     padding-left: 0;
 }
 
-.cbca-search-list{
+.cbca-search-list {
     padding: 0 15px;
+}
+
+.cbca-branches {
+    .map {
+        margin: 0 auto;
+        max-width: 500px;
+    }
+
+    .row {
+    }
+
+    .col-sm-4 {
+        div {
+            padding: 10px;
+            margin-bottom: 20px;
+            background: url('../Content/Images/greenbg.jpg') repeat;
+        }
+    }
+}
+
+html.orchard-users form fieldset{
+    margin-bottom: 80px;
+}
+
+@media print {
+    // Very basic print style sheet that simply suppresses unwanted and inappropriate items
+    a.btn, video, audio, object, embed, #layout-header, .navbar-wrapper, #layout-after-main, #layout-footer, #toTop {
+        display: none;
+    }
+
+    .projection-page {
+        h1 {
+            margin-bottom: 0;
+            margin-top: 0;
+        }
+
+        ul {
+            li {
+                page-break-inside: avoid;
+
+                .category-heading {
+                    padding-top: 20px;
+                    margin-top: 0;
+                }
+
+                .book-summary table .detail .gongs{
+                    text-align:left;
+                }
+            }
+        }
+    }
 }
