@@ -1,0 +1,542 @@
+@import "site-default.less";
+@import "bootswatch/cbca-bootswatch.less";
+@import "bootswatch/cbca-variables.less";
+
+html.boxed-layout {
+    #layout-main-container, #layout-tripel-container, #layout-footer,
+    #layout-after-main .container, #layout-header .container, .navbar-wrapper {
+        background: @cbca-background;
+    }
+
+    #layout-featured {
+        .container;
+
+        .widget-cbca-featured {
+            .row;
+            background: @cbca-background;
+
+            .cbca-featured {
+                padding: 0 @grid-gutter-width/2;
+
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+.cbca-featured {
+    .row:last-child {
+        padding-bottom: 40px;
+    }
+}
+
+.widget-header {
+    // Main CBCA branding
+    padding-top: 5px;
+
+    h1 {
+        margin: 0 0 10px 0;
+        font-weight: 700;
+    }
+
+    a.btn-header {
+        padding: 0 5px;
+        text-decoration: none;
+
+
+        > img {
+            height: 40px;
+            width: 40px;
+
+            &:hover {
+                animation-timing-function: ease-in-out;
+                transform: rotateZ(360deg);
+                transition: transform 0.3s;
+            }
+        }
+    }
+
+    .croc {
+        display: none;
+    }
+    /* Display croc if there is enough space */
+    @media (min-width: @screen-sm) {
+        .croc {
+            display: inline;
+        }
+    }
+
+    .cbca-header {
+        margin-top: 15px;
+
+        @media( min-width: @screen-md) {
+            margin-top: 30px;
+        }
+    }
+
+    .social-block {
+        margin-top: 3px;
+
+        @media (min-width: @screen-sm) {
+            text-align: right;
+        }
+    }
+    // Muck around with display-inline to get search form submit button on same line as text
+    .search-inline {
+        @media (min-width: @screen-sm) {
+            text-align: right;
+        }
+
+        .form-field-element {
+            display: inline;
+
+            input {
+                display: inline;
+                width: auto;
+            }
+        }
+    }
+    // cbca logo at top left
+    img {
+        height: 120px;
+        margin-left: 0;
+        margin-top: 15px;
+    }
+}
+
+.navbar-default {
+    border-bottom: 1px lighten(@design-green, 25%) solid;
+    margin-bottom: 10px;
+}
+
+.navbar-toggle {
+    float: none;
+}
+
+html.floating-nav #layout-navigation {
+    padding: 0;
+
+    ul.navbar-nav {
+        & > li > a {
+            padding-left: 6px;
+        }
+    }
+}
+
+// space above featured item
+@featured-item-top-margin: 10px;
+
+// Allow header to scroll but fix navbar at top
+.fix {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+
+// compensate for menu height once navbar is fixed
+.padfix {
+    margin-top: @navbar-height;
+}
+
+html.boxed-layout #layout-footer {
+    background: url('../Content/Images/bluebg.jpg') repeat;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+html.boxed-layout #layout-content {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.navbar-default {
+    font-size: @font-size-nav;
+}
+
+/* Adjust Headings everywhere */
+
+/* First, undo heading scaling */
+@media screen and (max-width:@screen-sm-max) {
+    h1, .h1 {
+        font-size: @font-size-h1;
+    }
+
+    h2, .h2 {
+        font-size: @font-size-h2;
+    }
+
+    h3, .h3 {
+        font-size: @font-size-h3;
+    }
+
+    h4, .h4 {
+        font-size: @font-size-h4;
+    }
+}
+
+h1 {
+    color: @cbca-light;
+    margin-top: 42px;
+    margin-bottom: 18px;
+}
+
+
+h1, h2, h3, h4 {
+    text-transform: uppercase;
+}
+
+h2 {
+    margin-top: 30px;
+    margin-bottom: 18px;
+}
+
+h4 {
+    margin-top: 25px;
+    margin-bottom: 14px;
+}
+
+h3, h5 {
+    margin-top: 10px;
+    margin-bottom: 6px;
+}
+
+/* Boxed right aside on home page */
+.green-stipple-wrapper {
+    .green-stipple {
+        padding: 15px;
+        margin-top: 40px;
+        background: url('../Content/Images/greenbg.jpg') repeat;
+    }
+}
+
+/* Adjust sizing of tripel on home page */
+.widget-tripel-featured {
+    #tripel-featured-panel {
+    }
+
+    .cbca-icon {
+
+        div {
+            height: 125px;
+            position: relative;
+
+            img {
+                margin: auto;
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+            }
+        }
+    }
+
+    .row {
+        padding-top: 20px;
+    }
+
+    .tripel-featured-icon {
+        height: 80px;
+        width: auto;
+    }
+}
+
+
+
+/* Footer Widget */
+.span-sponsors {
+    div.row {
+        margin-bottom: 24px;
+    }
+
+    h2 {
+        color: @cbca-complimentary;
+
+        .arrow-icon {
+            vertical-align: top;
+        }
+    }
+}
+
+.span-footer {
+    background-color: @cbca-background;
+    padding-bottom: 20px;
+
+    h4 {
+        text-transform: none;
+    }
+
+    div.row {
+        margin-top: 24px;
+    }
+
+    .link-col-1 {
+        width: 45%;
+    }
+}
+
+article.widget-badge {
+    background-color: @design-footer-bg;
+    color: @design-footer-color;
+    padding: 14px 0 0 0;
+}
+
+/* Book displays */
+
+/* Make the default search list display 
+    a wrapped list of tiles instead of a simple list*/
+ul.search-results.content-items {
+    li {
+        display: inline-block;
+    }
+}
+
+/* Apply the class .book-list to the List Class in the Query */
+ul.book-list {
+    li {
+        display: inline-block;
+    }
+}
+
+article.book.content-item {
+    display: inline-block;
+}
+
+.category-heading {
+    .h4();
+    text-transform: uppercase;
+    margin-top: 30px;
+}
+
+/* summary display for a book */
+.book-summary {
+    height: 250px;
+    /* Width is chosen for iPhone */
+    table {
+        width: 305px;
+
+        .image {
+            width: 130px;
+            overflow: hidden;
+            padding:5px 3px 0 0;
+            img {
+                max-height: 250px;
+                width: 130px;
+            }
+        }
+
+        .detail {
+            line-height: 1.1;
+            font-size: 18px;
+
+            .gongs {
+                padding: 3px;
+                text-align: center;
+                display: none; // suppresses '(none)'
+                &.Winner {
+                    background-color: gold;
+                    text-shadow: 0 0 2px #fff;
+                    font-weight: bold;
+                    color: black;
+                    display: block;
+                }
+
+                &.Honours {
+                    background-color: silver;
+                    color: #fff;
+                    text-shadow: 0 0 2px #333;
+                    display: block;
+                }
+
+                &.Notable {
+                    background-color: brown;
+                    color: white;
+                    display: block;
+                }
+
+                &.Shortlisted {
+                    background-color: @gray-lighter;
+                    display: block;
+                }
+            }
+
+            .title {
+                margin-top: 3px;
+                margin-bottom: 10px;
+            }
+
+            .byLine {
+                margin-top: 10px;
+                margin-bottom: 10px;
+                font-size: 14px;
+            }
+
+            .summary, .publisher, .isbn {
+                font-size: 11px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
+
+/* detail display for a book */
+.book-detail {
+
+    .image {
+        img {
+            width: 100%;
+        }
+    }
+
+    .detail {
+        line-height: 1.1;
+        margin-top: 10px;
+
+        @media (min-width: @screen-sm) {
+            margin-top: 0;
+        }
+
+        .gongs {
+            padding: 7px;
+
+            &.Winner {
+                background-color: gold;
+                text-shadow: 0 0 2px #fff;
+                font-weight: bold;
+                color: black;
+            }
+
+            &.Honours {
+                background-color: silver;
+                color: #fff;
+                text-shadow: 0 0 2px #333;
+            }
+
+            &.Notable {
+                background-color: brown;
+                color: white;
+            }
+
+            &.Shortlisted {
+                background-color: @gray-lighter;
+            }
+        }
+
+
+        .byLine {
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 110%;
+        }
+
+        .summary, .publisher, .isbn, .link-field {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+    }
+}
+
+// Reinstate normal ul/li style which is bastardized by Bootswatch.
+// But don't reinstate for Orchard templates that rely on it.
+// :not(.search-results, .projection)
+#layout-main {
+    ul {
+        padding-left: 25px;
+        list-style: disc outside;
+
+        li {
+            margin-bottom: 15px;
+        }
+    }
+
+    ol {
+        padding-left: 40px;
+        list-style: decimal;
+    }
+
+    ul.content-items, ul.pagination {
+        padding-left: 0;
+        list-style: none;
+
+        li {
+            background: none;
+            margin-bottom: 15px;
+            padding-left: 0;
+        }
+    }
+
+    ol.content-items {
+        padding-left: 0;
+        list-style: none;
+    }
+
+    article.projection-page {
+        ul, ol {
+            padding-left: 0;
+            list-style: none;
+
+            li {
+                background: none;
+                margin-bottom: 15px;
+                padding-left: 0;
+            }
+        }
+    }
+    // make blog (blogPost summary list) into container
+    article.blog.content-item {
+        .container();
+
+        > ul.blog-posts {
+            .row();
+
+            > li {
+                .make-sm-column(12);
+            }
+        }
+    }
+}
+
+
+
+
+// Miscellaneous
+address {
+    font-style: italic;
+}
+
+.learn-more {
+    width: 110px;
+    padding: 5px;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 300;
+    margin: 0 auto;
+    border: 1px @gray-light solid;
+
+    a:hover {
+        font-weight: 400;
+        color: black;
+        text-decoration: none;
+    }
+}
+
+/* Support for Bootstrap Grids without gutters */
+.row.no-gutter {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.row.no-gutter [class*='col-']:not(:first-child),
+.row.no-gutter [class*='col-']:not(:last-child) {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.cbca-search-list{
+    padding: 0 15px;
+}

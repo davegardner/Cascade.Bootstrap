@@ -103,4 +103,8 @@
 
 	$(window).on('load resize scroll', loadImage);
 
+	// YAMM ///////////////////////////////////////////////////////
+	$(document).on('click', '.yamm .dropdown-menu', function (e) {
+		e.stopPropagation()
+	})
 });

@@ -72,6 +72,9 @@
   <ItemGroup>
     <Content Include="Content\apple-touch-icon.png" />
     <Content Include="Content\favicon.ico" />
+    <Content Include="Content\Fonts\Hellena Script\Webfont\Hellena Script-webfont.svg" />
+    <Content Include="Content\Images\bluebg.jpg" />
+    <Content Include="Content\Images\greenbg.jpg" />
     <Content Include="Content\prettyPhoto\dark_rounded\btnNext.png" />
     <Content Include="Content\prettyPhoto\dark_rounded\btnPrevious.png" />
     <Content Include="Content\prettyPhoto\dark_rounded\contentPattern.png" />
@@ -154,6 +157,7 @@
     <Content Include="Scripts\prettyPhoto\jquery.prettyPhoto.js" />
     <Content Include="Scripts\stapel\jquery.stapel.js" />
     <Content Include="Scripts\stapel\modernizr.custom.63321.js" />
+    <Content Include="Styles\animate.css" />
     <Content Include="Styles\bootstrap-rtl\css\bootstrap-rtl.css" />
     <Content Include="Styles\bootstrap-rtl\css\bootstrap-rtl.min.css" />
     <Content Include="Styles\bootstrap-rtl\less\bootstrap-rtl.css">
@@ -163,6 +167,12 @@
       <DependentUpon>bootstrap-rtl.css</DependentUpon>
     </Content>
     <Content Include="Styles\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Styles\bootswatch\cbca-variables.css">
+      <DependentUpon>cbca-variables.less</DependentUpon>
+    </Content>
+    <Content Include="Styles\bootswatch\cbca-variables.min.css">
+      <DependentUpon>cbca-variables.css</DependentUpon>
+    </Content>
     <Content Include="Styles\bootswatch\cbca_national-variables.css">
       <DependentUpon>cbca_national-variables.less</DependentUpon>
     </Content>
@@ -190,6 +200,12 @@
     <Content Include="Styles\prettyPhoto\prettyPhoto.css" />
     <Content Include="Styles\restart\style.css" />
     <Content Include="Styles\restart\style.min.css" />
+    <Content Include="Styles\site-cbca.css">
+      <DependentUpon>site-cbca.less</DependentUpon>
+    </Content>
+    <Content Include="Styles\site-cbca.min.css">
+      <DependentUpon>site-cbca.css</DependentUpon>
+    </Content>
     <Content Include="Styles\site-cbca_national.css">
       <DependentUpon>site-cbca_national.less</DependentUpon>
     </Content>
@@ -663,6 +679,20 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Styles\site-pixels.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Styles\bootswatch\cbca-bootswatch.less" />
+    <Content Include="Styles\bootswatch\cbca-variables.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Styles\site-cbca.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Fonts\Hellena Script\Hellena Script.otf" />
+    <Content Include="Content\Fonts\Hellena Script\Hellena Script.ttf" />
+    <Content Include="Content\Fonts\Hellena Script\Webfont\Hellena Script-webfont.eot" />
+    <Content Include="Content\Fonts\Hellena Script\Webfont\Hellena Script-webfont.woff" />
+    <Content Include="Content\Fonts\Hellena Script\Webfont\Hellena Script-webfont.woff2" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
