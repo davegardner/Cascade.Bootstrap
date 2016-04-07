@@ -180,8 +180,6 @@ html.boxed-layout #layout-content {
 
 h1 {
     color: @cbca-light;
-    margin-top: 42px;
-    margin-bottom: 18px;
 }
 
 
@@ -199,11 +197,14 @@ h4 {
     margin-bottom: 14px;
 }
 
-h3, h5 {
+h3, h5 {    
     margin-top: 10px;
     margin-bottom: 6px;
 }
-
+h5, h6{
+   color:@gray-dark;
+   font-family: @font-family-base;
+}
 /* Boxed right aside on home page */
 .green-stipple-wrapper {
     .green-stipple {
@@ -212,7 +213,13 @@ h3, h5 {
         background: url('../Content/Images/greenbg.jpg') repeat;
     }
 }
-
+/* margin and padding for main content */
+.zone-content
+{
+    @media (min-width: @screen-sm) {
+        margin-bottom:50px;
+    }
+}
 /* Adjust sizing of tripel on home page */
 .widget-tripel-featured {
     #tripel-featured-panel {
