@@ -201,13 +201,14 @@ h4 {
     margin-bottom: 14px;
 }
 
-h3, h5 {    
+h3, h5 {
     margin-top: 10px;
     margin-bottom: 6px;
 }
-h5, h6{
-   color:@gray-dark;
-   font-family: @font-family-base;
+
+h5, h6 {
+    color: @gray-dark;
+    font-family: @font-family-base;
 }
 /* Boxed right aside on home page */
 .green-stipple-wrapper {
@@ -222,20 +223,24 @@ h5, h6{
     }
 }
 /* margin and padding for main content */
-.zone-content
-{
+.zone-content {
     @media (min-width: @screen-sm) {
-        margin-bottom:50px;
+        margin-bottom: 50px;
     }
 }
 /* Adjust sizing of tripel on home page */
-.widget-tripel-featured {
 
-    a:active, a:link, a:visited, a:hover, a:focus{
-        text-decoration: none;
-        outline:none !important;
+#tripel-featured-panel {
+    .head-image {
+        text-align: center;
     }
-    .cbca-icon {
+
+    a:active, a:link, a:visited, a:hover, a:focus {
+        text-decoration: none;
+        outline: none !important;
+    }
+
+    .featured-icon {
 
         div {
             height: 125px;
@@ -252,22 +257,16 @@ h5, h6{
         }
     }
 
-    .row {
-        padding-top: 20px;
-
-        .text-block {
-            @media(min-width:@screen-md) {
-                min-height: 110px;
-            }
+    .text-block {
+        @media(min-width:@screen-md) {
+            min-height: 110px;
         }
     }
 
-    .tripel-featured-icon {
-        height: 80px;
-        width: auto;
+    .row {
+        padding-top: 20px;
     }
 }
-
 
 
 /* Footer Widget */
@@ -607,7 +606,7 @@ address {
     }
 }
 
-html.orchard-users form fieldset{
+html.orchard-users form fieldset {
     margin-bottom: 80px;
 }
 
@@ -632,8 +631,8 @@ html.orchard-users form fieldset{
                     margin-top: 0;
                 }
 
-                .book-summary table .detail .gongs{
-                    text-align:left;
+                .book-summary table .detail .gongs {
+                    text-align: left;
                 }
             }
         }
