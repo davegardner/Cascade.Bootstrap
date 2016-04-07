@@ -9808,8 +9808,6 @@ html.boxed-layout #layout-content {
 }
 h1 {
   color: #65cadc;
-  margin-top: 42px;
-  margin-bottom: 18px;
 }
 h1,
 h2,
@@ -9830,11 +9828,22 @@ h5 {
   margin-top: 10px;
   margin-bottom: 6px;
 }
+h5,
+h6 {
+  color: #212121;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 /* Boxed right aside on home page */
 .green-stipple-wrapper .green-stipple {
   padding: 15px;
   margin-top: 40px;
   background: url('../Content/Images/greenbg.jpg') repeat;
+}
+/* margin and padding for main content */
+@media (min-width: 768px) {
+  .zone-content {
+    margin-bottom: 50px;
+  }
 }
 /* Adjust sizing of tripel on home page */
 .widget-tripel-featured .cbca-icon div {
