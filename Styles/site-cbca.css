@@ -9813,8 +9813,8 @@ html.boxed-layout #layout-content {
 }
 h1 {
   color: #65cadc;
-  margin-top: 42px;
-  margin-bottom: 18px;
+  margin-top: 36px;
+  margin-bottom: 26px;
 }
 h1,
 h2,
@@ -9835,6 +9835,11 @@ h5 {
   margin-top: 10px;
   margin-bottom: 6px;
 }
+h5,
+h6 {
+  color: #212121;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 /* Boxed right aside on home page */
 .green-stipple-wrapper .green-stipple {
   padding: 15px;
@@ -9842,32 +9847,57 @@ h5 {
   background: url('../Content/Images/greenbg.jpg') repeat;
 }
 .green-stipple-wrapper .green-stipple .cbca-arrows {
+  display: none;
   max-width: 100%;
 }
+@media (min-width: 768px) {
+  .green-stipple-wrapper .green-stipple .cbca-arrows {
+    display: inline;
+  }
+}
+/* margin and padding for main content */
+@media (min-width: 768px) {
+  .zone-content {
+    margin-bottom: 50px;
+  }
+}
 /* Adjust sizing of tripel on home page */
-.widget-tripel-featured .cbca-icon div {
-  height: 125px;
+#tripel-featured-panel .container {
+  padding-bottom: 40px;
+}
+#tripel-featured-panel .head-image {
+  text-align: center;
+}
+#tripel-featured-panel a:active,
+#tripel-featured-panel a:link,
+#tripel-featured-panel a:visited,
+#tripel-featured-panel a:hover,
+#tripel-featured-panel a:focus {
+  text-decoration: none;
+  outline: none !important;
+}
+#tripel-featured-panel .featured-icon {
   position: relative;
+  height: 125px;
+  width: 100%;
 }
-.widget-tripel-featured .cbca-icon div img {
-  margin: auto;
-  position: absolute;
+#tripel-featured-panel .featured-icon div img {
   top: 0;
-  left: 0;
   bottom: 0;
+  left: 0;
   right: 0;
-}
-.widget-tripel-featured .row {
-  padding-top: 20px;
+  position: absolute;
+  margin: auto;
+  max-height: 125px;
+  vertical-align: middle;
 }
 @media (min-width: 992px) {
-  .widget-tripel-featured .row .text-block {
+  #tripel-featured-panel .text-block {
     min-height: 110px;
   }
 }
-.widget-tripel-featured .tripel-featured-icon {
-  height: 80px;
-  width: auto;
+#tripel-featured-panel .row {
+  padding-top: 20px;
 }
 /* Footer Widget */
 .span-sponsors div.row {

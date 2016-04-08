@@ -184,8 +184,9 @@ html.boxed-layout #layout-content {
 
 h1 {
     color: @cbca-light;
+    margin-top: 36px;
+    margin-bottom: 26px;
 }
-
 
 h1, h2, h3, h4 {
     text-transform: uppercase;
@@ -210,6 +211,7 @@ h5, h6 {
     color: @gray-dark;
     font-family: @font-family-base;
 }
+
 /* Boxed right aside on home page */
 .green-stipple-wrapper {
     .green-stipple {
@@ -218,7 +220,12 @@ h5, h6 {
         background: url('../Content/Images/greenbg.jpg') repeat;
 
         .cbca-arrows {
+            display: none;
             max-width: 100%;
+            // only display arrows on full screen, otherwise we get 2 sets
+            @media(min-width: @screen-sm) {
+                display: inline;
+            }
         }
     }
 }
@@ -231,6 +238,11 @@ h5, h6 {
 /* Adjust sizing of tripel on home page */
 
 #tripel-featured-panel {
+
+    .container {
+        padding-bottom: 40px;
+    }
+
     .head-image {
         text-align: center;
     }
@@ -241,18 +253,20 @@ h5, h6 {
     }
 
     .featured-icon {
+        position: relative;
+        height: 125px;
+        width: 100%;
 
         div {
-            height: 125px;
-            position: relative;
-
             img {
-                margin: auto;
-                position: absolute;
                 top: 0;
-                left: 0;
                 bottom: 0;
+                left: 0;
                 right: 0;
+                position: absolute;
+                margin: auto;
+                max-height: 125px;
+                vertical-align: middle;
             }
         }
     }
