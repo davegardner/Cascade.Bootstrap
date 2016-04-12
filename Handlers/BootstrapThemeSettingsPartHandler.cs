@@ -1,11 +1,9 @@
-﻿using JetBrains.Annotations;
-using Orchard.ContentManagement;
-using Orchard.ContentManagement.Handlers;
+﻿using Orchard.ContentManagement;
+using Orchard.ContentManagement.Utilities;
 using Orchard.Localization;
 using Cascade.Bootstrap.Models;
 
 namespace Cascade.Bootstrap.Handlers {
-    [UsedImplicitly]
     public class BootstrapThemeSettingsPartHandler : ContentHandler {
         public BootstrapThemeSettingsPartHandler() {
             T = NullLocalizer.Instance;
