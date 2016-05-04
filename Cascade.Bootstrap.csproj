@@ -142,6 +142,7 @@
     <Content Include="Content\prettyPhoto\light_square\loader.gif" />
     <Content Include="Content\prettyPhoto\light_square\sprite.png" />
     <Content Include="Content\swatches\cbca_national_th.png" />
+    <Content Include="Content\swatches\cbca_th.png" />
     <Content Include="Content\swatches\cerulean_th.png" />
     <Content Include="Content\swatches\clayton_th.png" />
     <Content Include="Content\swatches\cosmo_th.png" />
@@ -154,6 +155,7 @@
     <Content Include="Content\swatches\journal_th.png" />
     <Content Include="Content\swatches\lumen_th.png" />
     <Content Include="Content\swatches\paper_th.png" />
+    <Content Include="Content\swatches\pixels_th.png" />
     <Content Include="Content\swatches\readable_th.png" />
     <Content Include="Content\swatches\restart_th.png" />
     <Content Include="Content\swatches\safetec_th.png" />
