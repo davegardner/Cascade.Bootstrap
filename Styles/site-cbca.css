@@ -10241,6 +10241,10 @@ html.orchard-users form fieldset {
   margin-bottom: 80px;
 }
 @media print {
+  /* this affects the margin in the printer settings */
+  @page {
+    margin: 1cm 1cm 1cm 1cm;
+  }
   a.btn,
   video,
   audio,
@@ -10253,12 +10257,20 @@ html.orchard-users form fieldset {
   #toTop {
     display: none;
   }
+  body {
+    margin-top: .5cm;
+    margin-bottom: 0;
+  }
   .projection-page h1 {
     margin-bottom: 0;
-    margin-top: 0;
+    margin-top: 1cm;
+  }
+  .projection-page .col-lg-4.col-sm-6 {
+    page-break-inside: avoid;
+    display: inline-block;
   }
   .projection-page ul li {
-    page-break-inside: avoid;
+    page-break-after: always;
   }
   .projection-page ul li .category-heading {
     padding-top: 20px;

@@ -1,5 +1,5 @@
 ﻿using Orchard.ContentManagement;
-using Orchard.ContentManagement.Utilities;
+using Orchard.ContentManagement.Handlers;
 using Orchard.Localization;
 using Cascade.Bootstrap.Models;
 
