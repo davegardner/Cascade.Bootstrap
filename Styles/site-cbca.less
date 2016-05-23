@@ -651,21 +651,36 @@ html.orchard-users form fieldset {
 }
 
 @media print {
-    // Very basic print style sheet that simply suppresses unwanted and inappropriate items
+    
+    /* this affects the margin in the printer settings */ 
+    @page{
+        margin: 1cm 1cm 1cm 1cm;  
+
+    }
+
+    // Suppress unwanted and inappropriate items
     a.btn, video, audio, object, embed, #layout-header, .navbar-wrapper, #layout-after-main, #layout-footer, #toTop {
         display: none;
+    }
+    
+    body{
+        margin-top: .5cm;
+        margin-bottom: 0;
     }
 
     .projection-page {
         h1 {
             margin-bottom: 0;
-            margin-top: 0;
+            margin-top: 1cm;
         }
 
+        .col-lg-4.col-sm-6{
+                page-break-inside: avoid;
+                display: inline-block;
+        }
         ul {
             li {
-                page-break-inside: avoid;
-
+                page-break-after: always;
                 .category-heading {
                     padding-top: 20px;
                     margin-top: 0;
