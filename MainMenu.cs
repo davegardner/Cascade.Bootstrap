@@ -37,7 +37,11 @@ namespace Cascade.Bootstrap {
                     {
 
                         builder.Add(T(FirstWord(_orchardServices.WorkContext.CurrentUser.UserName, bootstrapSettings)), itemCount.ToString(), item => item.Url("#").AddClass("menuUserName"));
-                        builder.Add(T("Change Password"), itemCount.ToString() + ".1", item => item.Action("ChangePassword", "Account", new { area = "Orchard.Users" }));
+                        
+                        // HACK: for CBCA, prevent Members from changing the password because it's a shared login
+                        if (bootstrapSettings.Swatch != "cbca" && _orchardServices.WorkContext.CurrentUser.UserName != "Member")
+                            builder.Add(T("Change Password"), itemCount.ToString() + ".1", item => item.Action("ChangePassword", "Account", new { area = "Orchard.Users" }));
+
                         builder.Add(T("Sign Out"), itemCount.ToString() + ".2", item => item.Action("LogOff", "Account", new { area = "Orchard.Users", ReturnUrl = _orchardServices.WorkContext.HttpContext.Request.RawUrl }));
                         if (_orchardServices.Authorizer.Authorize(Orchard.Security.StandardPermissions.AccessAdminPanel))
                         {
