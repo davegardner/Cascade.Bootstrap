@@ -9,22 +9,26 @@ using System;
 using System.Linq;
 
 
-namespace Cascade.Bootstrap {
-    public class MainMenu : IMenuProvider {
+namespace Cascade.Bootstrap
+{
+    public class MainMenu : IMenuProvider
+    {
         private readonly IContentManager _contentManager;
         private readonly IOrchardServices _orchardServices;
 
-        public MainMenu(IContentManager contentManager, IOrchardServices orchardServices) {
+        public MainMenu(IContentManager contentManager, IOrchardServices orchardServices)
+        {
             _contentManager = contentManager;
             _orchardServices = orchardServices;
         }
 
         public Localizer T { get; set; }
-        public void GetMenu(IContent menu, NavigationBuilder builder) {
+        public void GetMenu(IContent menu, NavigationBuilder builder)
+        {
             var workContext = _orchardServices.WorkContext;
             var bootstrapSettings = workContext.CurrentSite.As<BootstrapThemeSettingsPart>();
 
-           
+
             if (menu.As<TitlePart>().Title == "Main Menu")
             {
                 var menuParts = _contentManager.Query<MenuPart, MenuPartRecord>().Where(x => x.MenuId == menu.Id).List();
@@ -35,15 +39,16 @@ namespace Cascade.Bootstrap {
                 {
                     if (_orchardServices.WorkContext.CurrentUser != null)
                     {
+                        var adminAccess = _orchardServices.Authorizer.Authorize(Orchard.Security.StandardPermissions.AccessAdminPanel);
 
                         builder.Add(T(FirstWord(_orchardServices.WorkContext.CurrentUser.UserName, bootstrapSettings)), itemCount.ToString(), item => item.Url("#").AddClass("menuUserName"));
-                        
+
                         // HACK: for CBCA, prevent Members from changing the password because it's a shared login
-                        if (bootstrapSettings.Swatch != "cbca" && _orchardServices.WorkContext.CurrentUser.UserName != "Member")
+                        if(adminAccess || bootstrapSettings.Swatch != "cbca")
                             builder.Add(T("Change Password"), itemCount.ToString() + ".1", item => item.Action("ChangePassword", "Account", new { area = "Orchard.Users" }));
 
                         builder.Add(T("Sign Out"), itemCount.ToString() + ".2", item => item.Action("LogOff", "Account", new { area = "Orchard.Users", ReturnUrl = _orchardServices.WorkContext.HttpContext.Request.RawUrl }));
-                        if (_orchardServices.Authorizer.Authorize(Orchard.Security.StandardPermissions.AccessAdminPanel))
+                        if (adminAccess)
                         {
                             builder.Add(T("Dashboard"), itemCount.ToString() + ".3", item => item.Action("Index", "Admin", new { area = "Dashboard" }));
 
